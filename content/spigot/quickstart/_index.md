@@ -50,8 +50,10 @@ holders:
   mine:
     type: statistic
     statistic: mine_block
-    material: diamond_ore # mine_block needs a block material to work. In this case, we are using diamond_ore
+    material: diamond_ore
 ```
+
+`mine_block` needs a block material to work. Hence, we added the `material` field to specify the block material, which in this case is `diamond_ore`.
 
 Open your server terminal and type `/reloadtop` to apply the changes.
 
