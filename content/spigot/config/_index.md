@@ -5,7 +5,7 @@ weight = 3
 
 ```yaml
 # The type of storage the plugin will use to store the value
-# Available: YAML, JSON, SQLITE, MYSQL
+# Available: FLAT, YAML, JSON, SQLITE, NEW-SQLITE, MYSQL
 storage-type: yaml
 
 # The settings for the Top Holders
