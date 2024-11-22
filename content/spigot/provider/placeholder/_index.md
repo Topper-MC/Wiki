@@ -54,6 +54,6 @@ holders:
 
 ### My placeholder gives a formatted value (e.g., 1,000.00 instead of 1000). Can I use it in the provider?
 
-No, the placeholder provider only supports numerical values (only numbers and decimal points).
+No, the placeholder provider only supports numerical values (only numbers and decimal separator `.` (dot) ).
 You must use a placeholder that returns a raw number without formatting, if possible.
 If the plugin that provides the placeholder does not have an option to return a raw number, you can try using a different placeholder or ask the plugin developer to add support for raw numbers.
