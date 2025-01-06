@@ -57,3 +57,17 @@ holders:
 No, the placeholder provider only supports numerical values (only numbers and decimal separator `.` (dot) ).
 You must use a placeholder that returns a raw number without formatting, if possible.
 If the plugin that provides the placeholder does not have an option to return a raw number, you can try using a different placeholder or ask the plugin developer to add support for raw numbers.
+
+### How can I know if a placeholder works with Topper?
+
+Here is a rough list of criteria that a placeholder should have in order to work with Topper:
+
+- The placeholder should only returns raw number
+  * That means it should only have digits and one `.` (dot) as a decimal separator
+    * Work: `100`, `100.00`, `100.123`
+    * Won't work: `abc`, `1,000,000`, `100,000.122`, `100.000.000`, `1 000 000`
+- The placeholder should work with both online and offline players
+- If the placeholder doesn't work with offline players, it should return an empty string or the placeholder itself
+  * You should enable `online` anyways to avoid issues and errors caused by weird behaviors of the placeholder for offline players
+  * For developers, that means you should return an empty string or `null` in your `onRequest` or `onPlaceholderRequest`
+- If there is any error in the logic of the placeholder, it should return an empty string or the placeholder itself
