@@ -24,7 +24,7 @@ holders:
   playtime:
     type: statistic
     statistic: PLAY_ONE_MINUTE
-    line: "&7[&b{index}&7] &b{name} &7- &b{value;time:pattern=HH:mm:ss&type=duration&unit=ticks}"
+    line: "&7[&b{index}&7] &b{name} &7- &b{value_time:pattern=HH:mm:ss&type=duration&unit=ticks}"
 ```
 
 We added the `line` setting to the holder and override [the default `line`]({{% ref "spigot/extra/default_value" %}}). The `{value;time:pattern=HH:mm:ss&type=duration&unit=ticks}` will format the value to a human-readable time format.
