@@ -12,4 +12,4 @@ holders:
 ```
 
 > [!NOTE]
-> In some Value Providers like [Placeholder]({{% ref "spigot/provider/placeholder" %}}), you may need to ensure that it would take the value of online players only (For example, by setting `online` to `true` in [Placeholder Value Provider]({{% ref "spigot/provider/placeholder" %}})
+> In some Value Providers like [Placeholder]({{% ref "spigot/provider/placeholder" %}}), you may need to ensure that it would take the value of online players only (For example, by setting `online` to `true` in [Placeholder Value Provider]({{% ref "spigot/provider/placeholder" %}}))
