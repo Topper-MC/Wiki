@@ -1,5 +1,5 @@
 +++
-title = "Ignored Permission"
+title = "Ignore Permission"
 +++
 
 You can specify a set of permissions so that the Holder will skip updating the value of the player if they have one of the permissions.
