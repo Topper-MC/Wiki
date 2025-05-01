@@ -2,7 +2,7 @@
 title = "Value Display"
 +++
 
-Some places like [`{value}` in `line`]({{% ref "spigot/extra/default_value" %}}) and [the `value` and `top_value` queries]({{% ref "spigot/query" %}}) can be expanded to format the value in a more readable way. This is done by specifying some settings for them like:
+Some places like [`{value}` in `line`]({{% ref "spigot/extra/provider#default-values" %}}) and [the `value` and `top_value` queries]({{% ref "spigot/query" %}}) can be expanded to format the value in a more readable way. This is done by specifying some settings for them like:
 
 - `{value_<format>}`
 - `<holder>;value;<format>`
