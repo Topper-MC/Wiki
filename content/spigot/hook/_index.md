@@ -1,7 +1,7 @@
 +++
 title = "Hook"
 type = "chapter"
-weight = 6
+weight = 7
 +++
 
 Details about the hooks provided by the plugin.

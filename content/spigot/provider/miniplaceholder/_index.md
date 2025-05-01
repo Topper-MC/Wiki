@@ -17,10 +17,6 @@ holders:
     type: mini-placeholder
     # The placeholder used to get the value
     placeholder: <placeholder>
-    # Whether the placeholder should be parsed asynchronously. Default is false
-    async: <true/false>
-    # Whether to show errors when parsing the placeholder. Default is false
-    show-errors: <true/false>
 ```
 
 ## Example

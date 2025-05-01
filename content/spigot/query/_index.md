@@ -1,6 +1,6 @@
 +++
 title = "Query"
-weight = 5
+weight = 6
 +++
 
 This page provides information about the query system, which is used to retrieve data from the Top Holder.

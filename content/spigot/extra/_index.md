@@ -1,7 +1,7 @@
 +++
 title = "Extra"
 type = "chapter"
-weight = 7
+weight = 8
 +++
 
 Extra tutorials for common features and tasks.
