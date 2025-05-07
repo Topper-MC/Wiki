@@ -3,6 +3,11 @@ title = "Frequently Asked Questions"
 weight = 4
 +++
 
+### I set my Value Provider, but it's laggy
+
+In most cases, you'd better enable `async` ([Tutorial]({{% ref "spigot/extra/provider#asynchronous-provider" %}})) so that your provider is run on an asynchronous thread that doesn't affect your main server thread.
+However, some providers may not support asynchronous run and require to run on the main thread. In that case, either you have to find one that supports and test it or ask the author of that provider to add support for that.
+
 ### I set my PlaceholderAPI's placeholder but it is not showing the value in the Top Holder
 
 - Make sure that the placeholder you are using is valid and that the plugin that provides the placeholder is installed and working correctly.
