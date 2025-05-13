@@ -9,6 +9,7 @@ title = "KingdomsX"
 
 ```yaml
 type: kingdoms
+kingdoms-type: <KINGDOM/NATION> # The type of the kingdoms to get, KINGDOM for the kingdom of the player, NATION for the capital kingdom of the nation of the player
 ```
 
 ## Example
@@ -19,4 +20,5 @@ holders:
     top: jump
 
     type: kingdoms
+    kingdoms-type: KINGDOM
 ```
