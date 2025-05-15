@@ -1,6 +1,5 @@
 +++
 title = "PlaceholderAPI"
-weight = 3
 +++
 
 The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Holder.

@@ -4,4 +4,4 @@ type = "chapter"
 weight = 2
 +++
 
-This will guide you to set up a Group Holder
+This will guide you to set up a Timed Holder
