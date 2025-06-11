@@ -24,4 +24,11 @@ task:
     entry-per-tick: 10
     # How many ticks should the plugin wait before updating the leaderboard
     delay: 0
+    # How many times should the plugin skip updating the value for the entry if it fails to update
+    # This is useful to let the plugin prioritize other active entries
+    max-skips: 1
+    # How many ticks should the plugin wait before applying the updated value to the entry
+    # Since the holder is updated partially, this is useful to prevent the plugin from applying the value too early
+    # and to allow the plugin to apply the value in larger batches, creating the illusion of a single update
+    set-delay: 20
 ```

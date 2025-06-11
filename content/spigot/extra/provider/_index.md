@@ -51,6 +51,41 @@ holders:
       decimal-separator: "." # Change this to the decimal separator of the formatted value
 ```
 
+## Ignore & Reset Permission
+
+You can specify a set of permissions so that the Holder will skip updating the value of the player if they have one of the permissions.
+
+```yml
+holders:
+  jump:
+    <your other settings>
+    ignore-permission: exclude.permission
+
+  jump-multiple:
+    <your other settings>
+    ignore-permission:
+      - exclude.permission1
+      - exclude.permission2
+```
+
+You can also specify a set of permissions so that the Holder will reset the value of the player if they have one of the permissions.
+
+```yml
+holders:
+  jump:
+    <your other settings>
+    reset-permission: reset.permission
+
+  jump-multiple:
+    <your other settings>
+    reset-permission:
+      - reset.permission1
+      - reset.permission2
+```
+
+> [!NOTE]
+> In some Value Providers like [Placeholder]({{% ref "spigot/provider/placeholder" %}}), you may need to ensure that it would take the value of online players only (For example, by setting `online` to `true` in [Placeholder Value Provider]({{% ref "spigot/provider/placeholder" %}}))
+
 ## Show Errors
 
 By default, any errors that occur during the execution of a provider will be truncated. If you want to show the errors instead, you can set `show-errors` to `true`.
