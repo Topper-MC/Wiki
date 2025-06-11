@@ -83,9 +83,6 @@ holders:
       - reset.permission2
 ```
 
-> [!NOTE]
-> In some Value Providers like [Placeholder]({{% ref "spigot/provider/placeholder" %}}), you may need to ensure that it would take the value of online players only (For example, by setting `online` to `true` in [Placeholder Value Provider]({{% ref "spigot/provider/placeholder" %}}))
-
 ## Show Errors
 
 By default, any errors that occur during the execution of a provider will be truncated. If you want to show the errors instead, you can set `show-errors` to `true`.
