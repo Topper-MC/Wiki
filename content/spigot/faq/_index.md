@@ -12,13 +12,27 @@ Some providers may have an `online` option that determines whether the provider 
 
 For those who are using `statistic` placeholder in the [PlaceholderAPI Value Provider]({{% ref "spigot/provider/placeholder" %}}), you are recommended to either enable `online` option or check out the built-in [Statistic Provider]({{% ref "spigot/provider/statistic" %}}).
 
+### My name isn't appearing in the Top Holder after I set it up
+
+As Topper only registers players when they join the server, the issue can be solved by just re-joining the server.
+
+### The Top Holder doesn't work
+
+In most cases, there must be a reason why the holder is not working. Here are some common practices we gather from similar cases:
+
+- **Check if the configuration is properly set up**: There are cases when there is a syntax error in the configuration file or the configuration is not formatted correctly. You should check the file with some validation tools such as [YAML Lint](https://www.yamllint.com/).
+- **Check if the required settings are properly set up**: Make sure to check your settings against the wiki. There are cases when users mixed up the settings or forgot to set some required settings, so please read the wiki carefully.
+- **Check if there is any errors**: Make sure to check your logs for any errors related to your Top Holder. If there isn't one, make sure to enable `show-errors` in the configuration ([Tutorial]({{% ref "spigot/extra/provider#show-errors" %}})).
+
+After all, there must be a reason why the holder is not working. Please check thoroughly and provide more details about the issue when you report it in the support channel.
+
 ### I set my PlaceholderAPI's placeholder but it is not showing the value in the Top Holder
 
 - Make sure that the placeholder you are using is valid and that the plugin that provides the placeholder is installed and working correctly.
 - Try running the command `/papi parse me <placeholder>` to see if the placeholder is working as expected.
 - Check if the placeholder is for online players only. If so, set the `online` option to `true` in the configuration.
 - Try setting `show-errors` to `true` to see if there are any errors when parsing the placeholder. ([Tutorial]({{% ref "spigot/extra/provider#show-errors" %}}))
-- If the placeholder is still not working, ask for help in the plugin's support channel or forum (remember to enable `show-errors` and provide the logs to them for better support).
+- If the placeholder is still not working, ask for help in the plugin's support channel or forum (remember to enable `show-errors` ([Tutorial]({{% ref "spigot/extra/provider#show-errors" %}})) and provide the logs to them for better support).
 
 ### My placeholder gives a formatted value (e.g., 1,000.00 instead of 1000). Can I use it in the provider?
 
