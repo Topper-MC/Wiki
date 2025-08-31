@@ -8,6 +8,10 @@ weight = 4
 In most cases, you'd better enable `async` ([Tutorial]({{% ref "spigot/extra/provider#asynchronous-provider" %}})) so that your provider is run on an asynchronous thread that doesn't affect your main server thread.
 However, some providers may not support asynchronous run and require to run on the main thread. In that case, either you have to find one that supports and test it or ask the author of that provider to add support for that.
 
+Some providers may have an `online` option that determines whether the provider should only be run for online players (like [PlaceholderAPI]({{% ref "spigot/provider/placeholder" %}})). If so, you are recommended to enable it to avoid unnecessary computations for offline players.
+
+For those who are using `statistic` placeholder in the [PlaceholderAPI Value Provider]({{% ref "spigot/provider/placeholder" %}}), you are recommended to either enable `online` option or check out the built-in [Statistic Provider]({{% ref "spigot/provider/statistic" %}}).
+
 ### I set my PlaceholderAPI's placeholder but it is not showing the value in the Top Holder
 
 - Make sure that the placeholder you are using is valid and that the plugin that provides the placeholder is installed and working correctly.
