@@ -21,6 +21,7 @@ You can change the default values, returned by some queries and commands, by add
 holders:
   jump:
     <your other settings>
+    default-value: null # The default value of an entry. This will be used when a player joins the server the first time
     null-name: "---" # Default value for the name
     null-uuid: "---" # Default value for the uuid
     null-value: "---" # Default value for the value
@@ -92,4 +93,13 @@ holders:
   jump:
     <your other settings>
     show-errors: true
+```
+
+You can also reset the value of the player if there is an error when updating the value.
+
+```yaml
+holders:
+  jump:
+    <your other settings>
+    reset-on-error: true
 ```

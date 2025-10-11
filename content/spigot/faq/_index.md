@@ -53,3 +53,19 @@ Here is a rough list of criteria that a placeholder should have in order to work
 - The placeholder should work with both online and offline players
 - If the placeholder doesn't work with offline players, it should return an empty string or the placeholder itself
 - If there is any error in the logic of the placeholder, it should return an empty string or the placeholder itself
+
+### I want to format the value returned by my placeholder in my leaderboard
+
+First, you should ALWAYS use a placeholder that returns a raw number without formatting, if possible (Check the previous questions for more information).
+
+Then in your query to get the value from the Top Holder, you can apply [Value Display]({{ ref "spigot/extra/value_display" }}) to format the value.
+
+In short, use the placeholder that returns a raw number when setting up the Top Holder, then apply Value Display settings when setting up the display of the leaderboard.
+
+### I want to shorten the number (e.g. 1000000 to 1M)
+
+The [Value Display function]({{ ref "spigot/extra/value_display" }}) can be used to shorten the number. For example, `money:value:shorten` will shorten the number of the value in the `money` Top Holder.
+
+### I am so confused about how to use Topper
+
+Take a deep breath and read the wiki again. You should take it slow and read the wiki carefully as you can miss some important details if you read it too quickly. If you still have trouble, feel free to ask for help in the Discord server. Remember to provide a clear and concise description of your issue, including any relevant error messages or screenshots.

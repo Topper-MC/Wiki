@@ -19,3 +19,6 @@ Here is an example of a hologram that displays the top 5 players in the leaderbo
 ```
 
 ![hologram](hologram.png)
+
+> [!NOTE]
+> If you don't know what `top_name` and `top_value` are, you can find more information about them in the [Query]({{% ref "spigot/query" %}}) section
