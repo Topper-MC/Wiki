@@ -10,6 +10,8 @@ This is a provider that allows you to use MiniPlaceholders placeholders as value
 
 ## Format
 
+{{< tabs groupid="platform" >}}
+{{% tab title="SpigotMC" %}}
 ```yaml
 holders:
   <holder-name>:
@@ -18,9 +20,27 @@ holders:
     # The placeholder used to get the value
     placeholder: <placeholder>
 ```
+{{% /tab %}}
+{{% tab title="FabricMC" %}}
+```json
+{
+  "holders": {
+    "<holder-name>": {
+      // The type of the provider
+      "type": "mini-placeholder",
+      // The placeholder used to get the value
+      "placeholder": "<placeholder>"
+    }
+  }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ## Example
 
+{{< tabs groupid="platform" >}}
+{{% tab title="SpigotMC" %}}
 ```yaml
 holders:
   # Holder that shows the amount of money a player has
@@ -29,3 +49,17 @@ holders:
     type: mini-placeholder
     placeholder: "<vault_eco_balance>"
 ```
+{{% /tab %}}
+{{% tab title="FabricMC" %}}
+```json
+{
+  "holders": {
+    "money": {
+      "type": "mini-placeholder",
+      "placeholder": "<vault_eco_balance>"
+    }
+  }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
