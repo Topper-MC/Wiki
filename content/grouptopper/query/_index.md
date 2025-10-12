@@ -8,4 +8,4 @@ The query system is the same as the one used in Topper, with the addition that:
 - the `top_name` query returns the name of the Group
 - the `top_key` query returns the UUID of the owner of the Group
 
-Refer to the [Topper Query]({{% ref "spigot/query" %}}) page for more information.
+Refer to the [Topper Query]({{% ref "topper/query" %}}) page for more information.

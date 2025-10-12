@@ -11,6 +11,8 @@ The unit that stores and manages the leaderboard data is called a `Top Holder`. 
 
 We will start by creating a `Top Holder` named `jump` and defining a `Value Provider` to count the number of times the player jumps. The `Value Provider` we will use is called `Statistic Provider`.
 
+{{< tabs groupid="platform" >}}
+{{% tab title="SpigotMC" %}}
 Open the `config.yml` file from the plugin's folder (`plugins/Topper/config.yml`), head to the `holders` section, and add the following configuration:
 
 ```yaml
@@ -19,6 +21,22 @@ holders:
     type: statistic # The type of the Value Provider, which in this case is a Statistic Provider
     statistic: jump # The name of the statistic that will be used to count the number of jumps
 ```
+{{% /tab %}}
+{{% tab title="FabricMC" %}}
+Open the `config.json` file from the mod's folder (`config/topper/config.json`), head to the `holders` section, and add the following configuration:
+
+```json
+{
+  "holders": {
+    "jump": { // The name of the Top Holder
+      "type": "statistic", // The type of the Value Provider, which in this case is a Statistic Provider
+      "statistic": "minecraft:jump" // The name of the statistic that will be used to count the number of jumps
+    }
+  }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 That is all you need to do, now the plugin is ready to start counting the number of jumps.
 
@@ -40,6 +58,8 @@ To do this, type the following command:
 
 Now, let's add another `Top Holder` to show the amount of diamond ores a player has mined.
 
+{{< tabs groupid="platform" >}}
+{{% tab title="SpigotMC" %}}
 Open the `config.yml` file from the plugin's folder (`plugins/Topper/config.yml`), head to the `holders` section, and add the following configuration:
 
 ```yaml
@@ -54,6 +74,27 @@ holders:
 ```
 
 `mine_block` needs a block material to work. Hence, we added the `material` field to specify the block material, which in this case is `diamond_ore`.
+{{% /tab %}}
+{{% tab title="FabricMC" %}}
+Open the `config.json` file from the mod's folder (`config/topper/config.json`), head to the `holders` section, and add the following configuration:
+
+```json
+{
+  "holders": {
+    "jump": {
+      "type": "statistic",
+      "statistic": "minecraft:jump"
+    },
+    "mine": { // The name of the Top Holder
+      "type": "statistic", // The type of the Top Holder
+      "statistic-type": "minecraft:mined", // The type of the statistic
+      "statistic": "minecraft:diamond_ore" // The name of the statistic
+    }
+  }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Open your server terminal and type `/reloadtop` to apply the changes.
 

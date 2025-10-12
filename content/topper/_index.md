@@ -1,10 +1,10 @@
 +++
-title = "Topper (Spigot)"
+title = "Topper"
 type = "chapter"
 weight = 1
 +++
 
-The documentation for the Spigot plugin of Topper.
+The documentation for Topper - The leaderboard plugin/mod.
 
 Where to find the plugin:
 - [SpigotMC](https://www.spigotmc.org/resources/topper.101325/)

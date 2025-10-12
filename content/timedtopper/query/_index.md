@@ -5,7 +5,7 @@ weight = 3
 
 The query system is the same as the one used in Topper, with the addition that the `<holder>` is the name of the Holder speficied in the configuration file of TimedTopper.
 
-Refer to the [Topper Query]({{% ref "spigot/query" %}}) page for more information.
+Refer to the [Topper Query]({{% ref "topper/query" %}}) page for more information.
 
 ## New Types
 

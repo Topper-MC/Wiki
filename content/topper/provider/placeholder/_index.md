@@ -3,12 +3,14 @@ title = "Placeholder"
 weight = 2
 +++
 
-> [!NOTE]
-> Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
-
 This is a provider that allows you to use PlaceholderAPI placeholders as values in the Top Holder.
 
 ## Format
+
+{{< tabs groupid="platform" >}}
+{{% tab title="SpigotMC" %}}
+> [!NOTE]
+> Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
 
 ```yaml
 holders:
@@ -21,9 +23,31 @@ holders:
     # If set to false, the placeholder will be parsed for all players, even those who are offline.
     online: <true/false>
 ```
+{{% /tab %}}
+{{% tab title="FabricMC" %}}
+> [!NOTE]
+> The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+> You can check its wiki for more information: [Wiki](https://placeholders.pb4.eu/)
+
+```json
+{
+  "holders": {
+    "<holder-name>": {
+      // The type of the provider
+      "type": "placeholder",
+      // The placeholder used to get the value
+      "placeholder": "<placeholder>"
+    }
+  }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ## Example
 
+{{< tabs groupid="platform" >}}
+{{% tab title="SpigotMC" %}}
 ```yaml
 holders:
   # Holder that shows the number of diamonds a player has mined
@@ -38,3 +62,19 @@ holders:
     placeholder: "%vault_eco_balance%"
     online: false # Get the value for all players, even those who are offline.
 ```
+{{% /tab %}}
+{{% tab title="FabricMC" %}}
+```json
+{
+  "holders": {
+    // Holder that shows the level of a player
+    // Use PlayerEx
+    "level": {
+      "type": "placeholder",
+      "placeholder": "%playerex:level%"
+    }
+  }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}

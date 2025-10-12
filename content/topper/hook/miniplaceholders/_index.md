@@ -14,7 +14,7 @@ The plugin provides a MiniPlaceholders placeholder to allow you to query data fr
 <topper_player:<query>>
 ```
 
-Check the [Query]({{% ref "spigot/query" %}}) section for more information about how to set the `<query>`.
+Check the [Query]({{% ref "topper/query" %}}) section for more information about how to set the `<query>`.
 
 ## Example
 

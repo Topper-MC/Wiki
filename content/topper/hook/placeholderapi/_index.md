@@ -13,7 +13,7 @@ The plugin provides a PlaceholderAPI placeholder to allow you to query data from
 %topper_<query>%
 ```
 
-Check the [Query]({{% ref "spigot/query" %}}) section for more information about how to set the `<query>`.
+Check the [Query]({{% ref "topper/query" %}}) section for more information about how to set the `<query>`.
 
 ## Example
 
