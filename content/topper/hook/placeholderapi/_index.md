@@ -40,9 +40,11 @@ Check the [Query]({{% ref "topper/query" %}}) section for more information about
 ```
 {{% /tab %}}
 {{% tab title="FabricMC" %}}
+```
 %topper:query money;top_name;1%
 %topper:query money;top_value;1%
 %topper:query money;top_value;1;#,###%
 %topper:query money;top_rank%
+```
 {{% /tab %}}
 {{< /tabs >}}
