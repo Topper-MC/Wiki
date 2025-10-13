@@ -24,7 +24,7 @@ Here is an example of a hologram that displays the top 5 players in the leaderbo
 {{% /tab %}}
 {{% tab title="FabricMC" %}}
 > [!NOTE]
-> The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+> You can use a hologram mod that supports [Text Placeholder API](https://modrinth.com/mod/placeholder-api) ([HoloDisplays](https://modrinth.com/mod/holodisplays) for example)
 
 ```
 <aqua><bold>JUMP LEADERBOARD
