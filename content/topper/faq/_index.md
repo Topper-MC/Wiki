@@ -58,13 +58,13 @@ Here is a rough list of criteria that a placeholder should have in order to work
 
 First, you should ALWAYS use a placeholder that returns a raw number without formatting, if possible (Check the previous questions for more information).
 
-Then in your query to get the value from the Top Holder, you can apply [Value Display]({{ ref "topper/extra/value_display" }}) to format the value.
+Then in your query to get the value from the Top Holder, you can apply [Value Display]({{% ref "topper/extra/value_display" %}}) to format the value.
 
 In short, use the placeholder that returns a raw number when setting up the Top Holder, then apply Value Display settings when setting up the display of the leaderboard.
 
 ### I want to shorten the number (e.g. 1000000 to 1M)
 
-The [Value Display function]({{ ref "topper/extra/value_display" }}) can be used to shorten the number. For example, `money:value:shorten` will shorten the number of the value in the `money` Top Holder.
+The [Value Display function]({{℅ ref "topper/extra/value_display" ℅}}) can be used to shorten the number. For example, `money:value:shorten` will shorten the number of the value in the `money` Top Holder.
 
 ### I am so confused about how to use Topper
 
