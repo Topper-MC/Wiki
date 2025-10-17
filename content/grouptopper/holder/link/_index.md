@@ -13,4 +13,15 @@ holders:
 
 This example will set that the Group Holder `jump_group` will listen to the Top Holder `jump` ([Click here if you don't know what `jump` is]({{% ref "topper/quickstart" %}})).
 
+{{% notice style="info" title="Link a holder from TimedTopper" %}}
+If you want to use a holder from [**TimedTopper**]({{% ref "timedtopper" %}}), you can set the `top-type` field to `timedtopper`. Then you can set the `top` field to the name of the holder you want to use.
+
+```yaml
+holders:
+  jump_group:
+    top-type: timedtopper # The type of the top holder. In this case, it will use TimedTopper
+    top: jump # The top holder it will be based on
+```
+{{% /notice %}}
+
 Continue reading to learn how to set up group settings.
