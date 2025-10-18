@@ -19,6 +19,6 @@ holders:
 
 The available values for `mode` are:
 - `default`: The value of any member of the group will be assigned to the group.
-- `owner`: Only the value of the member will be assigned to the group.
+- `owner`: Only the value of the owner will be assigned to the group.
 - `min`: The value of the member will be assigned to the group only if it is less than the current group value.
 - `max`: The value of the member will be assigned to the group only if it is greater than the current group value.
