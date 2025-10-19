@@ -64,7 +64,7 @@ In short, use the placeholder that returns a raw number when setting up the Top 
 
 ### I want to shorten the number (e.g. 1000000 to 1M)
 
-The [Value Display function]({{℅ ref "topper/extra/value_display" ℅}}) can be used to shorten the number. For example, `money:value:shorten` will shorten the number of the value in the `money` Top Holder.
+The [Value Display function]({{% ref "topper/extra/value_display" %}}) can be used to shorten the number. For example, `money:value:shorten` will shorten the number of the value in the `money` Top Holder.
 
 ### I am so confused about how to use Topper
 
