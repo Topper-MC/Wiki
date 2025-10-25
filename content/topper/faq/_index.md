@@ -49,7 +49,7 @@ Here is a rough list of criteria that a placeholder should have in order to work
 - The placeholder should only returns raw number
   * That means it should only have digits and one `.` (dot) as a decimal separator
     * Work: `100`, `100.00`, `100.123`
-    * Won't work: `abc`, `1,000,000`, `100,000.122`, `100.000.000`, `1 000 000`
+    * Won't work: `abc`, `1,000,000`, `100,000.122`, `100.000.000`, `1 000 000`, `10.2M`, `1h 30m`
 - The placeholder should work with both online and offline players
 - If the placeholder doesn't work with offline players, it should return an empty string or the placeholder itself
 - If there is any error in the logic of the placeholder, it should return an empty string or the placeholder itself
