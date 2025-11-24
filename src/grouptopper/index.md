@@ -13,7 +13,7 @@ hero:
       link: https://www.spigotmc.org/resources/124971/
     - theme: alt
       text: Explore
-      link: ./holder
+      link: ./config
 
 features:
   - icon: 🔄
