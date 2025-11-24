@@ -3,47 +3,47 @@ import {DefaultTheme} from "vitepress";
 const timedTopperSidebar: DefaultTheme.SidebarItem[] = [
     {
         text: "Config",
-        link: "/config",
+        link: "/config/",
     },
     {
         text: "Holder",
-        link: "/holder",
+        link: "/holder/",
         items: [
             {
                 text: "Link a Top Holder",
-                link: "/holder/link",
+                link: "/holder/link/",
             },
             {
                 text: "Set time interval",
-                link: "/holder/time",
+                link: "/holder/time/",
             },
             {
                 text: "Set up Reward",
-                link: "/holder/reward",
+                link: "/holder/reward/",
             }
         ]
     },
     {
         text: "Query",
-        link: "/query",
+        link: "/query/",
     },
     {
         text: "Hook",
-        link: "/hook",
+        link: "/hook/",
         items: [
             {
                 text: "LuckPerms",
-                link: "/hook/luckperms",
+                link: "/hook/luckperms/",
             },
             {
                 text: "PlaceholderAPI",
-                link: "/hook/placeholderapi",
+                link: "/hook/placeholderapi/",
             }
         ]
     },
     {
         text: "API",
-        link: "/api",
+        link: "/api/",
     }
 ]
 

@@ -3,19 +3,19 @@ import {DefaultTheme} from "vitepress";
 const cachySidebar: DefaultTheme.SidebarItem[] = [
     {
         text: "Config",
-        link: "/config",
+        link: "/config/",
     },
     {
         text: "Query",
-        link: "/query",
+        link: "/query/",
     },
     {
         text: "Hook",
-        link: "/hook",
+        link: "/hook/",
         items: [
             {
                 text: "PlaceholderAPI",
-                link: "/hook/placeholderapi",
+                link: "/hook/placeholderapi/",
             }
         ]
     }

@@ -3,95 +3,95 @@ import {DefaultTheme} from "vitepress";
 const topperSidebar: DefaultTheme.SidebarItem[] = [
     {
         text: "Quick Start",
-        link: "/quickstart",
+        link: "/quickstart/",
     },
     {
         text: "Commands & Permissions",
-        link: "/commands",
+        link: "/commands/",
     },
     {
         text: "Config",
-        link: "/config",
+        link: "/config/",
     },
     {
         text: "Frequently Asked Questions",
-        link: "/faq",
+        link: "/faq/",
     },
     {
         text: "Query",
-        link: "/query",
+        link: "/query/",
     },
     {
         text: "Value Provider",
-        link: "/provider",
+        link: "/provider/",
         items: [
             {
                 text: "Statistic",
-                link: "/provider/statistic"
+                link: "/provider/statistic/"
             },
             {
                 text: "Placeholder",
-                link: "/provider/placeholder",
+                link: "/provider/placeholder/",
             },
             {
                 text: "MiniPlaceholder",
-                link: "/provider/miniplaceholder",
+                link: "/provider/miniplaceholder/",
             }
         ]
     },
     {
         text: "Hook",
-        link: "/hook",
+        link: "/hook/",
         items: [
             {
                 text: "PlaceholderAPI",
-                link: "/hook/placeholderapi",
+                link: "/hook/placeholderapi/",
             },
             {
                 text: "MiniPlaceholders",
-                link: "/hook/miniplaceholders",
+                link: "/hook/miniplaceholders/",
             },
             {
                 text: "LuckPerms",
-                link: "/hook/luckperms",
+                link: "/hook/luckperms/",
             },
             {
                 text: "LastLoginAPI",
-                link: "/hook/lastloginapi",
+                link: "/hook/lastloginapi/",
             }
         ]
     },
     {
         text: "Extra",
-        link: "/extra",
+        link: "/extra/",
         items: [
             {
                 text: "Customize Value Provider",
-                link: "/extra/provider",
+                link: "/extra/provider/",
             },
             {
                 text: "Create a Hologram",
-                link: "/extra/hologram",
+                link: "/extra/hologram/",
             },
             {
                 text: "Create a Top Block",
-                link: "/extra/block",
+                link: "/extra/block/",
             },
             {
                 text: "Create an NPC",
-                link: "/extra/npc",
+                link: "/extra/npc/",
             },
             {
                 text: "Playtime Leaderboard",
-                link: "/extra/playtime",
+                link: "/extra/playtime/",
             },
             {
                 text: "Value Display",
-                link: "/extra/value_display",
+                link: "/extra/value_display/",
             },
             {
                 text: "Migrate from 2.X",
-                link: "/extra/migrate_v2",
+                link: "/extra/migrate_v2/",
             }
         ]
     }
