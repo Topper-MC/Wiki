@@ -1,0 +1,26 @@
+{
+  "name": "topper.wiki",
+  "version": "1.0.0",
+  "description": "The wiki of Topper",
+  "homepage": "https://github.com/Topper-MC/Wiki#readme",
+  "bugs": {
+    "url": "https://github.com/Topper-MC/Wiki/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Topper-MC/Wiki.git"
+  },
+  "license": "MIT",
+  "author": "HSGamer",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-tabs": "^0.7.3",
+    "vue": "^3.5.24"
+  }
+}
