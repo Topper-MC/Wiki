@@ -68,7 +68,11 @@ export default defineConfig({
 
         socialLinks: [
             {icon: 'github', link: 'https://github.com/Topper-MC'}
-        ]
+        ],
+
+        search: {
+            provider: "local"
+        }
     },
     markdown: {
         config(md) {
