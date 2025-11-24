@@ -28,6 +28,9 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", ".vitepress/**/*.ts"],
-  "exclude": ["node_modules", "dist", ".vitepress/cache", ".vitepress/dist"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", ".vitepress/**/*.ts", "src/**/*.vue", "src/**/*.md"],
+  "exclude": ["node_modules", "dist", ".vitepress/cache", ".vitepress/dist"],
+  "vueCompilerOptions": {
+    "vitePressExtensions": [".md"],
+  }
 }
