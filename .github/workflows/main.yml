@@ -3,7 +3,7 @@ name: Deploy Hugo site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,15 +37,15 @@ jobs:
       - name: Cache Hugo resources
         uses: actions/cache@v4
         env:
-            cache-name: cache-hugo-resources
+          cache-name: cache-hugo-resources
         with:
-            path: resources
-            key: ${{ env.cache-name }}
-      
+          path: resources
+          key: ${{ env.cache-name }}
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-            hugo-version: "0.145.0"
+          hugo-version: "0.145.0"
 
       - name: Setup Pages
         id: pages
