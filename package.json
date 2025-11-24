@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/Topper-MC/Wiki.git"
   },
-  "license": "ISC",
-  "author": "",
+  "license": "MIT",
+  "author": "HSGamer",
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
