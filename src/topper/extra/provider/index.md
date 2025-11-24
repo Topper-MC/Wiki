@@ -104,7 +104,8 @@ holders:
 
 ## Handle Formatted Values
 
-If the output of a `Value Provider` ([`Placeholder`](/topper/provider/placeholder/) for example) is a formatted value and
+If the output of a `Value Provider` ([`Placeholder`](/topper/provider/placeholder/) for example) is a formatted value
+and
 you are confident that you can get the raw value from it with a simple method of taking only numbers and the decimal
 separator, you can enable the `formatted` option in your Holder Setting.
 

@@ -13,6 +13,7 @@ export default defineConfig({
     ],
 
     srcDir: "src",
+    base: "/Wiki",
 
     themeConfig: {
         logo: "https://topper-mc.github.io/Assets/topper/logo.svg",

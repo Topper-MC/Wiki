@@ -11,9 +11,9 @@ Now you will set the rewards to give to the players when the Timed Holder is res
 ```yaml
 rewards:
   ?: # Rewards for all players in the holder
-    - "command_1"
-    - "command_2"
-    - ...
+  - "command_1"
+  - "command_2"
+  - ...
   1: # Rewards for the 1st player
     - "command_1"
     - "command_2"
@@ -55,7 +55,7 @@ holders:
     cron: DAILY
     rewards:
       ?:
-        - give {name} stone 1
+      - give {name} stone 1
       1:
         - give {name} diamond 1
         - say {name} got a diamond for jumping the most
