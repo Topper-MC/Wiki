@@ -3,6 +3,7 @@ title: MiniPlaceholders
 ---
 
 <script setup>
+import QueryTypes from '/topper/query/query_types.md'
 </script>
 
 # MiniPlaceholders

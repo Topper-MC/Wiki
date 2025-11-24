@@ -3,6 +3,8 @@ title: PlaceholderAPI
 ---
 
 <script setup>
+import QueryTypes from "/topper/query/query_types.md";
+import TimedQueryTypes from "/timedtopper/query/query_types.md";
 </script>
 
 # PlaceholderAPI

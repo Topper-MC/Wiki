@@ -11,6 +11,7 @@ defineProps({
 });
 </script>
 
+
 | Type          | Argument   | Description                                        | Example                                                                  | Explanation                                                                            |
 |---------------|------------|----------------------------------------------------|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 | `remain_time` |            | The remaining time in millis until the next reset. | `{{ globalPrefix }}money;remain_time{{ globalSuffix }}`                  | Retrieve the remaining time in millis until the next reset of the Holder named `money` |

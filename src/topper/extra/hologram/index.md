@@ -12,8 +12,7 @@ Here is an example of a hologram that displays the top 5 players in the leaderbo
 == SpigotMC
 > [!NOTE]
 > Requires [PlaceholderAPI](https://placeholderapi.com) and a hologram plugin that supports PlaceholderAPI such
->
-as [DecentHolograms](https://www.spigotmc.org/resources/decentholograms-1-8-1-21-1-papi-support-no-dependencies.96927/)
+> as [DecentHolograms](https://www.spigotmc.org/resources/decentholograms-1-8-1-21-1-papi-support-no-dependencies.96927/)
 
 ```
 &b&lJUMP LEADERBOARD
@@ -27,8 +26,7 @@ as [DecentHolograms](https://www.spigotmc.org/resources/decentholograms-1-8-1-21
 == FabricMC
 > [!NOTE]
 > You can use a hologram mod that
->
-supports [Text Placeholder API](https://modrinth.com/mod/placeholder-api) ([HoloDisplays](https://modrinth.com/mod/holodisplays)
+> supports [Text Placeholder API](https://modrinth.com/mod/placeholder-api) ([HoloDisplays](https://modrinth.com/mod/holodisplays)
 > for example)
 
 ```

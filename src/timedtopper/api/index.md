@@ -15,7 +15,6 @@ specific toolchain.
 For example, if you are using Maven, add the following to your `pom.xml`:
 
 ```xml
-
 <repositories>
     <repository>
         <id>jitpack.io</id>
@@ -24,11 +23,11 @@ For example, if you are using Maven, add the following to your `pom.xml`:
 </repositories>
 
 <dependencies>
-<dependency>
-    <groupId>com.github.Topper-MC</groupId>
-    <artifactId>TimedTopperAPI</artifactId>
-    <version>VERSION</version>
-</dependency>
+    <dependency>
+        <groupId>com.github.Topper-MC</groupId>
+        <artifactId>TimedTopperAPI</artifactId>
+        <version>VERSION</version>
+    </dependency>
 </dependencies>
 ```
 

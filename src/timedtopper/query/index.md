@@ -3,6 +3,7 @@ title: Query
 ---
 
 <script setup>
+import QueryTypes from './query_types.md';
 </script>
 
 # Query

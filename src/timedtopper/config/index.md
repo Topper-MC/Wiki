@@ -16,7 +16,7 @@ holders:
     cron: DAILY
     rewards:
       ?:
-      - give {name} stone 1
+        - give {name} stone 1
       1:
         - give {name} diamond 1
         - say {name} got a diamond for jumping the most
