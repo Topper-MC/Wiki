@@ -3,7 +3,11 @@ import {h} from 'vue'
 import type {Theme} from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
+import '@vueform/vueform/dist/vueform.css';
+
 import {enhanceAppWithTabs} from 'vitepress-plugin-tabs/client'
+import Vueform from '@vueform/vueform'
+import vueformConfig from './vueform.config'
 
 export default {
     extends: DefaultTheme,
@@ -14,5 +18,6 @@ export default {
     },
     enhanceApp({app}) {
         enhanceAppWithTabs(app);
+        app.use(Vueform, vueformConfig)
     }
 } satisfies Theme
