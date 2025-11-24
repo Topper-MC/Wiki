@@ -26,7 +26,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+
+    "types": ["node", "vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", ".vitepress/**/*.ts", "src/**/*.vue", "src/**/*.md"],
   "exclude": ["node_modules", "dist", ".vitepress/cache", ".vitepress/dist"],

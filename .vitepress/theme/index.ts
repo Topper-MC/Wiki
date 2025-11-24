@@ -6,8 +6,6 @@ import './style.css'
 import '@vueform/vueform/dist/vueform.css';
 
 import {enhanceAppWithTabs} from 'vitepress-plugin-tabs/client'
-import Vueform from '@vueform/vueform'
-import vueformConfig from './vueform.config'
 
 export default {
     extends: DefaultTheme,
@@ -16,8 +14,12 @@ export default {
             // https://vitepress.dev/guide/extending-default-theme#layout-slots
         })
     },
-    enhanceApp({app}) {
+    async enhanceApp({app}) {
         enhanceAppWithTabs(app);
-        app.use(Vueform, vueformConfig)
+        if (!import.meta.env.SSR) {
+            const Vueform = await import('@vueform/vueform')
+            const vueformConfig = await import('./vueform.config')
+            app.use(Vueform.default, vueformConfig.default)
+        }
     }
 } satisfies Theme
