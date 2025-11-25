@@ -1,4 +1,5 @@
 ---
+title: Cachy
 layout: home
 
 hero:

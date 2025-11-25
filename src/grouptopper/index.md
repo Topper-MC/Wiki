@@ -1,4 +1,5 @@
 ---
+title: GroupTopper
 layout: home
 
 hero:

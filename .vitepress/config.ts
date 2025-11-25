@@ -88,5 +88,16 @@ export default defineConfig({
         config(md) {
             md.use(tabsMarkdownPlugin)
         }
+    },
+    async transformPageData(pageData) {
+        if (pageData.filePath.startsWith("topper/")) {
+            pageData.titleTemplate = "Topper"
+        } else if (pageData.filePath.startsWith("timedtopper/")) {
+            pageData.titleTemplate = "TimedTopper"
+        } else if (pageData.filePath.startsWith("grouptopper/")) {
+            pageData.titleTemplate = "GroupTopper"
+        } else if (pageData.filePath.startsWith("cachy/")) {
+            pageData.titleTemplate = "Cachy"
+        }
     }
 })

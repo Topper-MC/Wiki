@@ -1,4 +1,5 @@
 ---
+title: TimedTopper
 layout: home
 
 hero:
