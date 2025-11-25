@@ -88,6 +88,17 @@ settings when setting up the display of the leaderboard.
 The [Value Display function](/topper/extra/value_display/) can be used to shorten the number. For example,
 `money:value:shorten` will shorten the number of the value in the `money` Top Holder.
 
+## How can I display other things rather than Player Name?
+
+Topper doesn't have the concept of "extra value", so if you want to do that, you have to make a workaround (mostly by developing or asking a developer to make a plugin that gets the UUID of the player from Topper and does stuff with it).
+
+However, if you use [PlaceholderAPI](https://placeholderapi.com), Topper provides [the `top_key` placeholder](/topper/hook/placeholderapi/#top-key) to get the UUID of the player in the Holder. You can use that along with [the ParseOther expansion](https://api.extendedclip.com/expansions/parseother/) to parse your placeholder by the UUId of the player in the Holder.
+
+For example, if you want to display the LuckPerms prefix (`%luckperms_prefix%`) of the 1st player in the Holder named `jump`, then the placeholder for that will be
+```
+%parseother_unsafe_{topper_jump;top_name;1}_{luckperms_prefix}%
+```
+
 ## I am so confused about how to use Topper
 
 Take a deep breath and read the wiki again. You should take it slow and read the wiki carefully as you can miss some
