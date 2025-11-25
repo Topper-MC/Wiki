@@ -77,11 +77,12 @@ Now when you save and restart the server, you should see the playtime leaderboar
 
 ## Display the Leaderboard
 
-:::tabs key:s
-== SpigotMC
 We will [display it in a hologram](/topper/extra/hologram/)
 
 Here is an example of a hologram that displays the top 5 players in the leaderboard:
+
+:::tabs key:platform
+== SpigotMC
 
 ```
 &b&lPLAYTIME LEADERBOARD
@@ -92,5 +93,17 @@ Here is an example of a hologram that displays the top 5 players in the leaderbo
 &7#5 &f%topper_playtime;top_name;5% &7- &b%topper_playtime;top_value;5;time:pattern=HH:mm:ss&type=duration&unit=ticks%
 ```
 
-![hologram](hologram.png)
+== FabricMC
+
+```
+<aqua><bold>PLAYTIME LEADERBOARD
+<gray>#1 <white>%topper:query playtime;top_name;1% <gray>- <aqua>%topper:query playtime;top_value;1;time:pattern=HH:mm:ss&type=duration&unit=ticks%
+<gray>#2 <white>%topper:query playtime;top_name;2% <gray>- <aqua>%topper:query playtime;top_value;2;time:pattern=HH:mm:ss&type=duration&unit=ticks%
+<gray>#3 <white>%topper:query playtime;top_name;3% <gray>- <aqua>%topper:query playtime;top_value;3;time:pattern=HH:mm:ss&type=duration&unit=ticks%
+<gray>#4 <white>%topper:query playtime;top_name;4% <gray>- <aqua>%topper:query playtime;top_value;4;time:pattern=HH:mm:ss&type=duration&unit=ticks%
+<gray>#5 <white>%topper:query playtime;top_name;5% <gray>- <aqua>%topper:query playtime;top_value;5;time:pattern=HH:mm:ss&type=duration&unit=ticks%
+```
+
 :::
+
+![hologram](hologram.png)
