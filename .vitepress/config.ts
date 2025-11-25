@@ -80,7 +80,9 @@ export default defineConfig({
 
         editLink: {
             pattern: 'https://github.com/Topper-MC/Wiki/edit/main/src/:path'
-        }
+        },
+
+        outline: "deep"
     },
     markdown: {
         config(md) {
