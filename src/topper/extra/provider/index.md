@@ -15,8 +15,9 @@ can be useful if the provider is slow or if it performs a lot of calculations.
 ```yaml
 holders:
   jump:
-    <your other settings>
-    async: true
+    type: statistic
+    statistic: jump
+    async: true # [!code focus]
 ```
 
 == FabricMC
@@ -25,8 +26,9 @@ holders:
 {
   "holders": {
     "jump": {
-      "<your other settings>": "you other settings",
-      "async": true
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "async": true // [!code focus]
     }
   }
 }
@@ -45,8 +47,9 @@ settings.
 ```yaml
 holders:
   jump:
-    <your other settings>
-    default-value: null # The default value of an entry. This will be used when a player joins the server the first time
+    type: statistic
+    statistic: jump
+    default-value: null # [!code focus:5] # The default value of an entry. This will be used when a player joins the server the first time
     null-name: "---" # Default value for the name
     null-uuid: "---" # Default value for the uuid
     null-value: "---" # Default value for the value
@@ -59,8 +62,9 @@ holders:
 {
   "holders": {
     "jump": {
-      "<your other settings>": "you other settings",
-      "default-value": null,
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "default-value": null, // [!code focus:5]
       "null-name": "---",
       "null-uuid": "---",
       "null-value": "---",
@@ -83,8 +87,9 @@ show the player with the least value first), you can set `reverse` to `true`.
 ```yaml
 holders:
   jump:
-    <your other settings>
-    reverse: true
+    type: statistic
+    statistic: jump
+    reverse: true # [!code focus]
 ```
 
 == FabricMC
@@ -93,8 +98,9 @@ holders:
 {
   "holders": {
     "jump": {
-      "<your other settings>": "you other settings",
-      "reverse": true
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "reverse": true // [!code focus]
     }
   }
 }
@@ -114,8 +120,9 @@ separator, you can enable the `formatted` option in your Holder Setting.
 ```yml
 holders:
   example-formatted-value-provider:
-    <your other settings>
-    formatted: true
+    type: statistic
+    statistic: jump
+    formatted: true # [!code focus:3]
     formatted-settings: # Optional settings for the formatted value
       decimal-separator: "." # Change this to the decimal separator of the formatted value
 ```
@@ -126,8 +133,9 @@ holders:
 {
   "holders": {
     "example-formatted-value-provider": {
-      "<your other settings>": "you other settings",
-      "formatted": true,
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "formatted": true, // [!code focus:5]
       "formatted-settings": {
         // Optional settings for the formatted value
         "decimal-separator": "."
@@ -151,12 +159,14 @@ the permissions.
 ```yml
 holders:
   jump:
-    <your other settings>
-    ignore-permission: exclude.permission
+    type: statistic
+    statistic: jump
+    ignore-permission: exclude.permission # [!code focus:1]
 
   jump-multiple:
-    <your other settings>
-    ignore-permission:
+    type: statistic
+    statistic: jump
+    ignore-permission: # [!code focus:3]
       - exclude.permission1
       - exclude.permission2
 ```
@@ -167,12 +177,14 @@ holders:
 {
   "holders": {
     "jump": {
-      "<your other settings>": "you other settings",
-      "ignore-permission": "exclude.permission"
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "ignore-permission": "exclude.permission" // [!code focus:1]
     },
     "jump-multiple": {
-      "<your other settings>": "you other settings",
-      "ignore-permission": [
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "ignore-permission": [ // [!code focus:3]
         "exclude.permission1",
         "exclude.permission2"
       ]
@@ -192,12 +204,14 @@ permissions.
 ```yml
 holders:
   jump:
-    <your other settings>
-    reset-permission: reset.permission
+    type: statistic
+    statistic: jump
+    reset-permission: reset.permission # [!code focus:1]
 
   jump-multiple:
-    <your other settings>
-    reset-permission:
+    type: statistic
+    statistic: jump
+    reset-permission: # [!code focus:3]
       - reset.permission1
       - reset.permission2
 ```
@@ -208,12 +222,14 @@ holders:
 {
   "holders": {
     "jump": {
-      "<your other settings>": "you other settings",
-      "reset-permission": "reset.permission"
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "reset-permission": "reset.permission" // [!code focus:1]
     },
     "jump-multiple": {
-      "<your other settings>": "you other settings",
-      "reset-permission": [
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "reset-permission": [ // [!code focus:3]
         "reset.permission1",
         "reset.permission2"
       ]
@@ -235,8 +251,9 @@ instead, you can set `show-errors` to `true`.
 ```yaml
 holders:
   jump:
-    <your other settings>
-    show-errors: true
+    type: statistic
+    statistic: jump
+    show-errors: true # [!code focus]
 ```
 
 == FabricMC
@@ -245,8 +262,9 @@ holders:
 {
   "holders": {
     "jump": {
-      "<your other settings>": "you other settings",
-      "show-errors": true
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "show-errors": true // [!code focus]
     }
   }
 }
@@ -262,8 +280,9 @@ You can also reset the value of the player if there is an error when updating th
 ```yaml
 holders:
   jump:
-    <your other settings>
-    reset-on-error: true
+    type: statistic
+    statistic: jump
+    reset-on-error: true # [!code focus]
 ```
 
 == FabricMC
@@ -272,8 +291,9 @@ holders:
 {
   "holders": {
     "jump": {
-      "<your other settings>": "you other settings",
-      "reset-on-error": true
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "reset-on-error": true // [!code focus]
     }
   }
 }
