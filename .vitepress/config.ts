@@ -13,7 +13,11 @@ export default defineConfig({
     ],
 
     srcDir: "src",
-    base: "/Wiki",
+    base: "/Wiki/",
+    sitemap: {
+        hostname: "https://topper-mc.github.io/Wiki/",
+    },
+    metaChunk: true,
 
     themeConfig: {
         logo: "https://topper-mc.github.io/Assets/topper/logo.svg",
@@ -72,6 +76,10 @@ export default defineConfig({
 
         search: {
             provider: "local"
+        },
+
+        editLink: {
+            pattern: 'https://github.com/Topper-MC/Wiki/edit/main/src/:path'
         }
     },
     markdown: {
