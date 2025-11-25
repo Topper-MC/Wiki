@@ -13,7 +13,7 @@ hero:
       link: https://modrinth.com/plugin/topper-lb
     - theme: alt
       text: Explore
-      link: ./quickstart
+      link: ./quickstart/
 
 features:
   - icon: ⚡

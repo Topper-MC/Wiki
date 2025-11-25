@@ -11,15 +11,15 @@ hero:
   actions:
     - theme: brand
       text: Topper
-      link: /topper
+      link: /topper/
     - theme: alt
       text: TimedTopper
       link: /timedtopper/
     - theme: alt
       text: GroupTopper
-      link: /grouptopper
+      link: /grouptopper/
     - theme: alt
       text: Cachy
-      link: /cachy
+      link: /cachy/
 ---
 

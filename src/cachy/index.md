@@ -13,7 +13,7 @@ hero:
       link: https://github.com/Topper-MC/Cachy
     - theme: alt
       text: Explore
-      link: ./config
+      link: ./config/
 
 features:
   - icon: 💾

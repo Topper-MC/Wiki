@@ -13,7 +13,7 @@ hero:
       link: https://www.spigotmc.org/resources/timedtopper.116995/
     - theme: alt
       text: Explore
-      link: ./holder
+      link: ./config/
 
 features:
   - icon: 🔄
