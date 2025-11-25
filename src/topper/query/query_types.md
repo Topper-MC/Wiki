@@ -28,7 +28,7 @@ defineProps({
   - `<position>`: The position of the player in the Holder
 - **Example:** 
   - `{{ globalPrefix }}money;top_name;1{{ globalSuffix }}`
-    - Retrieve the name of the player at the first position in the Top Holder named `money`
+    - Retrieve the name of the player at the first position in the Holder named `money`
 
 ### `top_key`
 - **Format**:
@@ -39,7 +39,7 @@ defineProps({
   - `<position>`: The position of the player in the Holder
 - **Example:**
   - `{{ globalPrefix }}money;top_key;1{{ globalSuffix }}`
-    - Retrieve the UUID of the player at the first position in the Top Holder named `money`
+    - Retrieve the UUID of the player at the first position in the Holder named `money`
 
 ### `top_value`
 - **Format**:
@@ -52,9 +52,9 @@ defineProps({
   - `<format>` *(optional)*: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
 - **Example:**
   - `{{ globalPrefix }}money;top_value;1{{ globalSuffix }}`
-    - Retrieve the value of the player at the first position in the Top Holder named `money`
+    - Retrieve the value of the player at the first position in the Holder named `money`
   - `{{ globalPrefix }}money;top_value;1;#,###{{ globalSuffix }}`
-    - Retrieve the formatted value of the player at the first position in the Top Holder named `money`, in the format of `#,###`
+    - Retrieve the formatted value of the player at the first position in the Holder named `money`, in the format of `#,###`
 
 ### `top_value_raw`
 - **Format**:
@@ -65,31 +65,31 @@ defineProps({
   - `<position>`: The position of the player in the Holder
 - **Example:**
   - `{{ globalPrefix }}money;top_value_raw;1{{ globalSuffix }}`
-    - Retrieve the raw value of the player at the first position in the Top Holder named `money`
+    - Retrieve the raw value of the player at the first position in the Holder named `money`
 
 ### `top_rank`
 - **Format**:
   - `{{ globalPrefix }}<holder>;top_rank{{ globalSuffix }}`
   - `{{ globalPrefix }}<holder>;top_rank;<format>{{ globalSuffix }}` (optional `<format>`)
-- **Description:** The rank of the player.
+- **Description:** The player's rank (position number) in the specified Holder.
 - **Argument:**
   - `<holder>`: The name of the Holder
   - `<format>` *(optional)*: A number format pattern (e.g., `#,###` for thousands separator)
 - **Example:**
   - `{{ globalPrefix }}money;top_rank{{ globalSuffix }}`
-    - Retrieve the rank of the player in the Top Holder named `money`
+    - Retrieve the rank of the player in the Holder named `money`
   - `{{ globalPrefix }}money;top_rank;#,###{{ globalSuffix }}`
-    - Retrieve the formatted rank of the player in the Top Holder named `money`
+    - Retrieve the formatted rank of the player in the Holder named `money`
 
 ### `top_size`
 - **Format**:
   - `{{ globalPrefix }}<holder>;top_size{{ globalSuffix }}`
-- **Description:** The amount of entries in the Top Holder.
+- **Description:** The amount of entries in the Holder.
 - **Argument:**
   - `<holder>`: The name of the Holder
 - **Example:**
   - `{{ globalPrefix }}money;top_size{{ globalSuffix }}`
-    - Retrieve the amount of entries in the Top Holder named `money`
+    - Retrieve the amount of entries in the Holder named `money`
 
 ### `value`
 - **Format**:
@@ -101,9 +101,9 @@ defineProps({
   - `<format>` *(optional)*: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
 - **Example:**
   - `{{ playerPrefix }}money;value{{ playerSuffix }}`
-    - Retrieve the value of the player in the Top Holder named `money`
+    - Retrieve the value of the player in the Holder named `money`
   - `{{ playerPrefix }}money;value;#,###{{ playerSuffix }}`
-    - Retrieve the formatted value of the player in the Top Holder named `money`
+    - Retrieve the formatted value of the player in the Holder named `money`
 
 ### `value_raw`
 - **Format**:
@@ -113,4 +113,4 @@ defineProps({
   - `<holder>`: The name of the Holder
 - **Example:**
   - `{{ playerPrefix }}money;value_raw{{ playerSuffix }}`
-    - Retrieve the raw value of the player in the Top Holder named `money`
+    - Retrieve the raw value of the player in the Holder named `money`
