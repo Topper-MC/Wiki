@@ -160,14 +160,17 @@ For example: `shorten:1000=k&100000=hk&1000000=m` would shorten the number based
 ::: details Click me to edit the custom groups
 
 <Vueform v-model="shortenFormData" sync>
-    <ListElement name="customGroups" label="Custom Groups" description="Define custom number and suffix pairs (leave empty to use default groups)">
-        <template #default="{ index }">
-            <ObjectElement :name="index" label="Group">
-                <TextElement name="number" placeholder="Number (e.g., 1000)" />
-                <TextElement name="suffix" placeholder="Suffix (e.g., k)" />
-            </ObjectElement>
-        </template>
-    </ListElement>
+    <ListElement
+        name="customGroups"
+        description="Define custom number and suffix pairs (leave empty to use default groups)"
+        :object="{
+            label: 'Group',
+            schema: {
+                number: { type: 'text', placeholder: 'Number (e.g., 1000)' },
+                suffix: { type: 'text', placeholder: 'Suffix (e.g., k)' },
+            }
+        }"
+    />
 </Vueform>
 
 :::
