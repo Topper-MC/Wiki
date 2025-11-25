@@ -22,7 +22,7 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "jump": {
@@ -49,7 +49,7 @@ holders:
   jump:
     type: statistic
     statistic: jump
-    default-value: null # [!code focus:5] # The default value of an entry. This will be used when a player joins the server the first time
+    default-value: null # [!code focus:5] The default value of an entry. This will be used when a player joins the server the first time
     null-name: "---" # Default value for the name
     null-uuid: "---" # Default value for the uuid
     null-value: "---" # Default value for the value
@@ -58,17 +58,17 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "jump": {
       "type": "statistic",
       "statistic": "minecraft:jump",
-      "default-value": null, // [!code focus:5]
-      "null-name": "---",
-      "null-uuid": "---",
-      "null-value": "---",
-      "line": "<gray>[<blue>{index}<gray>] <blue>{name} <gray>- <blue>{value}"
+      "default-value": null, // [!code focus:5] The default value of an entry. This will be used when a player joins the server the first time
+      "null-name": "---", // Default value for the name
+      "null-uuid": "---", // Default value for the uuid
+      "null-value": "---", // Default value for the value
+      "line": "<gray>[<blue>{index}<gray>] <blue>{name} <gray>- <blue>{value}" // Default format for the top line in the top list
     }
   }
 }
@@ -94,7 +94,7 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "jump": {
@@ -129,17 +129,15 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "example-formatted-value-provider": {
       "type": "statistic",
       "statistic": "minecraft:jump",
-      "formatted": true, // [!code focus:5]
-      "formatted-settings": {
-        // Optional settings for the formatted value
-        "decimal-separator": "."
-        // Change this to the decimal separator of the formatted value
+      "formatted": true, // [!code focus:4]
+      "formatted-settings": { // Optional settings for the formatted value
+        "decimal-separator": "." // Change this to the decimal separator of the formatted value
       }
     }
   }
@@ -173,7 +171,7 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "jump": {
@@ -184,7 +182,7 @@ holders:
     "jump-multiple": {
       "type": "statistic",
       "statistic": "minecraft:jump",
-      "ignore-permission": [ // [!code focus:3]
+      "ignore-permission": [ // [!code focus:4]
         "exclude.permission1",
         "exclude.permission2"
       ]
@@ -218,7 +216,7 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "jump": {
@@ -229,7 +227,7 @@ holders:
     "jump-multiple": {
       "type": "statistic",
       "statistic": "minecraft:jump",
-      "reset-permission": [ // [!code focus:3]
+      "reset-permission": [ // [!code focus:4]
         "reset.permission1",
         "reset.permission2"
       ]
@@ -258,7 +256,7 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "jump": {
@@ -287,7 +285,7 @@ holders:
 
 == FabricMC
 
-```json
+```jsonc
 {
   "holders": {
     "jump": {
