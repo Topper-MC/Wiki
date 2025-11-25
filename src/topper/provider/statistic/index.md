@@ -2,6 +2,23 @@
 title: Statistic
 ---
 
+<script setup>
+import { ref } from 'vue';
+
+const spigotFormData = ref({
+    name: 'jump',
+    statistic: 'JUMP',
+    material: [],
+    entity: [],
+});
+
+const fabricFormData = ref({
+    name: 'jump',
+    statisticType: 'minecraft:custom',
+    statistic: ['minecraft:jump'],
+});
+</script>
+
 # Statistic
 
 This is a provider that provides statistic values of a player to the Top Holder.
@@ -103,86 +120,37 @@ entity:
 :::tabs key:platform
 == SpigotMC
 
-```yaml
+<Vueform v-model="spigotFormData" sync>
+    <TextElement name="name" label="Holder Name" description="The name of the holder" />
+    <TextElement name="statistic" label="Statistic" description="The name of the statistic" />
+    <ListElement name="material" label="Material" description="The name of the material. Used for some statistics that require an item." :element="{ type: 'text' }" />
+    <ListElement name="entity" label="Entity" description="The name of the entity. Used for some statistics that require an entity." :element="{ type: 'text' }" />
+</Vueform>
+
+```yaml-vue
 holders:
-  # Holder that shows the number of times a player has jumped
-  jump:
+  {{ spigotFormData.name }}:
     type: statistic
-    statistic: JUMP
-  # Holder that shows the number of blocks mined by a player
-  mine:
-    type: statistic
-    statistic: MINE_BLOCK
-  # Holder that shows the number of times a player has killed a zombie
-  zombie:
-    type: statistic
-    statistic: KILL_ENTITY
-    entity: ZOMBIE
-  # Holder that shows the number of times a player has mined diamond ore
-  diamond:
-    type: statistic
-    statistic: MINE_BLOCK
-    material: DIAMOND_ORE
-  # Holder that shows the number of times a player has mined diamond ore or gold ore
-  diamond_or_gold:
-    type: statistic
-    statistic: MINE_BLOCK
-    material:
-      - DIAMOND_ORE
-      - GOLD_ORE
-  # Holder that shows the number of times a player has killed a zombie or a skeleton
-  zombie_or_skeleton:
-    type: statistic
-    statistic: KILL_ENTITY
-    entity:
-      - ZOMBIE
-      - SKELETON
+    statistic: {{ spigotFormData.statistic }}
+{{ spigotFormData.material.length ? (spigotFormData.material.length === 1 ? '    material: ' + spigotFormData.material[0] : '    material:\n      - ' + spigotFormData.material.join('\n      - ')) : '' }}
+{{ spigotFormData.entity.length ? (spigotFormData.entity.length === 1 ? '    entity: ' + spigotFormData.entity[0] : '    entity:\n      - ' + spigotFormData.entity.join('\n      - ')) : '' }}
 ```
 
 == FabricMC
 
-```json
+<Vueform v-model="fabricFormData" sync>
+    <TextElement name="name" label="Holder Name" description="The name of the holder" />
+    <TextElement name="statisticType" label="Statistic Type" description="The type of the statistic (e.g., minecraft:custom, minecraft:mined, minecraft:killed)" />
+    <ListElement name="statistic" label="Statistic" description="The name of the statistic" :element="{ type: 'text' }" />
+</Vueform>
+
+```json-vue
 {
   "holders": {
-    // Holder that shows the number of times a player has jumped
-    "jump": {
+    "{{ fabricFormData.name }}": {
       "type": "statistic",
-      "statistic": "minecraft:jump"
-    },
-    // Holder that shows the number of times a player has mined a block
-    "mine": {
-      "type": "statistic",
-      "statistic-type": "minecraft:mined"
-    },
-    // Holder that shows the number of times a player has killed a zombie
-    "zombie": {
-      "type": "statistic",
-      "statistic-type": "minecraft:killed",
-      "statistic": "minecraft:zombie"
-    },
-    // Holder that shows the number of times a player has mined diamond ore
-    "diamond": {
-      "type": "statistic",
-      "statistic-type": "minecraft:mined",
-      "statistic": "minecraft:diamond_ore"
-    },
-    // Holder that shows the number of times a player has mined diamond ore or gold ore
-    "diamond_or_gold": {
-      "type": "statistic",
-      "statistic-type": "minecraft:mined",
-      "statistic": [
-        "minecraft:diamond_ore",
-        "minecraft:gold_ore"
-      ]
-    },
-    // Holder that shows the number of times a player has killed a zombie or a skeleton
-    "zombie_or_skeleton": {
-      "type": "statistic",
-      "statistic-type": "minecraft:killed",
-      "statistic": [
-        "minecraft:zombie",
-        "minecraft:skeleton"
-      ]
+      "statistic-type": "{{ fabricFormData.statisticType }}"{{ fabricFormData.statistic.length ? ',' : '' }}
+{{ fabricFormData.statistic.length ? ('      "statistic": ' + (fabricFormData.statistic.length === 1 ? '"' + fabricFormData.statistic[0] + '"' : JSON.stringify(fabricFormData.statistic))) : '' }}
     }
   }
 }
