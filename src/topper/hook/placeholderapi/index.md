@@ -34,7 +34,7 @@ The plugin provides a PlaceholderAPI placeholder to allow you to query data from
 
 Check the [Query](/topper/query/) section for more information about how to set the `<query>`.
 
-## Examples
+## Example
 
 :::tabs key:platform
 == SpigotMC
