@@ -2,6 +2,21 @@
 title: Placeholder
 ---
 
+<script setup>
+import { ref } from 'vue';
+
+const formData = ref({
+    name: 'money',
+    placeholder: '%vault_eco_balance%',
+    online: true,
+});
+
+const fabricFormData = ref({
+    name: 'level',
+    placeholder: '%playerex:level%',
+});
+</script>
+
 # Placeholder
 
 This is a provider that allows you to use PlaceholderAPI placeholders as values in the Top Holder.
@@ -28,6 +43,7 @@ holders:
 == FabricMC
 > [!NOTE]
 > The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+> 
 > You can check its wiki for more information: [Wiki](https://placeholders.pb4.eu/)
 
 ```json
@@ -50,31 +66,35 @@ holders:
 :::tabs key:platform
 == SpigotMC
 
-```yaml
+<Vueform v-model="formData" sync>
+    <TextElement name="name" label="Holder Name" description="The name of the holder" />
+    <TextElement name="placeholder" label="Placeholder" description="The placeholder used to get the value" />
+    <CheckboxElement name="online" description="Whether the placeholder should be parsed only for players who are currently online in the server. When enabled, the plugin parses placeholder values for online players. When disabled, it parses for all players, including offline.">
+        Parse for online players only
+    </CheckboxElement>
+</Vueform>
+
+```yaml-vue
 holders:
-  # Holder that shows the number of diamonds a player has mined
-  # Use the Statistic expansion: /papi ecloud download Statistic
-  diamonds:
+  {{ formData.name }}:
     type: placeholder
-    placeholder: "%statistic_mine_block:DIAMOND_ORE%"
-  # Holder that shows the amount of money a player has
-  # Use the Vault expansion: /papi ecloud download Vault
-  money:
-    type: placeholder
-    placeholder: "%vault_eco_balance%"
-    online: false # Get the value for all players, even those who are offline.
+    placeholder: "{{ formData.placeholder }}"
+    online: {{ formData.online }}
 ```
 
 == FabricMC
 
-```json
+<Vueform v-model="fabricFormData" sync>
+    <TextElement name="name" label="Holder Name" description="The name of the holder" />
+    <TextElement name="placeholder" label="Placeholder" description="The placeholder used to get the value" />
+</Vueform>
+
+```json-vue
 {
   "holders": {
-    // Holder that shows the level of a player
-    // Use PlayerEx
-    "level": {
+    "{{ fabricFormData.name }}": {
       "type": "placeholder",
-      "placeholder": "%playerex:level%"
+      "placeholder": "{{ fabricFormData.placeholder }}"
     }
   }
 }

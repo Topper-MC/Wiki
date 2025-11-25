@@ -2,6 +2,15 @@
 title: MiniPlaceholder
 ---
 
+<script setup>
+import { ref } from 'vue';
+
+const formData = ref({
+    name: 'money',
+    placeholder: '<vault_eco_balance>',
+});
+</script>
+
 # MiniPlaceholder
 
 > [!NOTE]
@@ -42,26 +51,29 @@ holders:
 
 ## Example
 
+<Vueform v-model="formData" sync>
+    <TextElement name="name" label="Holder Name" description="The name of the holder" />
+    <TextElement name="placeholder" label="Placeholder" description="The placeholder used to get the value" />
+</Vueform>
+
 :::tabs key:platform
 == SpigotMC
 
-```yaml
+```yaml-vue
 holders:
-  # Holder that shows the amount of money a player has
-  # Use the Vault expansion: https://modrinth.com/plugin/miniplaceholders-vault-expansion
-  money:
+  {{ formData.name }}:
     type: mini-placeholder
-    placeholder: "<vault_eco_balance>"
+    placeholder: "{{ formData.placeholder }}"
 ```
 
 == FabricMC
 
-```json
+```json-vue
 {
   "holders": {
-    "money": {
+    "{{ formData.name }}": {
       "type": "mini-placeholder",
-      "placeholder": "<vault_eco_balance>"
+      "placeholder": "{{ formData.placeholder }}"
     }
   }
 }
