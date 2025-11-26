@@ -3,7 +3,13 @@ title: PlaceholderAPI
 ---
 
 <script setup>
+import { ref } from 'vue'
 import QueryTypes from '/topper/query/query_types.md'
+
+const queryFormData = ref({
+    holder: 'money',
+    position: '1'
+})
 </script>
 
 # PlaceholderAPI
@@ -36,13 +42,22 @@ Check the [Query](/topper/query/) section for more information about how to set 
 
 ## Example
 
+::: details Click me to edit the example values
+
+<Vueform v-model="queryFormData" sync>
+    <TextElement name="holder" label="Holder Name" description="The name of the Holder used in examples" />
+    <TextElement name="position" label="Position" input-type="number" description="The position used in examples" />
+</Vueform>
+
+:::
+
 :::tabs key:platform
 == SpigotMC
 
-<QueryTypes globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
+<QueryTypes :exampleHolder="queryFormData.holder" :examplePosition="queryFormData.position" globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
 
 == FabricMC
 
-<QueryTypes globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
+<QueryTypes :exampleHolder="queryFormData.holder" :examplePosition="queryFormData.position" globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
 
 :::

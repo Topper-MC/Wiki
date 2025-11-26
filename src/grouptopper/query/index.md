@@ -2,6 +2,16 @@
 title: Query
 ---
 
+<script setup>
+import { ref } from 'vue'
+import QueryTypes from "/topper/query/query_types.md";
+
+const queryFormData = ref({
+    holder: 'money',
+    position: '1'
+})
+</script>
+
 # Query
 
 The query system is the same as the one used in Topper, with the addition that:
@@ -12,4 +22,6 @@ The query system is the same as the one used in Topper, with the addition that:
 
 Refer to the [Topper Query](/topper/query/) page for more information.
 
-## Examples
+## Types
+
+<QueryTypes :exampleHolder="queryFormData.holder" :examplePosition="queryFormData.position" />

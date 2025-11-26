@@ -3,7 +3,13 @@ title: Query
 ---
 
 <script setup>
+import { ref } from 'vue'
 import QueryTypes from './query_types.md'
+
+const queryFormData = ref({
+    holder: 'money',
+    position: '1'
+})
 </script>
 
 # Query
@@ -30,4 +36,13 @@ If the `<type>` does not require any arguments, the query can be simplified to:
 
 ## Types
 
-<QueryTypes />
+::: details Click me to edit the example values
+
+<Vueform v-model="queryFormData" sync>
+    <TextElement name="holder" label="Holder Name" description="The name of the Holder used in examples" />
+    <TextElement name="position" label="Position" input-type="number" description="The position used in examples" />
+</Vueform>
+
+:::
+
+<QueryTypes :exampleHolder="queryFormData.holder" :examplePosition="queryFormData.position" />
