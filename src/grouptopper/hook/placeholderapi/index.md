@@ -24,7 +24,7 @@ The plugin provides a PlaceholderAPI placeholder to allow you to query data from
 
 Check the [Query](/grouptopper/query/) for more information about how to set the `<query>`
 
-## Customize Examples
+## Example
 
 ::: details Click me to edit the example values
 
@@ -34,7 +34,5 @@ Check the [Query](/grouptopper/query/) for more information about how to set the
 </Vueform>
 
 :::
-
-## Example
 
 <QueryTypes :exampleHolder="queryFormData.holder" :examplePosition="queryFormData.position" globalPrefix="%grouptopper_" globalSuffix="%" playerPrefix="%grouptopper_" playerSuffix="%" />
