@@ -10,7 +10,7 @@ title: PlaceholderAPI
 ## Format
 
 ```yaml
-type: placeholderapi
+type: placeholder
 owner: "<owner-placeholder>" # The placeholder to get the owner of the group (could be player name or uuid)
 display: "<display-placeholder>" # The placeholder to get the display name of the group
 online: <true/false> # Whether or not to handle the value for online players only
