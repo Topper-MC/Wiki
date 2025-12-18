@@ -13,6 +13,9 @@ hero:
       text: Download
       link: https://www.spigotmc.org/resources/timedtopper.116995/
     - theme: alt
+      text: Demo
+      link: https://modrinth.com/plugin/grouptopper
+    - theme: alt
       text: Explore
       link: ./config/
 
