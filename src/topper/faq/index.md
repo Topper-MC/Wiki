@@ -86,7 +86,7 @@ settings when setting up the display of the leaderboard.
 ## I want to shorten the number (e.g. 1000000 to 1M)
 
 The [Value Display function](/topper/extra/value_display/) can be used to shorten the number. For example,
-`money:value:shorten` will shorten the number of the value in the `money` Top Holder.
+`money;value;shorten` will shorten the number of the value in the `money` Top Holder.
 
 ## How can I display other things rather than Player Name?
 
