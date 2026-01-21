@@ -30,6 +30,10 @@ const groupTopperSidebar: DefaultTheme.SidebarItem[] = [
                         link: "/holder/group/factionsuuid/",
                     },
                     {
+                        text: "FactionsBridge",
+                        link: "/holder/group/factionsbridge/",
+                    },
+                    {
                         text: "HuskTowns",
                         link: "/holder/group/husktowns/",
                     },
