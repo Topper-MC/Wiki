@@ -99,6 +99,17 @@ For example, if you want to display the LuckPerms prefix (`%luckperms_prefix%`) 
 %parseother_unsafe_{topper_jump;top_name;1}_{luckperms_prefix}%
 ```
 
+## Should I set `online` to `false` in PlaceholderAPI Value Provider?
+
+In most cases, you should **NOT** set `online` to `false` to avoid many issues.
+
+The `online` option behaves as follows:
+- `true`: The plugin will **ONLY** update values for the players who are **online (in the server)**. The plugin will **NOT** update values for the players who are **offline (not in the server)**
+  + It **DOES NOT** mean the plugin will **remove** the values for the players who are **offline (not in the server)**
+- `false`: The plugin will try to update values for **all players**, regardless of whether those players are **online (in the server)** or **offline (not in the server)**
+  + It **DOES NOT** mean it is necessary to make it work with **offline-mode / cracked servers**
+  + **ONLY** set if you are sure your placeholder **works** for the players who are **offline (not in the server)**
+
 ## I am so confused about how to use Topper
 
 Take a deep breath and read the wiki again. You should take it slow and read the wiki carefully as you can miss some

@@ -40,14 +40,14 @@ holders:
     # 
     # Setting "online" to true ONLY means the plugin would stop updating values for players who are not in the server.
     # It DOES NOT mean the plugin would remove the value if the player is offline.
-    # It DOES NOT mean that is necessary to make it work with offline-mode / cracked servers.
+    # It DOES NOT mean that is necessary to set it to false to make it work with offline-mode / cracked servers.
     online: <true/false>
 ```
 
 > [!IMPORTANT]
 > Setting `online` to `true` **ONLY** means the plugin would stop updating values for players who are not in the server.
 > It **DOES NOT** mean the plugin would remove the value if the player is offline.
-> It **DOES NOT** mean that is necessary to make it work with offline-mode / cracked servers.
+> It **DOES NOT** mean that is necessary to set it to `false` to make it work with offline-mode / cracked servers.
 
 == FabricMC
 > [!NOTE]
