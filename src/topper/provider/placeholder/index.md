@@ -37,8 +37,17 @@ holders:
     placeholder: <placeholder>
     # Whether the placeholder should be parsed for online players only (Those who are in the server). Default is true.
     # If set to false, the placeholder will be parsed for all players, even those who are offline.
+    # 
+    # Setting "online" to true ONLY means the plugin would stop updating values for players who are not in the server.
+    # It DOES NOT mean the plugin would remove the value if the player is offline.
+    # It DOES NOT mean that is necessary to make it work with offline-mode / cracked servers.
     online: <true/false>
 ```
+
+> [!IMPORTANT]
+> Setting `online` to `true` **ONLY** means the plugin would stop updating values for players who are not in the server.
+> It **DOES NOT** mean the plugin would remove the value if the player is offline.
+> It **DOES NOT** mean that is necessary to make it work with offline-mode / cracked servers.
 
 == FabricMC
 > [!NOTE]
