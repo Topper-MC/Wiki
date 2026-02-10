@@ -1,0 +1,30 @@
+
+### `remain_time`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;remain_time{props.globalSuffix || ''}</code>
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;remain_time;&lt;format&gt;{props.globalSuffix || ''}</code>
+- **Description**: The remaining time until the next reset.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<format>`: A time format pattern (e.g., `HH:mm:ss` for hours:minutes:seconds)
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};remain_time{props.globalSuffix || ''}</code>
+    - Retrieve the remaining time in millis until the next reset of the Holder named <code>{props.exampleHolder || 'money'}</code>
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};remain_time;HH:mm:ss{props.globalSuffix || ''}</code>
+    - Retrieve the remaining time until the next reset of the Holder named <code>{props.exampleHolder || 'money'}</code>
+
+### `end_time`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;end_time{props.globalSuffix || ''}</code>
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;end_time;&lt;format&gt;{props.globalSuffix || ''}</code>
+- **Description**: The time of the next reset.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<format>`: A date-time format pattern (e.g., `yyyy-MM-dd HH:mm:ss` for year-month-day hours:minutes:seconds)
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};end_time{props.globalSuffix || ''}</code>
+    - Retrieve the time of the next reset in epoch millis of the Holder named <code>{props.exampleHolder || 'money'}</code>
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};end_time;yyyy-MM-dd HH:mm:ss{props.globalSuffix || ''}</code>
+    - Retrieve the time of the next reset of the Holder named <code>{props.exampleHolder || 'money'}</code>

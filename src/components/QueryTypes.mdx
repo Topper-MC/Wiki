@@ -1,0 +1,104 @@
+
+### `top_name`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_name;&lt;position&gt;{props.globalSuffix || ''}</code>
+- **Description**: The name of the player at the specified position.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<position>`: The position of the player in the Holder
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_name;{props.examplePosition || '1'}{props.globalSuffix || ''}</code>
+    - Retrieve the name of the player at position {props.examplePosition || '1'} in the Holder named <code>{props.exampleHolder || 'money'}</code>
+
+### `top_key`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_key;&lt;position&gt;{props.globalSuffix || ''}</code>
+- **Description**: The UUID of the player at the specified position.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<position>`: The position of the player in the Holder
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_key;{props.examplePosition || '1'}{props.globalSuffix || ''}</code>
+    - Retrieve the UUID of the player at position {props.examplePosition || '1'} in the Holder named <code>{props.exampleHolder || 'money'}</code>
+
+### `top_value`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_value;&lt;position&gt;{props.globalSuffix || ''}</code>
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_value;&lt;position&gt;;&lt;format&gt;{props.globalSuffix || ''}</code>
+- **Description**: The value of the player at the specified position.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<position>`: The position of the player in the Holder
+  - `<format>`: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_value;{props.examplePosition || '1'}{props.globalSuffix || ''}</code>
+    - Retrieve the value of the player at position {props.examplePosition || '1'} in the Holder named <code>{props.exampleHolder || 'money'}</code>
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_value;{props.examplePosition || '1'};#,###{props.globalSuffix || ''}</code>
+    - Retrieve the formatted value of the player at position {props.examplePosition || '1'} in the Holder named <code>{props.exampleHolder || 'money'}</code>, in the format of <code>#,###</code>
+
+### `top_value_raw`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_value_raw;&lt;position&gt;{props.globalSuffix || ''}</code>
+- **Description**: The raw value of the player at the specified position.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<position>`: The position of the player in the Holder
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_value_raw;{props.examplePosition || '1'}{props.globalSuffix || ''}</code>
+    - Retrieve the raw value of the player at position {props.examplePosition || '1'} in the Holder named <code>{props.exampleHolder || 'money'}</code>
+
+### `top_rank`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_rank{props.globalSuffix || ''}</code>
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_rank;&lt;format&gt;{props.globalSuffix || ''}</code>
+- **Description**: The player's rank (position number) in the specified Holder.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<format>`: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_rank{props.globalSuffix || ''}</code>
+    - Retrieve the rank of the player in the Holder named <code>{props.exampleHolder || 'money'}</code>
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_rank;#,###{props.globalSuffix || ''}</code>
+    - Retrieve the formatted rank of the player in the Holder named <code>{props.exampleHolder || 'money'}</code>
+
+### `top_size`
+
+- **Format**:
+  - <code>{props.globalPrefix || ''}&lt;holder&gt;;top_size{props.globalSuffix || ''}</code>
+- **Description**: The amount of entries in the Holder.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+- **Example**:
+  - <code>{props.globalPrefix || ''}{props.exampleHolder || 'money'};top_size{props.globalSuffix || ''}</code>
+    - Retrieve the amount of entries in the Holder named <code>{props.exampleHolder || 'money'}</code>
+
+### `value`
+
+- **Format**:
+  - <code>{props.playerPrefix || ''}&lt;holder&gt;;value{props.playerSuffix || ''}</code>
+  - <code>{props.playerPrefix || ''}&lt;holder&gt;;value;&lt;format&gt;{props.playerSuffix || ''}</code>
+- **Description**: The value of the player.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+  - `<format>`: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
+- **Example**:
+  - <code>{props.playerPrefix || ''}{props.exampleHolder || 'money'};value{props.playerSuffix || ''}</code>
+    - Retrieve the value of the player in the Holder named <code>{props.exampleHolder || 'money'}`</code>
+  - <code>{props.playerPrefix || ''}{props.exampleHolder || 'money'};value;#,###{props.playerSuffix || ''}</code>
+    - Retrieve the formatted value of the player in the Holder named <code>{props.exampleHolder || 'money'}</code>
+
+### `value_raw`
+
+- **Format**:
+  - <code>{props.playerPrefix || ''}&lt;holder&gt;;value_raw{props.playerSuffix || ''}</code>
+- **Description**: The raw value of the player.
+- **Argument**:
+  - `<holder>`: The name of the Holder
+- **Example**:
+  - <code>{props.playerPrefix || ''}{props.exampleHolder || 'money'};value_raw{props.playerSuffix || ''}</code>
+    - Retrieve the raw value of the player in the Holder named <code>{props.exampleHolder || 'money'}</code>
