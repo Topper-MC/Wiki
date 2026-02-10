@@ -30,42 +30,42 @@ export default defineConfig({
                 {
                     label: 'Topper',
                     items: [
-                        { label: 'Introduction', link: '/topper/' }, // Main page of Topper
-                        { label: 'Quick Start', link: '/topper/quickstart/' },
-                        { label: 'Commands & Permissions', link: '/topper/commands/' },
-                        { label: 'Config', link: '/topper/config/' },
-                        { label: 'FAQ', link: '/topper/faq/' },
-                        { label: 'Query', link: '/topper/query/' },
+                        'topper',
+                        'topper/quickstart',
+                        'topper/commands',
+                        'topper/config',
+                        'topper/faq',
+                        'topper/query',
                         {
                             label: 'Value Provider',
                             items: [
-                                { label: 'Introduction', link: '/topper/provider/' },
-                                { label: 'Statistic', link: '/topper/provider/statistic/' },
-                                { label: 'Placeholder', link: '/topper/provider/placeholder/' },
-                                { label: 'MiniPlaceholder', link: '/topper/provider/miniplaceholder/' },
+                                'topper/provider',
+                                'topper/provider/statistic',
+                                'topper/provider/placeholder',
+                                'topper/provider/miniplaceholder',
                             ]
                         },
                         {
                             label: 'Hook',
                             items: [
-                                { label: 'Introduction', link: '/topper/hook/' },
-                                { label: 'PlaceholderAPI', link: '/topper/hook/placeholderapi/' },
-                                { label: 'MiniPlaceholders', link: '/topper/hook/miniplaceholders/' },
-                                { label: 'LuckPerms', link: '/topper/hook/luckperms/' },
-                                { label: 'LastLoginAPI', link: '/topper/hook/lastloginapi/' },
+                                'topper/hook',
+                                'topper/hook/placeholderapi',
+                                'topper/hook/miniplaceholders',
+                                'topper/hook/luckperms',
+                                'topper/hook/lastloginapi',
                             ]
                         },
                         {
                             label: 'Extra',
                             items: [
-                                { label: 'Introduction', link: '/topper/extra/' },
-                                { label: 'Customize Value Provider', link: '/topper/extra/provider/' },
-                                { label: 'Create a Hologram', link: '/topper/extra/hologram/' },
-                                { label: 'Create a Top Block', link: '/topper/extra/block/' },
-                                { label: 'Create an NPC', link: '/topper/extra/npc/' },
-                                { label: 'Playtime Leaderboard', link: '/topper/extra/playtime/' },
-                                { label: 'Value Display', link: '/topper/extra/value_display/' },
-                                { label: 'Migrate from 2.X', link: '/topper/extra/migrate_v2/' },
+                                'topper/extra',
+                                'topper/extra/provider',
+                                'topper/extra/hologram',
+                                'topper/extra/block',
+                                'topper/extra/npc',
+                                'topper/extra/playtime',
+                                'topper/extra/value_display',
+                                'topper/extra/migrate_v2',
                             ]
                         }
                     ],
@@ -73,68 +73,68 @@ export default defineConfig({
                 {
                     label: 'TimedTopper',
                     items: [
-                        { label: 'Introduction', link: '/timedtopper/' },
-                        { label: 'Config', link: '/timedtopper/config/' },
+                        'timedtopper',
+                        'timedtopper/config',
                         {
                             label: 'Holder',
                             items: [
-                                { label: 'Introduction', link: '/timedtopper/holder/' },
-                                { label: 'Link a Top Holder', link: '/timedtopper/holder/link/' },
-                                { label: 'Set time interval', link: '/timedtopper/holder/time/' },
-                                { label: 'Set up Reward', link: '/timedtopper/holder/reward/' },
+                                'timedtopper/holder',
+                                'timedtopper/holder/link',
+                                'timedtopper/holder/time',
+                                'timedtopper/holder/reward',
                             ]
                         },
-                        { label: 'Query', link: '/timedtopper/query/' },
+                        'timedtopper/query',
                         {
                             label: 'Hook',
                             items: [
-                                { label: 'Introduction', link: '/timedtopper/hook/' },
-                                { label: 'LuckPerms', link: '/timedtopper/hook/luckperms/' },
-                                { label: 'PlaceholderAPI', link: '/timedtopper/hook/placeholderapi/' },
+                                'timedtopper/hook',
+                                'timedtopper/hook/luckperms',
+                                'timedtopper/hook/placeholderapi',
                             ]
                         },
-                        { label: 'API', link: '/timedtopper/api/' },
+                        'timedtopper/api',
                     ]
                 },
                 {
                     label: 'GroupTopper',
                     items: [
-                        { label: 'Introduction', link: '/grouptopper/' },
-                        { label: 'Config', link: '/grouptopper/config/' },
+                        'grouptopper',
+                        'grouptopper/config',
                         {
                             label: 'Holder',
                             items: [
-                                { label: 'Introduction', link: '/grouptopper/holder/' },
-                                { label: 'Link a Top Holder', link: '/grouptopper/holder/link/' },
+                                'grouptopper/holder',
+                                'grouptopper/holder/link',
                                 {
                                     label: 'Set up Group settings',
                                     items: [
-                                        { label: 'Introduction', link: '/grouptopper/holder/group/' },
-                                        { label: 'BentoBox', link: '/grouptopper/holder/group/bentobox/' },
-                                        { label: 'BetterTeams', link: '/grouptopper/holder/group/betterteams/' },
-                                        { label: 'FactionsUUID', link: '/grouptopper/holder/group/factionsuuid/' },
-                                        { label: 'FactionsBridge', link: '/grouptopper/holder/group/factionsbridge/' },
-                                        { label: 'HuskTowns', link: '/grouptopper/holder/group/husktowns/' },
-                                        { label: 'KingdomsX', link: '/grouptopper/holder/group/kingdomsx/' },
-                                        { label: 'Lands', link: '/grouptopper/holder/group/lands/' },
-                                        { label: 'McMMO', link: '/grouptopper/holder/group/mcmmo/' },
-                                        { label: 'Parties', link: '/grouptopper/holder/group/parties/' },
-                                        { label: 'PlaceholderAPI', link: '/grouptopper/holder/group/placeholderapi/' },
-                                        { label: 'SimpleClans', link: '/grouptopper/holder/group/simpleclans/' },
-                                        { label: 'SuperiorSkyblock', link: '/grouptopper/holder/group/superiorskyblock/' },
-                                        { label: 'Towny', link: '/grouptopper/holder/group/towny/' },
+                                        'grouptopper/holder/group',
+                                        'grouptopper/holder/group/bentobox',
+                                        'grouptopper/holder/group/betterteams',
+                                        'grouptopper/holder/group/factionsuuid',
+                                        'grouptopper/holder/group/factionsbridge',
+                                        'grouptopper/holder/group/husktowns',
+                                        'grouptopper/holder/group/kingdomsx',
+                                        'grouptopper/holder/group/lands',
+                                        'grouptopper/holder/group/mcmmo',
+                                        'grouptopper/holder/group/parties',
+                                        'grouptopper/holder/group/placeholderapi',
+                                        'grouptopper/holder/group/simpleclans',
+                                        'grouptopper/holder/group/superiorskyblock',
+                                        'grouptopper/holder/group/towny',
                                     ]
                                 },
-                                { label: 'Set the Group Mode', link: '/grouptopper/holder/mode/' },
+                                'grouptopper/holder/mode',
                             ]
                         },
-                        { label: 'Query', link: '/grouptopper/query/' },
+                        'grouptopper/query',
                         {
                             label: 'Hook',
                             items: [
-                                { label: 'Introduction', link: '/grouptopper/hook/' },
-                                { label: 'LuckPerms', link: '/grouptopper/hook/luckperms/' },
-                                { label: 'PlaceholderAPI', link: '/grouptopper/hook/placeholderapi/' },
+                                'grouptopper/hook',
+                                'grouptopper/hook/luckperms',
+                                'grouptopper/hook/placeholderapi',
                             ]
                         }
                     ]
@@ -142,14 +142,14 @@ export default defineConfig({
                 {
                     label: 'Cachy',
                     items: [
-                        { label: 'Introduction', link: '/cachy/' },
-                        { label: 'Config', link: '/cachy/config/' },
-                        { label: 'Query', link: '/cachy/query/' },
+                        'cachy',
+                        'cachy/config',
+                        'cachy/query',
                         {
                             label: 'Hook',
                             items: [
-                                { label: 'Introduction', link: '/cachy/hook/' },
-                                { label: 'PlaceholderAPI', link: '/cachy/hook/placeholderapi/' },
+                                'cachy/hook',
+                                'cachy/hook/placeholderapi',
                             ]
                         }
                     ]
