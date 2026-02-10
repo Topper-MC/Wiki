@@ -1,0 +1,53 @@
+---
+title: TimedTopper
+hero:
+  title: TimedTopper
+  tagline: An addon for Timely Leaderboard
+  image:
+    file: ~/assets/timedtopper/logo.svg
+  actions:
+    - text: Download
+      link: https://www.spigotmc.org/resources/timedtopper.116995/
+      variant: primary
+      icon: right-arrow
+    - text: Demo
+      link: https://modrinth.com/plugin/timedtopper
+      variant: secondary
+      icon: external
+    - text: Explore
+      link: ./config/
+      variant: secondary
+      icon: external
+template: splash
+prev: false
+next: false
+---
+
+
+
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Run on Topper" icon="star">
+		Built as an addon of Topper - the better leaderboard plugin
+	</Card>
+	<Card title="Configurable Reset Time" icon="star">
+		Configure the leaderboard to reset after your desired time interval
+	</Card>
+	<Card title="Lightweight & High Performance" icon="star">
+		Heavy optimization for minimal server impact and blazing-fast performance
+	</Card>
+	<Card title="Placeholders" icon="star">
+		Get top values and remaining time with flexible placeholder support
+	</Card>
+	<Card title="Multiple Storage Backends" icon="star">
+		Support YAML, JSON, SQLITE & MYSQL storage options
+	</Card>
+	<Card title="Rewards System" icon="star">
+		Automated reward distribution to top players for each time period
+	</Card>
+	<Card title="Developer API" icon="star">
+		Full API access for developers to extend functionality
+	</Card>
+</CardGrid>

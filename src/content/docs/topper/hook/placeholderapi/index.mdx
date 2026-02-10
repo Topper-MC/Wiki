@@ -1,0 +1,64 @@
+---
+title: PlaceholderAPI
+---
+import QueryTypes from '../../../../../components/QueryTypes.mdx';
+import QueryForm from '../../../../../components/forms/QueryForm.vue';
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+
+
+
+The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Top Holder.
+
+## Usage
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+
+> [!NOTE]
+> Install [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+
+```
+%topper_<query>%
+```
+
+  </TabItem>
+  <TabItem label="FabricMC">
+
+> [!NOTE]
+> The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+> It's bundled in the mod, you don't need to install it separately.
+
+```
+%topper:query <query>%
+```
+
+  </TabItem>
+</Tabs>
+
+Check the [Query](../../query/) section for more information about how to set the `<query>`.
+
+## Example
+
+
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+
+
+<QueryForm client:load />
+
+<QueryTypes globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
+
+  </TabItem>
+  <TabItem label="FabricMC">
+
+
+<QueryForm client:load />
+
+<QueryTypes globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
+
+  </TabItem>
+</Tabs>

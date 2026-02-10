@@ -1,0 +1,50 @@
+---
+title: GroupTopper
+hero:
+  title: GroupTopper
+  tagline: An addon for Group Leaderboard
+  image:
+    file: ~/assets/grouptopper/logo.svg
+  actions:
+    - text: Download
+      link: https://www.spigotmc.org/resources/124971/
+      variant: primary
+      icon: right-arrow
+    - text: Demo
+      link: https://modrinth.com/plugin/grouptopper
+      variant: secondary
+      icon: external
+    - text: Explore
+      link: ./config/
+      variant: secondary
+      icon: external
+template: splash
+prev: false
+next: false
+---
+
+
+
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Run on Topper" icon="star">
+		Built as an addon of Topper - the better leaderboard plugin
+	</Card>
+	<Card title="Lightweight & High Performance" icon="star">
+		Heavy optimization designed for big servers with minimal resource usage
+	</Card>
+	<Card title="Support for Many Group Plugins" icon="star">
+		Compatible with Towny, LuckPerms, Parties, Factions, and more
+	</Card>
+	<Card title="Built-in Group Strategies" icon="star">
+		Min, Max, Total, and other built-in strategies for group calculations
+	</Card>
+	<Card title="Placeholders" icon="star">
+		Get information of group rankings with flexible placeholder support
+	</Card>
+	<Card title="Multiple Storage Backends" icon="star">
+		Support YAML, JSON, SQLITE & MYSQL storage options
+	</Card>
+</CardGrid>

@@ -1,0 +1,26 @@
+---
+title: PlaceholderAPI
+---
+import QueryTypes from '../../../../../components/QueryTypes.mdx';
+import QueryForm from '../../../../../components/forms/QueryForm.vue';
+
+
+
+
+The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Group Holder.
+
+## Usage
+
+```
+%grouptopper_<query>%
+```
+
+Check the [Query](../../query/) for more information about how to set the `<query>`
+
+## Example
+
+
+
+<QueryForm client:load />
+
+<QueryTypes globalPrefix="%grouptopper_" globalSuffix="%" playerPrefix="%grouptopper_" playerSuffix="%" />
