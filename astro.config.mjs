@@ -10,6 +10,7 @@ export default defineConfig({
         vue(),
 		starlight({
 			title: 'Topper',
+            favicon: 'src/assets/topper/logo.svg',
             plugins: [
                 starlightGitHubAlerts()
             ],
