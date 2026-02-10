@@ -1,8 +1,31 @@
 <template>
-  <Vueform v-model="formData" sync>
-    <TextElement name="name" label="Holder Name" description="The name of the holder" />
-    <TextElement name="placeholder" label="Placeholder" description="The placeholder used to get the value" />
-  </Vueform>
+  <form class="form-container">
+    <form.Field name="name">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Holder Name" description="The name of the holder" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+
+    <form.Field name="placeholder">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Placeholder" description="The placeholder used to get the value" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+  </form>
 
   <div class="language-json">
     <pre><code>{{ code }}</code></pre>
@@ -10,19 +33,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
+import { useForm, useStore } from '@tanstack/vue-form';
+import Input from '../ui/Input.vue';
+import FieldWrapper from '../ui/FieldWrapper.vue';
 
-const formData = ref({
+const form = useForm({
+  defaultValues: {
     name: 'level',
     placeholder: '%playerex:level%',
+  },
 });
 
+const formState = useStore(form.store);
+
 const code = computed(() => {
+    const values = formState.value.values;
     const obj = {
         holders: {
-            [formData.value.name]: {
+            [values.name]: {
                 type: 'placeholder',
-                placeholder: formData.value.placeholder
+                placeholder: values.placeholder
             }
         }
     };

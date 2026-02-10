@@ -1,11 +1,44 @@
 <template>
-  <Vueform v-model="formData" sync>
-    <TextElement name="name" label="Holder Name" description="The name of the holder" />
-    <TextElement name="placeholder" label="Placeholder" description="The placeholder used to get the value" />
-    <CheckboxElement name="online" description="Whether the placeholder should be parsed only for players who are currently online in the server. When enabled, the plugin parses placeholder values for online players. When disabled, it parses for all players, including offline.">
-        Parse for online players only
-    </CheckboxElement>
-  </Vueform>
+  <form class="form-container">
+    <form.Field name="name">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Holder Name" description="The name of the holder" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+
+    <form.Field name="placeholder">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Placeholder" description="The placeholder used to get the value" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+
+    <form.Field name="online">
+      <template #default="{ field, state }">
+        <Checkbox
+          :id="field.name"
+          :model-value="state.value"
+          @update:model-value="field.handleChange"
+          description="Whether the placeholder should be parsed only for players who are currently online in the server. When enabled, the plugin parses placeholder values for online players. When disabled, it parses for all players, including offline."
+        >
+          Parse for online players only
+        </Checkbox>
+      </template>
+    </form.Field>
+  </form>
 
   <div class="language-yaml">
     <pre><code>{{ code }}</code></pre>
@@ -13,20 +46,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
+import { useForm, useStore } from '@tanstack/vue-form';
+import Input from '../ui/Input.vue';
+import Checkbox from '../ui/Checkbox.vue';
+import FieldWrapper from '../ui/FieldWrapper.vue';
 
-const formData = ref({
+const form = useForm({
+  defaultValues: {
     name: 'money',
     placeholder: '%vault_eco_balance%',
     online: true,
+  },
 });
 
+const formState = useStore(form.store);
+
 const code = computed(() => {
+  const values = formState.value.values;
   return `holders:
-  ${formData.value.name}:
+  ${values.name}:
     type: placeholder
-    placeholder: "${formData.value.placeholder}"
-    online: ${formData.value.online}`;
+    placeholder: "${values.placeholder}"
+    online: ${values.online}`;
 });
 </script>
 

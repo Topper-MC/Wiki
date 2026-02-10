@@ -1,10 +1,59 @@
 <template>
-  <Vueform v-model="formData" sync>
-    <TextElement name="decimalSeparator" label="Decimal Separator" description="The character used to separate the integer part from the fractional part" />
-    <TextElement name="groupingSeparator" label="Grouping Separator" description="The character used to separate groups of digits (leave empty to disable)" />
-    <TextElement name="groupingSize" label="Grouping Size" input-type="number" description="The number of digits in each group" />
-    <TextElement name="maximumFractionDigits" label="Maximum Fraction Digits" input-type="number" description="The maximum number of digits in the fractional part (leave empty for unlimited)" />
-  </Vueform>
+  <form class="form-container">
+    <form.Field name="decimalSeparator">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Decimal Separator" description="The character used to separate the integer part from the fractional part" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+
+    <form.Field name="groupingSeparator">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Grouping Separator" description="The character used to separate groups of digits (leave empty to disable)" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+
+    <form.Field name="groupingSize">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Grouping Size" description="The number of digits in each group" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            type="number"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+
+    <form.Field name="maximumFractionDigits">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Maximum Fraction Digits" description="The maximum number of digits in the fractional part (leave empty for unlimited)" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            type="number"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+  </form>
 
   <div class="language-text">
     <pre><code>{{ code }}</code></pre>
@@ -12,21 +61,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
+import { useForm, useStore } from '@tanstack/vue-form';
+import Input from '../ui/Input.vue';
+import FieldWrapper from '../ui/FieldWrapper.vue';
 
-const formData = ref({
+const form = useForm({
+  defaultValues: {
     decimalSeparator: '.',
     groupingSeparator: ',',
     groupingSize: '3',
     maximumFractionDigits: '2',
+  },
 });
 
+const formState = useStore(form.store);
+
 const code = computed(() => {
+    const values = formState.value.values;
     const parts = [];
-    if (formData.value.decimalSeparator) parts.push(`decimalSeparator=${formData.value.decimalSeparator}`);
-    if (formData.value.groupingSeparator) parts.push(`groupingSeparator=${formData.value.groupingSeparator}`);
-    if (formData.value.groupingSize) parts.push(`groupingSize=${formData.value.groupingSize}`);
-    if (formData.value.maximumFractionDigits) parts.push(`maximumFractionDigits=${formData.value.maximumFractionDigits}`);
+    if (values.decimalSeparator) parts.push(`decimalSeparator=${values.decimalSeparator}`);
+    if (values.groupingSeparator) parts.push(`groupingSeparator=${values.groupingSeparator}`);
+    if (values.groupingSize) parts.push(`groupingSize=${values.groupingSize}`);
+    if (values.maximumFractionDigits) parts.push(`maximumFractionDigits=${values.maximumFractionDigits}`);
     
     const config = parts.join('&');
     const format = `decimal:${config}`;

@@ -1,29 +1,60 @@
 <template>
-  <Vueform v-model="formData" sync @change="updateStore">
-    <TextElement name="holder" label="Holder Name" description="The name of the Holder used in examples" />
-    <TextElement name="position" label="Position" input-type="number" description="The position used in examples" />
-  </Vueform>
+  <form @submit.prevent="handleSubmit" class="form-container">
+    <form.Field name="holder">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Holder Name" description="The name of the Holder used in examples" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+
+    <form.Field name="position">
+      <template #default="{ field, state }">
+        <FieldWrapper label="Position" description="The position used in examples" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+          <Input
+            :id="field.name"
+            type="number"
+            :model-value="state.value"
+            @update:model-value="field.handleChange"
+            @blur="field.handleBlur"
+          />
+        </FieldWrapper>
+      </template>
+    </form.Field>
+  </form>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { useForm, useStore } from '@tanstack/vue-form';
 import { holder, position } from '../../stores/queryStore';
+import Input from '../ui/Input.vue';
+import FieldWrapper from '../ui/FieldWrapper.vue';
+import { watch } from 'vue';
 
-const formData = ref({
+const form = useForm({
+  defaultValues: {
     holder: holder.get(),
     position: position.get(),
+  },
+  onSubmit: async ({ value }) => {
+    holder.set(value.holder);
+    position.set(value.position);
+  },
 });
 
-const updateStore = () => {
-    holder.set(formData.value.holder);
-    position.set(formData.value.position);
-};
+const formState = useStore(form.store);
 
-// Sync store changes back to form if needed (though mostly one-way here)
-// But good practice if multiple forms existed
-// Sync store changes back to form
-watch(formData, (newData) => {
-    holder.set(newData.holder);
-    position.set(newData.position);
+watch(() => formState.value.values, (values) => {
+  holder.set(values.holder);
+  position.set(values.position);
 }, { deep: true });
 </script>
+
+<style scoped>
+/* No specific styles needed as FieldWrapper handles margins */
+</style>
