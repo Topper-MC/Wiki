@@ -1,0 +1,6 @@
+---
+const { type = 'global', p = {} } = Astro.props;
+const prefix = type === 'player' ? (p.playerPrefix || '') : (p.globalPrefix || '');
+const suffix = type === 'player' ? (p.playerSuffix || '') : (p.globalSuffix || '');
+---
+<code>{prefix}<slot />{suffix}</code>

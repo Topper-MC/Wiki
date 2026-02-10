@@ -2,6 +2,7 @@
 title: PlaceholderAPI
 ---
 import QueryTypes from '../../../../../components/QueryTypes.mdx';
+import QueryForm from '../../../../../components/forms/QueryForm.vue';
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
@@ -47,13 +48,17 @@ Check the [Query](/topper/query/) section for more information about how to set 
   <TabItem label="SpigotMC">
 
 
-<QueryTypes exampleHolder="money" examplePosition="1" globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
+<QueryForm client:only="vue" />
+
+<QueryTypes globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
 
   </TabItem>
   <TabItem label="FabricMC">
 
 
-<QueryTypes exampleHolder="money" examplePosition="1" globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
+<QueryForm client:only="vue" />
+
+<QueryTypes globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
 
   </TabItem>
 </Tabs>

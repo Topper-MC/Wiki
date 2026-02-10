@@ -3,6 +3,8 @@ title: Statistic
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
+import StatisticSpigotForm from '~/components/forms/StatisticSpigotForm.vue';
+import StatisticFabricForm from '~/components/forms/StatisticFabricForm.vue';
 
 
 
@@ -114,36 +116,9 @@ entity:
 
 <Tabs syncKey="platform">
   <TabItem label="SpigotMC">
-
-
-
-
-```yaml
-holders:
-  jump:
-    type: statistic
-    statistic: JUMP
-
-
-```
-
+    <StatisticSpigotForm client:only="vue" />
   </TabItem>
   <TabItem label="FabricMC">
-
-
-
-
-```json
-{
-  "holders": {
-    "jump": {
-      "type": "statistic",
-      "statistic-type": "minecraft:custom",
-      "statistic": "minecraft:jump"
-    }
-  }
-}
-```
-
+    <StatisticFabricForm client:only="vue" />
   </TabItem>
 </Tabs>

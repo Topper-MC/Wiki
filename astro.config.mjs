@@ -8,7 +8,9 @@ import starlightUtils from "@lorenzo_lewis/starlight-utils";
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
-        vue(),
+        vue({
+            appEntrypoint: "./src/_page.ts",
+        }),
 		starlight({
 			title: 'Topper',
             favicon: 'src/assets/topper/logo.svg',
@@ -27,6 +29,7 @@ export default defineConfig({
             ],
             logo: {
                 src: 'src/assets/topper/logo.svg',
+                replacesTitle: true
             },
 			social: [
 				{

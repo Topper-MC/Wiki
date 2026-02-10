@@ -3,7 +3,7 @@ title: Query
 ---
 import QueryTypes from '../../../../components/QueryTypes.mdx';
 import TimedQueryTypes from '../../../../components/TimedQueryTypes.mdx';
-
+import QueryForm from '../../../../components/forms/QueryForm.vue';
 
 
 
@@ -16,5 +16,7 @@ Refer to the [Topper Query](/topper/query/) page for more information.
 
 
 
-<QueryTypes exampleHolder="money" examplePosition="1" />
-<TimedQueryTypes exampleHolder="money" />
+<QueryForm client:only="vue" />
+
+<QueryTypes />
+<TimedQueryTypes />

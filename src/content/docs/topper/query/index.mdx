@@ -2,6 +2,7 @@
 title: Query
 ---
 import QueryTypes from '../../../../components/QueryTypes.mdx';
+import QueryForm from '../../../../components/forms/QueryForm.vue';
 
 
 
@@ -30,4 +31,6 @@ If the `<type>` does not require any arguments, the query can be simplified to:
 
 
 
-<QueryTypes exampleHolder="money" examplePosition="1" />
+<QueryForm client:only="vue" />
+
+<QueryTypes />

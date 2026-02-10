@@ -2,6 +2,10 @@
 title: Value Display
 ---
 
+import ValueDisplayDecimalForm from '~/components/forms/ValueDisplayDecimalForm.vue';
+import ValueDisplayTimeForm from '~/components/forms/ValueDisplayTimeForm.vue';
+import ValueDisplayShortenForm from '~/components/forms/ValueDisplayShortenForm.vue';
+
 
 
 
@@ -34,11 +38,7 @@ The following section will guide you through the available formats to replace
 
 #### Example
 
-```
-{value_decimal:decimalSeparator=.&groupingSeparator=,&groupingSize=3&maximumFractionDigits=2}
-<holder>;value;decimal:decimalSeparator=.&groupingSeparator=,&groupingSize=3&maximumFractionDigits=2
-<holder>;top_value;<position>;decimal:decimalSeparator=.&groupingSeparator=,&groupingSize=3&maximumFractionDigits=2
-```
+<ValueDisplayDecimalForm client:only="vue" />
 
 
 
@@ -54,11 +54,7 @@ The following section will guide you through the available formats to replace
 
 #### Example
 
-```
-{value_time:pattern=HH:mm:ss&type=duration&unit=seconds}
-<holder>;value;time:pattern=HH:mm:ss&type=duration&unit=seconds
-<holder>;top_value;<position>;time:pattern=HH:mm:ss&type=duration&unit=seconds
-```
+<ValueDisplayTimeForm client:only="vue" />
 
 
 
@@ -108,10 +104,6 @@ would shorten the number based on the following groups:
 
 #### Example
 
-```
-{value_shorten}
-<holder>;value;shorten
-<holder>;top_value;<position>;shorten
-```
+<ValueDisplayShortenForm client:only="vue" />
 
 

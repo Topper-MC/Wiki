@@ -3,7 +3,7 @@ title: PlaceholderAPI
 ---
 import QueryTypes from '../../../../../components/QueryTypes.mdx';
 import TimedQueryTypes from '../../../../../components/TimedQueryTypes.mdx';
-
+import QueryForm from '../../../../../components/forms/QueryForm.vue';
 
 
 
@@ -21,5 +21,7 @@ Check the [Query](/timedtopper/query/) section for more information about how to
 
 
 
-<QueryTypes exampleHolder="money" examplePosition="1" globalPrefix="%timedtopper_" globalSuffix="%" playerPrefix="%timedtopper_" playerSuffix="%" />
-<TimedQueryTypes exampleHolder="money" globalPrefix="%timedtopper_" globalSuffix="%" />
+<QueryForm client:only="vue" />
+
+<QueryTypes globalPrefix="%timedtopper_" globalSuffix="%" playerPrefix="%timedtopper_" playerSuffix="%" />
+<TimedQueryTypes globalPrefix="%timedtopper_" globalSuffix="%" />

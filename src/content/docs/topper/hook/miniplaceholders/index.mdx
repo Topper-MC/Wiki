@@ -2,6 +2,7 @@
 title: MiniPlaceholders
 ---
 import QueryTypes from '../../../../../components/QueryTypes.mdx';
+import QueryForm from '../../../../../components/forms/QueryForm.vue';
 
 
 
@@ -24,4 +25,6 @@ Check the [Query](/topper/query/) section for more information about how to set 
 
 
 
-<QueryTypes exampleHolder="money" examplePosition="1" globalPrefix="<topper_global:" globalSuffix=">" playerPrefix="<topper_player:" playerSuffix=">" />
+<QueryForm client:only="vue" />
+
+<QueryTypes globalPrefix="<topper_global:" globalSuffix=">" playerPrefix="<topper_player:" playerSuffix=">" />

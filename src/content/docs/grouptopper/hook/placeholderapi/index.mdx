@@ -2,6 +2,7 @@
 title: PlaceholderAPI
 ---
 import QueryTypes from '../../../../../components/QueryTypes.mdx';
+import QueryForm from '../../../../../components/forms/QueryForm.vue';
 
 
 
@@ -20,4 +21,6 @@ Check the [Query](/grouptopper/query/) for more information about how to set the
 
 
 
-<QueryTypes exampleHolder="money" examplePosition="1" globalPrefix="%grouptopper_" globalSuffix="%" playerPrefix="%grouptopper_" playerSuffix="%" />
+<QueryForm client:only="vue" />
+
+<QueryTypes globalPrefix="%grouptopper_" globalSuffix="%" playerPrefix="%grouptopper_" playerSuffix="%" />
