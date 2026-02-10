@@ -19,11 +19,6 @@ export default defineConfig({
                 starlightUtils({
                     multiSidebar: {
                         switcherStyle: "dropdown"
-                    },
-                    navLinks: {
-                        leading: {
-                            useSidebarLabelled: "leadingNavLinks"
-                        }
                     }
                 })
             ],
@@ -42,15 +37,6 @@ export default defineConfig({
                 // './src/styles/custom.css', // If we have one
             ],
 			sidebar: [
-                {
-                    label: 'leadingNavLinks',
-                    items: [
-                        "topper",
-                        "timedtopper",
-                        "grouptopper",
-                        "cachy"
-                    ]
-                },
                 {
                     label: 'Topper',
                     items: [
