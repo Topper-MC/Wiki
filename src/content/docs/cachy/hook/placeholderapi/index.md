@@ -2,8 +2,8 @@
 title: PlaceholderAPI
 ---
 
-
-The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Group Holder.
+The plugin provides a PlaceholderAPI placeholder to allow you to query data from
+the Group Holder.
 
 ## Usage
 
@@ -11,7 +11,8 @@ The plugin provides a PlaceholderAPI placeholder to allow you to query data from
 %cachy_<query>%
 ```
 
-Check the [Query](/cachy/query/) for more information about how to set the `<query>`
+Check the [Query](../../query/) for more information about how to set the
+`<query>`
 
 ## Example
 
