@@ -36,6 +36,9 @@ export default defineConfig({
             customCss: [
                 // './src/styles/custom.css', // If we have one
             ],
+            components: {
+                Head: "./src/components/starlight/Head.astro",
+            },
 			sidebar: [
                 {
                     label: 'Topper',
