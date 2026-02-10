@@ -1,0 +1,43 @@
+---
+title: Topper
+hero:
+  title: Topper
+  tagline: Another leaderboard plugin for Minecraft servers
+  image:
+    file: ~/assets/topper/logo.svg
+  actions:
+    - text: Download
+      link: https://modrinth.com/plugin/topper-lb
+      variant: primary
+      icon: right-arrow
+    - text: Explore
+      link: ./quickstart/
+      variant: secondary
+      icon: external
+template: splash
+---
+
+
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Lightweight" icon="star">
+		Minimal resource usage and blazing-fast performance
+	</Card>
+	<Card title="Leaderboard" icon="star">
+		Complete leaderboard system for tracking and displaying player rankings
+	</Card>
+	<Card title="Multiple Providers" icon="star">
+		Support YAML, JSON, SQLITE & MYSQL storage backends
+	</Card>
+	<Card title="Placeholders" icon="star">
+		Flexible placeholder support for integration with other plugins
+	</Card>
+	<Card title="Friendly for All Servers" icon="star">
+		Works seamlessly from small servers to large-scale deployments
+	</Card>
+	<Card title="Multiple Hooks" icon="star">
+		Integration with PlaceholderAPI, MiniPlaceholders, LuckPerms, and more
+	</Card>
+</CardGrid>

@@ -1,0 +1,82 @@
+---
+title: MiniPlaceholder
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+
+
+
+> [!NOTE]
+> Requires [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders)
+
+This is a provider that allows you to use MiniPlaceholders placeholders as values in the Top Holder.
+
+## Format
+
+<Tabs>
+  <TabItem label="SpigotMC">
+
+
+```yaml
+holders:
+  <holder-name>:
+    # The type of the provider
+    type: mini-placeholder
+    # The placeholder used to get the value
+    placeholder: <placeholder>
+```
+
+  </TabItem>
+  <TabItem label="FabricMC">
+
+
+```json
+{
+  "holders": {
+    "<holder-name>": {
+      // The type of the provider
+      "type": "mini-placeholder",
+      // The placeholder used to get the value
+      "placeholder": "<placeholder>"
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Example
+
+
+
+<Tabs>
+  <TabItem label="SpigotMC">
+
+
+```yaml
+holders:
+  money:
+    type: mini-placeholder
+    placeholder: "<vault_eco_balance>"
+```
+
+  </TabItem>
+  <TabItem label="FabricMC">
+
+
+```json
+{
+  "holders": {
+    "money": {
+      "type": "mini-placeholder",
+      "placeholder": "<vault_eco_balance>"
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>

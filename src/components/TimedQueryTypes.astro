@@ -1,0 +1,69 @@
+---
+const {
+    globalPrefix = '',
+    globalSuffix = '',
+    exampleHolder = 'money',
+} = Astro.props;
+---
+
+<h3><code>remain_time</code></h3>
+<ul>
+  <li><strong>Format</strong>:
+    <ul>
+      <li><code>{globalPrefix}&lt;holder&gt;;remain_time{globalSuffix}</code></li>
+      <li><code>{globalPrefix}&lt;holder&gt;;remain_time;&lt;format&gt;{globalSuffix}</code></li>
+    </ul>
+  </li>
+  <li><strong>Description:</strong> The remaining time until the next reset.</li>
+  <li><strong>Argument:</strong>
+    <ul>
+      <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+      <li><code>&lt;format&gt;</code>: A time format pattern (e.g., <code>HH:mm:ss</code> for hours:minutes:seconds)</li>
+    </ul>
+  </li>
+  <li><strong>Example:</strong>
+    <ul>
+      <li><code>{globalPrefix}{exampleHolder};remain_time{globalSuffix}</code>
+        <ul>
+          <li>Retrieve the remaining time in millis until the next reset of the Holder named <code>{exampleHolder}</code></li>
+        </ul>
+      </li>
+      <li><code>{globalPrefix}{exampleHolder};remain_time;HH:mm:ss{globalSuffix}</code>
+        <ul>
+          <li>Retrieve the remaining time until the next reset of the Holder named <code>{exampleHolder}</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3><code>end_time</code></h3>
+<ul>
+  <li><strong>Format</strong>:
+    <ul>
+      <li><code>{globalPrefix}&lt;holder&gt;;end_time{globalSuffix}</code></li>
+      <li><code>{globalPrefix}&lt;holder&gt;;end_time;&lt;format&gt;{globalSuffix}</code></li>
+    </ul>
+  </li>
+  <li><strong>Description:</strong> The time of the next reset.</li>
+  <li><strong>Argument:</strong>
+    <ul>
+      <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+      <li><code>&lt;format&gt;</code>: A date-time format pattern (e.g., <code>yyyy-MM-dd HH:mm:ss</code> for year-month-day hours:minutes:seconds)</li>
+    </ul>
+  </li>
+  <li><strong>Example:</strong>
+    <ul>
+      <li><code>{globalPrefix}{exampleHolder};end_time{globalSuffix}</code>
+        <ul>
+          <li>Retrieve the time of the next reset in epoch millis of the Holder named <code>{exampleHolder}</code></li>
+        </ul>
+      </li>
+      <li><code>{globalPrefix}{exampleHolder};end_time;yyyy-MM-dd HH:mm:ss{globalSuffix}</code>
+        <ul>
+          <li>Retrieve the time of the next reset of the Holder named <code>{exampleHolder}</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>

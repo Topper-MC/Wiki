@@ -1,0 +1,59 @@
+---
+title: PlaceholderAPI
+---
+import QueryTypes from '../../../../../components/QueryTypes.astro';
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+
+
+
+The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Top Holder.
+
+## Usage
+
+<Tabs>
+  <TabItem label="SpigotMC">
+
+> [!NOTE]
+> Install [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+
+```
+%topper_<query>%
+```
+
+  </TabItem>
+  <TabItem label="FabricMC">
+
+> [!NOTE]
+> The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+> It's bundled in the mod, you don't need to install it separately.
+
+```
+%topper:query <query>%
+```
+
+  </TabItem>
+</Tabs>
+
+Check the [Query](/topper/query/) section for more information about how to set the `<query>`.
+
+## Example
+
+
+
+<Tabs>
+  <TabItem label="SpigotMC">
+
+
+<QueryTypes exampleHolder="money" examplePosition="1" globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
+
+  </TabItem>
+  <TabItem label="FabricMC">
+
+
+<QueryTypes exampleHolder="money" examplePosition="1" globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
+
+  </TabItem>
+</Tabs>

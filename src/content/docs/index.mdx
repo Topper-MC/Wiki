@@ -1,0 +1,43 @@
+---
+title: Topper
+description: A framework for single-value data tables
+template: splash
+hero:
+  tagline: A framework for single-value data tables
+  image:
+    file: ~/assets/topper/logo.svg
+  actions:
+    - text: Topper
+      link: /topper/
+      icon: right-arrow
+      variant: primary
+    - text: TimedTopper
+      link: /timedtopper/
+      icon: right-arrow
+      variant: secondary
+    - text: GroupTopper
+      link: /grouptopper/
+      icon: right-arrow
+      variant: secondary
+    - text: Cachy
+      link: /cachy/
+      icon: right-arrow
+      variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Topper" icon="pencil">
+		The core plugin.
+	</Card>
+	<Card title="TimedTopper" icon="add-document">
+		Timed leaderboards.
+	</Card>
+	<Card title="GroupTopper" icon="setting">
+		Group leaderboards.
+	</Card>
+	<Card title="Cachy" icon="open-book">
+		Caching system.
+	</Card>
+</CardGrid>
