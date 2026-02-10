@@ -7,6 +7,8 @@ import starlightUtils from "@lorenzo_lewis/starlight-utils";
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://topper-mc.github.io',
+    base: '/Wiki',
 	integrations: [
         vue(),
 		starlight({
