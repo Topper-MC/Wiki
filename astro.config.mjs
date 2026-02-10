@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 import starlightGitHubAlerts from 'starlight-github-alerts'
 
 import vue from '@astrojs/vue';
+import starlightUtils from "@lorenzo_lewis/starlight-utils";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +13,17 @@ export default defineConfig({
 			title: 'Topper',
             favicon: 'src/assets/topper/logo.svg',
             plugins: [
-                starlightGitHubAlerts()
+                starlightGitHubAlerts(),
+                starlightUtils({
+                    multiSidebar: {
+                        switcherStyle: "dropdown"
+                    },
+                    navLinks: {
+                        leading: {
+                            useSidebarLabelled: "leadingNavLinks"
+                        }
+                    }
+                })
             ],
             logo: {
                 src: 'src/assets/topper/logo.svg',
@@ -29,9 +40,17 @@ export default defineConfig({
             ],
 			sidebar: [
                 {
+                    label: 'leadingNavLinks',
+                    items: [
+                        "topper",
+                        "timedtopper",
+                        "grouptopper",
+                        "cachy"
+                    ]
+                },
+                {
                     label: 'Topper',
                     items: [
-                        'topper',
                         'topper/quickstart',
                         'topper/commands',
                         'topper/config',
@@ -74,7 +93,6 @@ export default defineConfig({
                 {
                     label: 'TimedTopper',
                     items: [
-                        'timedtopper',
                         'timedtopper/config',
                         {
                             label: 'Holder',
@@ -100,7 +118,6 @@ export default defineConfig({
                 {
                     label: 'GroupTopper',
                     items: [
-                        'grouptopper',
                         'grouptopper/config',
                         {
                             label: 'Holder',
@@ -143,7 +160,6 @@ export default defineConfig({
                 {
                     label: 'Cachy',
                     items: [
-                        'cachy',
                         'cachy/config',
                         'cachy/query',
                         {
