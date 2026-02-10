@@ -3,6 +3,6 @@ import StarlightHead from '@astrojs/starlight/components/Head.astro';
 import VtbotStarlight from 'astro-vtbot/components/starlight/Base.astro';
 ---
 
-<VtbotStarlight transition:animate="slide">
+<VtbotStarlight transition:animate="slide" replaceSidebarContent>
     <StarlightHead><slot /></StarlightHead>
 </VtbotStarlight>
