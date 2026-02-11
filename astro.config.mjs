@@ -11,6 +11,7 @@ import path from 'node:path';
 const docsDir = './src/content/docs';
 const translations = {};
 const starlightLocales = {};
+const siteTitle = {};
 
 // Helper to get native language name
 function getLanguageName(locale) {
@@ -27,17 +28,21 @@ function processLocale(locale, filePath) {
         const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         translations[locale] = content;
         
+        const title = content.site?.title || 'Topper';
+
         if (locale === 'en') {
             // Map English to root locale
             starlightLocales.root = {
                  label: getLanguageName(locale),
                  lang: locale
             };
+            siteTitle[locale] = title;
         } else {
             starlightLocales[locale] = {
                 label: getLanguageName(locale),
                 lang: locale
             };
+            siteTitle[locale] = title;
         }
     } catch (e) {
         console.error(`Failed to load locale ${locale}:`, e);
@@ -61,6 +66,11 @@ if (fs.existsSync(docsDir)) {
             }
         }
     });
+}
+
+// Ensure root title falls back to Topper if not set
+if (!siteTitle.en) {
+    siteTitle.en = 'Topper';
 }
 
 // Helper to get sidebar group translations for all non-default locales
@@ -196,7 +206,7 @@ function getSidebar(locale) {
                         'grouptopper/hook/placeholderapi',
                     ],
                     translations: getSidebarTranslations('hook')
-                }
+                },
             ],
             translations: getSidebarTranslations('groupTopper')
         },
@@ -226,7 +236,7 @@ export default defineConfig({
 	integrations: [
         vue(),
 		starlight({
-			title: translations['en']?.site?.title || 'Topper',
+			title: siteTitle,
             favicon: 'src/assets/topper/logo.svg',
             plugins: [
                 starlightGitHubAlerts(),
