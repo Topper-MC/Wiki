@@ -6,15 +6,15 @@ preserve_hierarchy: true
 files:
   # Content pages (md/mdx)
   - source: /**/*.md
-    translation: /%two_letters_code%/**/%original_file_name%
+    translation: /%locale%/**/%original_file_name%
     ignore:
       - /??/**
 
   - source: /**/*.mdx
-    translation: /%two_letters_code%/**/%original_file_name%
+    translation: /%locale%/**/%original_file_name%
     ignore:
       - /??/**
 
   # i18n JSON (UI translations)
   - source: /i18n.json
-    translation: /%two_letters_code%/i18n.json
+    translation: /%locale%/i18n.json
