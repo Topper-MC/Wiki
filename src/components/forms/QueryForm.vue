@@ -15,7 +15,7 @@
 
     <form.Field name="position">
       <template #default="{ field, state }">
-        <FieldWrapper :label="t('holderName')" :description="t('holderNameDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('position')" :description="t('positionDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             type="number"
