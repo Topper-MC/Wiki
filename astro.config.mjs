@@ -121,7 +121,6 @@ function getSidebar() {
                 {
                     label: getTitle('topper/provider', 'Value Provider'),
                     items: [
-                        'topper/provider',
                         'topper/provider/statistic',
                         'topper/provider/placeholder',
                         'topper/provider/miniplaceholder',
@@ -131,7 +130,6 @@ function getSidebar() {
                 {
                     label: getTitle('topper/hook', 'Hook'),
                     items: [
-                        'topper/hook',
                         'topper/hook/placeholderapi',
                         'topper/hook/miniplaceholders',
                         'topper/hook/luckperms',
@@ -142,7 +140,6 @@ function getSidebar() {
                 {
                     label: getTitle('topper/extra', 'Extra'),
                     items: [
-                        'topper/extra',
                         'topper/extra/provider',
                         'topper/extra/hologram',
                         'topper/extra/block',
@@ -163,7 +160,6 @@ function getSidebar() {
                 {
                     label: getTitle('timedtopper/holder', 'Holder'),
                     items: [
-                        'timedtopper/holder',
                         'timedtopper/holder/link',
                         'timedtopper/holder/time',
                         'timedtopper/holder/reward',
@@ -174,7 +170,6 @@ function getSidebar() {
                 {
                     label: getTitle('timedtopper/hook', 'Hook'),
                     items: [
-                        'timedtopper/hook',
                         'timedtopper/hook/luckperms',
                         'timedtopper/hook/placeholderapi',
                     ],
@@ -191,28 +186,9 @@ function getSidebar() {
                 {
                     label: getTitle('grouptopper/holder', 'Holder'),
                     items: [
-                        'grouptopper/holder',
                         'grouptopper/holder/link',
-                        {
-                            label: getTitle('grouptopper/holder/group', 'Set up Group settings'),
-                            items: [
-                                'grouptopper/holder/group',
-                                'grouptopper/holder/group/bentobox',
-                                'grouptopper/holder/group/betterteams',
-                                'grouptopper/holder/group/factionsuuid',
-                                'grouptopper/holder/group/factionsbridge',
-                                'grouptopper/holder/group/husktowns',
-                                'grouptopper/holder/group/kingdomsx',
-                                'grouptopper/holder/group/lands',
-                                'grouptopper/holder/group/mcmmo',
-                                'grouptopper/holder/group/parties',
-                                'grouptopper/holder/group/placeholderapi',
-                                'grouptopper/holder/group/simpleclans',
-                                'grouptopper/holder/group/superiorskyblock',
-                                'grouptopper/holder/group/towny',
-                            ],
-                            translations: getTitleTranslations('grouptopper/holder/group')
-                        },
+                        'grouptopper/holder/group',
+
                         'grouptopper/holder/mode',
                     ],
                     translations: getTitleTranslations('grouptopper/holder')
@@ -221,7 +197,6 @@ function getSidebar() {
                 {
                     label: getTitle('grouptopper/hook', 'Hook'),
                     items: [
-                        'grouptopper/hook',
                         'grouptopper/hook/luckperms',
                         'grouptopper/hook/placeholderapi',
                     ],
@@ -238,7 +213,6 @@ function getSidebar() {
                 {
                     label: getTitle('cachy/hook', 'Hook'),
                     items: [
-                        'cachy/hook',
                         'cachy/hook/placeholderapi',
                     ],
                     translations: getTitleTranslations('cachy/hook')
