@@ -1,0 +1,108 @@
+import QueryVar from '~/components/forms/QueryVar.vue';
+import QueryCode from '~/components/QueryCode.astro';
+
+### `top_name`
+
+* **Format**:
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_name;<QueryVar client:load field="position" /></QueryCode>
+* **Description**: The name of the player at the specified position.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+  * `<position>`: The position of the player in the Holder
+* **Example**:
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_name;<QueryVar client:load field="position" /></QueryCode>
+    <ul>
+      <li>Retrieve the name of the player at position <QueryVar client:load field="position" /> in the Holder named <code><QueryVar client:load field="holder" /></code></li>
+    </ul>
+
+### `top_key`
+
+* **Format**:
+  * <code>{props.globalPrefix || ''}&lt;holder&gt;;top_key;&lt;position&gt;{props.globalSuffix || ''}</code>
+* **Description**: The UUID of the player at the specified position.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+  * `<position>`: The position of the player in the Holder
+* **Example**:
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_key;<QueryVar client:load field="position" /></QueryCode>
+    * Retrieve the UUID of the player at position <QueryVar client:load field="position" /> in the Holder named <code><QueryVar client:load field="holder" /></code>
+
+### `top_value`
+
+* **Format**:
+  * <QueryCode p={props} type="global">&lt;holder&gt;;top_value;&lt;position&gt;</QueryCode>
+  * <QueryCode p={props} type="global">&lt;holder&gt;;top_value;&lt;position&gt;;&lt;format&gt;</QueryCode>
+* **Description**: The value of the player at the specified position.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+  * `<position>`: The position of the player in the Holder
+  * `<format>`: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
+* **Example**:
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_value;<QueryVar client:load field="position" /></QueryCode>
+    * Retrieve the value of the player at position <QueryVar client:load field="position" /> in the Holder named <code><QueryVar client:load field="holder" /></code>
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_value;<QueryVar client:load field="position" />;#,###</QueryCode>
+    * Retrieve the formatted value of the player at position <QueryVar client:load field="position" /> in the Holder named <code><QueryVar client:load field="holder" /></code>, in the format of <code>#,###</code>
+
+### `top_value_raw`
+
+* **Format**:
+  * <QueryCode p={props} type="global">&lt;holder&gt;;top_value_raw;&lt;position&gt;</QueryCode>
+* **Description**: The raw value of the player at the specified position.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+  * `<position>`: The position of the player in the Holder
+* **Example**:
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_value_raw;<QueryVar client:load field="position" /></QueryCode>
+    * Retrieve the raw value of the player at position <QueryVar client:load field="position" /> in the Holder named <code><QueryVar client:load field="holder" /></code>
+
+### `top_rank`
+
+* **Format**:
+  * <QueryCode p={props} type="global">&lt;holder&gt;;top_rank</QueryCode>
+  * <QueryCode p={props} type="global">&lt;holder&gt;;top_rank;&lt;format&gt;</QueryCode>
+* **Description**: The player's rank (position number) in the specified Holder.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+  * `<format>`: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
+* **Example**:
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_rank</QueryCode>
+    * Retrieve the rank of the player in the Holder named <code><QueryVar client:load field="holder" /></code>
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_rank;#,###</QueryCode>
+    * Retrieve the formatted rank of the player in the Holder named <code><QueryVar client:load field="holder" /></code>
+
+### `top_size`
+
+* **Format**:
+  * <QueryCode p={props} type="global">&lt;holder&gt;;top_size</QueryCode>
+* **Description**: The amount of entries in the Holder.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+* **Example**:
+  * <QueryCode p={props} type="global"><QueryVar client:load field="holder" />;top_size</QueryCode>
+    * Retrieve the amount of entries in the Holder named <code><QueryVar client:load field="holder" /></code>
+
+### `value`
+
+* **Format**:
+  * <QueryCode p={props} type="player">&lt;holder&gt;;value</QueryCode>
+  * <QueryCode p={props} type="player">&lt;holder&gt;;value;&lt;format&gt;</QueryCode>
+* **Description**: The value of the player.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+  * `<format>`: A number format pattern, see [Value Display](/topper/extra/value_display/) for more details on how to apply a format
+* **Example**:
+  * <QueryCode p={props} type="player"><QueryVar client:load field="holder" />;value</QueryCode>
+    * Retrieve the value of the player in the Holder named <code><QueryVar client:load field="holder" />\`</code>
+  * <QueryCode p={props} type="player"><QueryVar client:load field="holder" />;value;#,###</QueryCode>
+    * Retrieve the formatted value of the player in the Holder named <code><QueryVar client:load field="holder" /></code>
+
+### `value_raw`
+
+* **Format**:
+  * <QueryCode p={props} type="player">&lt;holder&gt;;value_raw</QueryCode>
+* **Description**: The raw value of the player.
+* **Argument**:
+  * `<holder>`: The name of the Holder
+* **Example**:
+  * <QueryCode p={props} type="player"><QueryVar client:load field="holder" />;value_raw</QueryCode>
+    * Retrieve the raw value of the player in the Holder named <code><QueryVar client:load field="holder" /></code>

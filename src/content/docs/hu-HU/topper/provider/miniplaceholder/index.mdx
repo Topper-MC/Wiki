@@ -1,0 +1,54 @@
+---
+title: MiniPlaceholder
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import MiniPlaceholderSpigotForm from '~/components/forms/MiniPlaceholderSpigotForm.vue';
+import MiniPlaceholderFabricForm from '~/components/forms/MiniPlaceholderFabricForm.vue';
+
+> [!NOTE]
+> Requires [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders)
+
+This is a provider that allows you to use MiniPlaceholders placeholders as values in the Top Holder.
+
+## Format
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+    ```yaml
+    holders:
+      <holder-name>:
+        # The type of the provider
+        type: mini-placeholder
+        # The placeholder used to get the value
+        placeholder: <placeholder>
+    ```
+  </TabItem>
+
+  <TabItem label="FabricMC">
+    ```json
+    {
+      "holders": {
+        "<holder-name>": {
+          // The type of the provider
+          "type": "mini-placeholder",
+          // The placeholder used to get the value
+          "placeholder": "<placeholder>"
+        }
+      }
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+## Example
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+    <MiniPlaceholderSpigotForm client:load />
+  </TabItem>
+
+  <TabItem label="FabricMC">
+    <MiniPlaceholderFabricForm client:load />
+  </TabItem>
+</Tabs>

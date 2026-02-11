@@ -1,0 +1,113 @@
+---
+title: Statistic
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import StatisticSpigotForm from '~/components/forms/StatisticSpigotForm.vue';
+import StatisticFabricForm from '~/components/forms/StatisticFabricForm.vue';
+
+This is a provider that provides statistic values of a player to the Top Holder.
+
+## Format
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+    ```yaml
+    holders:
+      <holder-name>:
+        # The type of the provider
+        type: statistic
+        # The name of the statistic
+        statistic: <statistic>
+        # The name of the material. Used for some statistics that require an item.
+        material: <material>
+        # The name of the entity. Used for some statistics that require an entity.
+        entity: <entity>
+    ```
+
+    * Available values for `<statistic>` can be
+      found [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Statistic.html)
+    * Available values for `<material>` can be
+      found [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)
+    * Available values for `<entity>` can be
+      found [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)
+      \== FabricMC
+
+    ```json
+    {
+      "holders": {
+        "<holder-name>": {
+          // The type of the provider
+          "type": "statistic",
+          // The type of the statistic
+          "statistic-type": "<statistic-type>",
+          // The name of the statistic
+          "statistic": "<statistic>"
+        }
+      }
+    }
+    ```
+
+    * The available `<statistic-type>` and `<statistic>` can be found [here](https://minecraft.wiki/w/Statistics)
+  </TabItem>
+</Tabs>
+
+## Behavior
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+    * If the `statistic` is a Generic type, the `material` and `entity` fields are ignored. The provider will return the
+      value of the statistic for the player.
+
+    * If the `statistic` is a Material type, the `material` field will be used:
+      * If the `material` is not specified, the provider will return the value of the statistic for all materials.
+      * If the `material` is specified, the provider will return the value of the statistic for the specified material.
+      * The `material` field can be a string or a list of strings.
+
+    ```yaml
+    material: STONE
+
+    material:
+      - STONE
+      - COBBLESTONE
+    ```
+
+    * If the `statistic` is an Entity type, the `entity` field will be used:
+      * If the `entity` is not specified, the provider will return the value of the statistic for all entities.
+      * If the `entity` is specified, the provider will return the value of the statistic for the specified entity.
+      * The `entity` field can be a string or a list of strings.
+
+    ```yaml
+    entity: ZOMBIE
+
+    entity:
+      - ZOMBIE
+      - SKELETON
+    ```
+  </TabItem>
+
+  <TabItem label="FabricMC">
+    * If the `statistic-type` is not specified, it will default to `minecraft:custom`.
+    * If the `statistic-type` is `minecraft:custom`, the value of the `statistic` field will be one of
+      the [Custom statistic names](https://minecraft.wiki/w/Statistics)
+    * If the `statistic-type` is one of the ITEM types (e.g. `minecraft:broken`, `minecraft:crafted`, `minecraft:used`,
+      `minecraft:picked_up`, etc.), the value of the `statistic` field will be one of
+      the [Items](https://minecraft.wiki/w/Java_Edition_data_values)
+    * If the `statistic-type` is one of the ENTITY types (e.g. `minecraft:killed`, `minecraft:killed_by`, etc.), the value
+      of the `statistic` field will be one of the [Entities](https://minecraft.wiki/w/Java_Edition_data_values)
+    * If the `statistic-type` is one of the BLOCK types (e.g. `minecraft:mined`, `minecraft:broken`, etc.), the value of the
+      `statistic` field will be one of the [Blocks](https://minecraft.wiki/w/Java_Edition_data_values)
+  </TabItem>
+</Tabs>
+
+## Example
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+    <StatisticSpigotForm client:load />
+  </TabItem>
+
+  <TabItem label="FabricMC">
+    <StatisticFabricForm client:load />
+  </TabItem>
+</Tabs>

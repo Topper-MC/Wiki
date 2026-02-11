@@ -1,0 +1,71 @@
+---
+title: Placeholder
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import PlaceholderSpigotForm from '~/components/forms/PlaceholderSpigotForm.vue';
+import PlaceholderFabricForm from '~/components/forms/PlaceholderFabricForm.vue';
+
+This is a provider that allows you to use PlaceholderAPI placeholders as values in the Top Holder.
+
+## Format
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+    > [!NOTE]
+    > Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+
+    ```yaml
+    holders:
+      <holder-name>:
+        # The type of the provider
+        type: placeholder
+        # The placeholder used to get the value
+        placeholder: <placeholder>
+        # Whether the placeholder should be parsed for online players only (Those who are in the server). Default is true.
+        # If set to false, the placeholder will be parsed for all players, even those who are offline.
+        # 
+        # Setting "online" to true ONLY means the plugin would stop updating values for players who are not in the server.
+        # It DOES NOT mean the plugin would remove the value if the player is offline.
+        # It DOES NOT mean that is necessary to set it to false to make it work with offline-mode / cracked servers.
+        online: <true/false>
+    ```
+
+    > [!IMPORTANT]
+    > Setting `online` to `true` **ONLY** means the plugin would stop updating values for players who are not in the server.
+    > It **DOES NOT** mean the plugin would remove the value if the player is offline.
+    > It **DOES NOT** mean that is necessary to set it to `false` to make it work with offline-mode / cracked servers.
+  </TabItem>
+
+  <TabItem label="FabricMC">
+    > [!NOTE]
+    > The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+    >
+    > You can check its wiki for more information: [Wiki](https://placeholders.pb4.eu/)
+
+    ```json
+    {
+      "holders": {
+        "<holder-name>": {
+          // The type of the provider
+          "type": "placeholder",
+          // The placeholder used to get the value
+          "placeholder": "<placeholder>"
+        }
+      }
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+## Example
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+    <PlaceholderSpigotForm client:load />
+  </TabItem>
+
+  <TabItem label="FabricMC">
+    <PlaceholderFabricForm client:load />
+  </TabItem>
+</Tabs>

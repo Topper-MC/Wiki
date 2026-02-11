@@ -1,0 +1,26 @@
+---
+title: MiniPlaceholders
+---
+
+import QueryTypes from '../../query/_QueryTypes.mdx';
+import QueryForm from '~/components/forms/QueryForm.vue';
+
+> [!NOTE]
+> Install [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders)
+
+The plugin provides a MiniPlaceholders placeholder to allow you to query data from the Top Holder.
+
+## Usage
+
+```
+<topper_global:<query>>
+<topper_player:<query>>
+```
+
+Check the [Query](../../query/) section for more information about how to set the `<query>`.
+
+## Example
+
+<QueryForm client:load />
+
+<QueryTypes globalPrefix="<topper_global:" globalSuffix=">" playerPrefix="<topper_player:" playerSuffix=">" />
