@@ -90,7 +90,7 @@ function getTitle(slug, fallback) {
             }
         }
     }
-    return fallback || slug;
+    return fallback;
 }
 
 // Helper to get translated titles from locale subdirectories
@@ -99,7 +99,7 @@ function getTitleTranslations(slug) {
     // Find all locale directories that have i18n.json (i.e. are registered locales)
     Object.keys(translations).forEach(lang => {
         if (lang === 'en') return; // Skip default locale
-        const title = getTitle(path.join(lang, slug), null);
+        const title = getTitle(path.join(lang, slug));
         if (title) {
             result[lang] = title;
         }
