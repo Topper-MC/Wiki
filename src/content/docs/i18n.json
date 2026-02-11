@@ -2,17 +2,6 @@
   "site": {
     "title": "Topper"
   },
-  "sidebar": {
-    "topper": "Topper",
-    "valueProvider": "Value Provider",
-    "hook": "Hook",
-    "extra": "Extra",
-    "timedTopper": "TimedTopper",
-    "holder": "Holder",
-    "groupTopper": "GroupTopper",
-    "setUpGroupSettings": "Set up Group settings",
-    "cachy": "Cachy"
-  },
   "ui": {
     "holderName": "Holder Name",
     "holderNameDescription": "The name of the Holder used in examples",

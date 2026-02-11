@@ -73,25 +73,38 @@ if (!siteTitle.en) {
     siteTitle.en = 'Topper';
 }
 
-// Helper to get sidebar group translations for all non-default locales
-function getSidebarTranslations(key) {
+// Helper to read frontmatter title from an index page
+function getTitle(slug, fallback) {
+    const extensions = ['mdx', 'md'];
+    for (const ext of extensions) {
+        const filePath = path.join(docsDir, slug, `index.${ext}`);
+        if (fs.existsSync(filePath)) {
+            const content = fs.readFileSync(filePath, 'utf-8');
+            const match = content.match(/^---\s*\n[\s\S]*?^title:\s*(.+)\s*$/m);
+            if (match) return match[1].trim().replace(/^['"]|['"]$/g, '');
+        }
+    }
+    return fallback || slug;
+}
+
+// Helper to get translated titles from locale subdirectories
+function getTitleTranslations(slug) {
     const result = {};
+    // Find all locale directories that have i18n.json (i.e. are registered locales)
     Object.keys(translations).forEach(lang => {
-        if (lang === 'en') return; // Skip default locale (root)
-        if (translations[lang]?.sidebar?.[key]) {
-            result[lang] = translations[lang].sidebar[key];
+        if (lang === 'en') return; // Skip default locale
+        const title = getTitle(path.join(lang, slug), null);
+        if (title) {
+            result[lang] = title;
         }
     });
     return result;
 }
 
-function getSidebar(locale) {
-    // Fallback to empty object if locale not found
-    const t = translations[locale]?.sidebar || {};
-    
+function getSidebar() {
     return [
         {
-            label: t.topper || 'Topper',
+            label: getTitle('topper', 'Topper'),
             items: [
                 'topper/quickstart',
                 'topper/commands',
@@ -99,17 +112,17 @@ function getSidebar(locale) {
                 'topper/faq',
                 'topper/query',
                 {
-                    label: t.valueProvider || 'Value Provider',
+                    label: getTitle('topper/provider', 'Value Provider'),
                     items: [
                         'topper/provider',
                         'topper/provider/statistic',
                         'topper/provider/placeholder',
                         'topper/provider/miniplaceholder',
                     ],
-                    translations: getSidebarTranslations('valueProvider')
+                    translations: getTitleTranslations('topper/provider')
                 },
                 {
-                    label: t.hook || 'Hook',
+                    label: getTitle('topper/hook', 'Hook'),
                     items: [
                         'topper/hook',
                         'topper/hook/placeholderapi',
@@ -117,10 +130,10 @@ function getSidebar(locale) {
                         'topper/hook/luckperms',
                         'topper/hook/lastloginapi',
                     ],
-                    translations: getSidebarTranslations('hook')
+                    translations: getTitleTranslations('topper/hook')
                 },
                 {
-                    label: t.extra || 'Extra',
+                    label: getTitle('topper/extra', 'Extra'),
                     items: [
                         'topper/extra',
                         'topper/extra/provider',
@@ -131,50 +144,50 @@ function getSidebar(locale) {
                         'topper/extra/value_display',
                         'topper/extra/migrate_v2',
                     ],
-                    translations: getSidebarTranslations('extra')
+                    translations: getTitleTranslations('topper/extra')
                 }
             ],
-            translations: getSidebarTranslations('topper')
+            translations: getTitleTranslations('topper')
         },
         {
-            label: t.timedTopper || 'TimedTopper',
+            label: getTitle('timedtopper', 'TimedTopper'),
             items: [
                 'timedtopper/config',
                 {
-                    label: t.holder || 'Holder',
+                    label: getTitle('timedtopper/holder', 'Holder'),
                     items: [
                         'timedtopper/holder',
                         'timedtopper/holder/link',
                         'timedtopper/holder/time',
                         'timedtopper/holder/reward',
                     ],
-                    translations: getSidebarTranslations('holder')
+                    translations: getTitleTranslations('timedtopper/holder')
                 },
                 'timedtopper/query',
                 {
-                    label: t.hook || 'Hook',
+                    label: getTitle('timedtopper/hook', 'Hook'),
                     items: [
                         'timedtopper/hook',
                         'timedtopper/hook/luckperms',
                         'timedtopper/hook/placeholderapi',
                     ],
-                    translations: getSidebarTranslations('hook')
+                    translations: getTitleTranslations('timedtopper/hook')
                 },
                 'timedtopper/api',
             ],
-            translations: getSidebarTranslations('timedTopper')
+            translations: getTitleTranslations('timedtopper')
         },
         {
-            label: t.groupTopper || 'GroupTopper',
+            label: getTitle('grouptopper', 'GroupTopper'),
             items: [
                 'grouptopper/config',
                 {
-                    label: t.holder || 'Holder',
+                    label: getTitle('grouptopper/holder', 'Holder'),
                     items: [
                         'grouptopper/holder',
                         'grouptopper/holder/link',
                         {
-                            label: t.setUpGroupSettings || 'Set up Group settings',
+                            label: getTitle('grouptopper/holder/group', 'Set up Group settings'),
                             items: [
                                 'grouptopper/holder/group',
                                 'grouptopper/holder/group/bentobox',
@@ -191,40 +204,40 @@ function getSidebar(locale) {
                                 'grouptopper/holder/group/superiorskyblock',
                                 'grouptopper/holder/group/towny',
                             ],
-                            translations: getSidebarTranslations('setUpGroupSettings')
+                            translations: getTitleTranslations('grouptopper/holder/group')
                         },
                         'grouptopper/holder/mode',
                     ],
-                    translations: getSidebarTranslations('holder')
+                    translations: getTitleTranslations('grouptopper/holder')
                 },
                 'grouptopper/query',
                 {
-                    label: t.hook || 'Hook',
+                    label: getTitle('grouptopper/hook', 'Hook'),
                     items: [
                         'grouptopper/hook',
                         'grouptopper/hook/luckperms',
                         'grouptopper/hook/placeholderapi',
                     ],
-                    translations: getSidebarTranslations('hook')
+                    translations: getTitleTranslations('grouptopper/hook')
                 },
             ],
-            translations: getSidebarTranslations('groupTopper')
+            translations: getTitleTranslations('grouptopper')
         },
         {
-            label: t.cachy || 'Cachy',
+            label: getTitle('cachy', 'Cachy'),
             items: [
                 'cachy/config',
                 'cachy/query',
                 {
-                    label: t.hook || 'Hook',
+                    label: getTitle('cachy/hook', 'Hook'),
                     items: [
                         'cachy/hook',
                         'cachy/hook/placeholderapi',
                     ],
-                    translations: getSidebarTranslations('hook')
+                    translations: getTitleTranslations('cachy/hook')
                 }
             ],
-            translations: getSidebarTranslations('cachy')
+            translations: getTitleTranslations('cachy')
         }
     ];
 }
@@ -265,7 +278,7 @@ export default defineConfig({
             components: {
                 Head: "./src/components/starlight/Head.astro",
             },
-			sidebar: getSidebar('en'),
+			sidebar: getSidebar(),
 		}),
 	],
 });
