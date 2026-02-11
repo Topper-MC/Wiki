@@ -6,7 +6,7 @@
           <Input
             :id="field.name"
             :model-value="state.value"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -19,7 +19,7 @@
           <Input
             :id="field.name"
             :model-value="state.value"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -31,7 +31,7 @@
         <Checkbox
           :id="field.name"
           :model-value="state.value"
-          @update:model-value="field.handleChange"
+          @update:model-value="(val) => field.handleChange(val)"
           description="Whether the placeholder should be parsed only for players who are currently online in the server. When enabled, the plugin parses placeholder values for online players. When disabled, it parses for all players, including offline."
         >
           Parse for online players only
@@ -40,17 +40,16 @@
     </form.Field>
   </form>
 
-  <div class="language-yaml">
-    <pre><code>{{ code }}</code></pre>
-  </div>
+  <CodeBlock :code="code" lang="yaml" />
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useForm, useStore } from '@tanstack/vue-form';
-import Input from '../ui/Input.vue';
-import Checkbox from '../ui/Checkbox.vue';
-import FieldWrapper from '../ui/FieldWrapper.vue';
+import Input from '~/components/ui/Input.vue';
+import Checkbox from '~/components/ui/Checkbox.vue';
+import FieldWrapper from '~/components/ui/FieldWrapper.vue';
+import CodeBlock from '~/components/ui/CodeBlock.vue';
 
 const form = useForm({
   defaultValues: {
@@ -71,15 +70,3 @@ const code = computed(() => {
     online: ${values.online}`;
 });
 </script>
-
-<style scoped>
-.language-yaml {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    overflow-x: auto;
-    font-family: monospace;
-}
-</style>

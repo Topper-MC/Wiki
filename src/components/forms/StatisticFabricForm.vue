@@ -6,7 +6,7 @@
           <Input
             :id="field.name"
             :model-value="state.value"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -19,7 +19,7 @@
           <Input
             :id="field.name"
             :model-value="state.value"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -32,7 +32,7 @@
            <div v-for="(item, index) in state.value" :key="index" class="list-item">
             <Input
               :model-value="item"
-              @update:model-value="(val) => field.handleChange((old) => old.map((v, i) => i === index ? val : v))"
+              @update:model-value="(val) => field.handleChange((old) => old.map((v, i) => i === index ? val as string : v))"
             />
             <button type="button" @click="field.removeValue(index)" class="remove-btn">Remove</button>
           </div>
@@ -42,16 +42,15 @@
     </form.Field>
   </form>
 
-  <div class="language-json">
-    <pre><code>{{ code }}</code></pre>
-  </div>
+  <CodeBlock :code="code" lang="json" />
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useForm, useStore } from '@tanstack/vue-form';
-import Input from '../ui/Input.vue';
-import FieldWrapper from '../ui/FieldWrapper.vue';
+import Input from '~/components/ui/Input.vue';
+import FieldWrapper from '~/components/ui/FieldWrapper.vue';
+import CodeBlock from '~/components/ui/CodeBlock.vue';
 
 const form = useForm({
   defaultValues: {
@@ -89,16 +88,6 @@ const code = computed(() => {
 </script>
 
 <style scoped>
-.language-json {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    overflow-x: auto;
-    font-family: monospace;
-}
-
 .list-item {
   display: flex;
   gap: 0.5rem;

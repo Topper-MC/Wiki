@@ -1,12 +1,12 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="form-container">
+  <form @submit.prevent="form.handleSubmit" class="form-container">
     <form.Field name="holder">
       <template #default="{ field, state }">
         <FieldWrapper label="Holder Name" description="The name of the Holder used in examples" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -20,7 +20,7 @@
             :id="field.name"
             type="number"
             :model-value="state.value"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(String(val))"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -31,9 +31,9 @@
 
 <script setup lang="ts">
 import { useForm, useStore } from '@tanstack/vue-form';
-import { holder, position } from '../../stores/queryStore';
-import Input from '../ui/Input.vue';
-import FieldWrapper from '../ui/FieldWrapper.vue';
+import { holder, position } from '~/stores/queryStore';
+import Input from '~/components/ui/Input.vue';
+import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import { watch } from 'vue';
 
 const form = useForm({

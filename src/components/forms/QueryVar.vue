@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { useStore } from '@nanostores/vue';
-import { holder, position } from '../../stores/queryStore';
+import { holder, position } from '~/stores/queryStore';
 
 const props = defineProps<{
   field: 'holder' | 'position';

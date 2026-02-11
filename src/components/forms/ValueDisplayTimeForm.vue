@@ -6,7 +6,7 @@
           <Input
             :id="field.name"
             :model-value="state.value"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -20,7 +20,7 @@
             :id="field.name"
             :model-value="state.value"
             :options="typeOptions"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -34,7 +34,7 @@
             :id="field.name"
             :model-value="state.value"
             :options="unitOptions"
-            @update:model-value="field.handleChange"
+            @update:model-value="(val) => field.handleChange(val as string)"
             @blur="field.handleBlur"
           />
         </FieldWrapper>
@@ -42,17 +42,16 @@
     </form.Field>
   </form>
 
-  <div class="language-text">
-    <pre><code>{{ code }}</code></pre>
-  </div>
+  <CodeBlock :code="code" lang="text" />
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useForm, useStore } from '@tanstack/vue-form';
-import Input from '../ui/Input.vue';
-import Select from '../ui/Select.vue';
-import FieldWrapper from '../ui/FieldWrapper.vue';
+import Input from '~/components/ui/Input.vue';
+import Select from '~/components/ui/Select.vue';
+import FieldWrapper from '~/components/ui/FieldWrapper.vue';
+import CodeBlock from '~/components/ui/CodeBlock.vue';
 
 const typeOptions = [
   { label: 'duration', value: 'duration' },
@@ -90,15 +89,3 @@ const code = computed(() => {
 <holder>;top_value;<position>;${format}`;
 });
 </script>
-
-<style scoped>
-.language-text {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    overflow-x: auto;
-    font-family: monospace;
-}
-</style>

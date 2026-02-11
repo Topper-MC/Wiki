@@ -9,7 +9,7 @@
                  <Input
                    placeholder="Number (e.g., 1000)"
                    :model-value="numberState.value"
-                   @update:model-value="numberField.handleChange"
+                   @update:model-value="(val) => numberField.handleChange(val as string)"
                    @blur="numberField.handleBlur"
                    class="flex-1"
                  />
@@ -20,7 +20,7 @@
                  <Input
                    placeholder="Suffix (e.g., k)"
                    :model-value="suffixState.value"
-                   @update:model-value="suffixField.handleChange"
+                   @update:model-value="(val) => suffixField.handleChange(val as string)"
                    @blur="suffixField.handleBlur"
                    class="flex-1"
                  />
@@ -34,16 +34,15 @@
     </form.Field>
   </form>
 
-  <div class="language-text">
-    <pre><code>{{ code }}</code></pre>
-  </div>
+  <CodeBlock :code="code" lang="text" />
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useForm, useStore } from '@tanstack/vue-form';
-import Input from '../ui/Input.vue';
-import FieldWrapper from '../ui/FieldWrapper.vue';
+import Input from '~/components/ui/Input.vue';
+import FieldWrapper from '~/components/ui/FieldWrapper.vue';
+import CodeBlock from '~/components/ui/CodeBlock.vue';
 
 const form = useForm({
   defaultValues: {
@@ -72,16 +71,6 @@ const code = computed(() => {
 </script>
 
 <style scoped>
-.language-text {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    overflow-x: auto;
-    font-family: monospace;
-}
-
 .list-item {
   display: flex;
   gap: 0.5rem;
