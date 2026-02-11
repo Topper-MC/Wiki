@@ -2,12 +2,12 @@
   <form class="form-container">
     <form.Field name="customGroups" mode="array">
       <template #default="{ field, state }">
-        <FieldWrapper label="Custom Groups" description="Define custom number and suffix pairs (leave empty to use default groups)">
+        <FieldWrapper :label="t('customGroups')" :description="t('customGroupsDescription')">
            <div v-for="(item, index) in state.value" :key="index" class="list-item">
              <form.Field :name="`customGroups[${index}].number`">
                <template #default="{ field: numberField, state: numberState }">
                  <Input
-                   placeholder="Number (e.g., 1000)"
+                   :placeholder="t('numberExample')"
                    :model-value="numberState.value"
                    @update:model-value="(val) => numberField.handleChange(val as string)"
                    @blur="numberField.handleBlur"
@@ -18,7 +18,7 @@
              <form.Field :name="`customGroups[${index}].suffix`">
                <template #default="{ field: suffixField, state: suffixState }">
                  <Input
-                   placeholder="Suffix (e.g., k)"
+                   :placeholder="t('suffixExample')"
                    :model-value="suffixState.value"
                    @update:model-value="(val) => suffixField.handleChange(val as string)"
                    @blur="suffixField.handleBlur"
@@ -26,9 +26,9 @@
                  />
                </template>
              </form.Field>
-            <button type="button" @click="field.removeValue(index)" class="remove-btn">Remove</button>
+            <button type="button" @click="field.removeValue(index)" class="remove-btn">{{ t('remove') }}</button>
           </div>
-          <button type="button" @click="field.pushValue({ number: '', suffix: '' })" class="add-btn">+ Add Group</button>
+          <button type="button" @click="field.pushValue({ number: '', suffix: '' })" class="add-btn">{{ t('addGroup') }}</button>
         </FieldWrapper>
       </template>
     </form.Field>
@@ -43,6 +43,9 @@ import { useForm, useStore } from '@tanstack/vue-form';
 import Input from '~/components/ui/Input.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import CodeBlock from '~/components/ui/CodeBlock.vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const form = useForm({
   defaultValues: {

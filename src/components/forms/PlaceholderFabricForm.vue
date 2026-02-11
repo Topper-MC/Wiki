@@ -2,7 +2,7 @@
   <form class="form-container">
     <form.Field name="name">
       <template #default="{ field, state }">
-        <FieldWrapper label="Holder Name" description="The name of the holder" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('holderName')" :description="t('holderDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -15,7 +15,7 @@
 
     <form.Field name="placeholder">
       <template #default="{ field, state }">
-        <FieldWrapper label="Placeholder" description="The placeholder used to get the value" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('placeholder')" :description="t('placeholderDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -36,6 +36,9 @@ import { useForm, useStore } from '@tanstack/vue-form';
 import Input from '~/components/ui/Input.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import CodeBlock from '~/components/ui/CodeBlock.vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const form = useForm({
   defaultValues: {

@@ -2,7 +2,7 @@
   <form class="form-container">
     <form.Field name="name">
       <template #default="{ field, state }">
-        <FieldWrapper label="Holder Name" description="The name of the holder" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('holderName')" :description="t('holderDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -15,7 +15,7 @@
 
     <form.Field name="placeholder">
       <template #default="{ field, state }">
-        <FieldWrapper label="Placeholder" description="The placeholder used to get the value" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('placeholder')" :description="t('valuePlaceholderDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -32,9 +32,9 @@
           :id="field.name"
           :model-value="state.value"
           @update:model-value="(val) => field.handleChange(val)"
-          description="Whether the placeholder should be parsed only for players who are currently online in the server. When enabled, the plugin parses placeholder values for online players. When disabled, it parses for all players, including offline."
+          :description="t('onlineDescription')"
         >
-          Parse for online players only
+          {{ t('onlineLabel') }}
         </Checkbox>
       </template>
     </form.Field>
@@ -50,6 +50,9 @@ import Input from '~/components/ui/Input.vue';
 import Checkbox from '~/components/ui/Checkbox.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import CodeBlock from '~/components/ui/CodeBlock.vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const form = useForm({
   defaultValues: {

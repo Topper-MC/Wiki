@@ -2,7 +2,7 @@
   <form class="form-container">
     <form.Field name="name">
       <template #default="{ field, state }">
-        <FieldWrapper label="Holder Name" description="The name of the holder" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('holderName')" :description="t('holderDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -15,7 +15,7 @@
 
     <form.Field name="statistic">
       <template #default="{ field, state }">
-        <FieldWrapper label="Statistic" description="The name of the statistic" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('statistic')" :description="t('statisticDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -28,30 +28,30 @@
     
     <form.Field name="material" mode="array">
       <template #default="{ field, state }">
-        <FieldWrapper label="Material" description="The name of the material. Used for some statistics that require an item.">
+        <FieldWrapper :label="t('material')" :description="t('materialDescription')">
           <div v-for="(item, index) in state.value" :key="index" class="list-item">
             <Input
               :model-value="item"
               @update:model-value="(val) => field.handleChange((old) => old.map((v, i) => i === index ? val as string : v))"
             />
-            <button type="button" @click="field.removeValue(index)" class="remove-btn">Remove</button>
+            <button type="button" @click="field.removeValue(index)" class="remove-btn">{{ t('remove') }}</button>
           </div>
-          <button type="button" @click="field.pushValue('')" class="add-btn">+ Add Material</button>
+          <button type="button" @click="field.pushValue('')" class="add-btn">{{ t('addMaterial') }}</button>
         </FieldWrapper>
       </template>
     </form.Field>
 
     <form.Field name="entity" mode="array">
       <template #default="{ field, state }">
-        <FieldWrapper label="Entity" description="The name of the entity. Used for some statistics that require an entity.">
+        <FieldWrapper :label="t('entity')" :description="t('entityDescription')">
            <div v-for="(item, index) in state.value" :key="index" class="list-item">
             <Input
               :model-value="item"
               @update:model-value="(val) => field.handleChange((old) => old.map((v, i) => i === index ? val as string : v))"
             />
-            <button type="button" @click="field.removeValue(index)" class="remove-btn">Remove</button>
+            <button type="button" @click="field.removeValue(index)" class="remove-btn">{{ t('remove') }}</button>
           </div>
-          <button type="button" @click="field.pushValue('')" class="add-btn">+ Add Entity</button>
+          <button type="button" @click="field.pushValue('')" class="add-btn">{{ t('addEntity') }}</button>
         </FieldWrapper>
       </template>
     </form.Field>
@@ -66,6 +66,9 @@ import { useForm, useStore } from '@tanstack/vue-form';
 import Input from '~/components/ui/Input.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import CodeBlock from '~/components/ui/CodeBlock.vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const form = useForm({
   defaultValues: {

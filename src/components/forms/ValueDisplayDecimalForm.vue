@@ -2,7 +2,7 @@
   <form class="form-container">
     <form.Field name="decimalSeparator">
       <template #default="{ field, state }">
-        <FieldWrapper label="Decimal Separator" description="The character used to separate the integer part from the fractional part" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('decimalSeparator')" :description="t('decimalSeparatorDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -15,7 +15,7 @@
 
     <form.Field name="groupingSeparator">
       <template #default="{ field, state }">
-        <FieldWrapper label="Grouping Separator" description="The character used to separate groups of digits (leave empty to disable)" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('groupingSeparator')" :description="t('groupingSeparatorDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -28,7 +28,7 @@
 
     <form.Field name="groupingSize">
       <template #default="{ field, state }">
-        <FieldWrapper label="Grouping Size" description="The number of digits in each group" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('groupingSize')" :description="t('groupingSizeDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             type="number"
@@ -42,7 +42,7 @@
 
     <form.Field name="maximumFractionDigits">
       <template #default="{ field, state }">
-        <FieldWrapper label="Maximum Fraction Digits" description="The maximum number of digits in the fractional part (leave empty for unlimited)" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('maximumFractionDigits')" :description="t('maximumFractionDigitsDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             type="number"
@@ -64,6 +64,9 @@ import { useForm, useStore } from '@tanstack/vue-form';
 import Input from '~/components/ui/Input.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import CodeBlock from '~/components/ui/CodeBlock.vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const form = useForm({
   defaultValues: {

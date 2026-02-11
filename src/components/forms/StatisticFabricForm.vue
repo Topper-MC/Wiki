@@ -2,7 +2,7 @@
   <form class="form-container">
     <form.Field name="name">
       <template #default="{ field, state }">
-        <FieldWrapper label="Holder Name" description="The name of the holder" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('holderName')" :description="t('holderDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -15,7 +15,7 @@
 
     <form.Field name="statisticType">
       <template #default="{ field, state }">
-        <FieldWrapper label="Statistic Type" description="The type of the statistic (e.g., minecraft:custom, minecraft:mined, minecraft:killed)" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('statisticType')" :description="t('statisticTypeDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -28,15 +28,15 @@
 
     <form.Field name="statistic" mode="array">
       <template #default="{ field, state }">
-        <FieldWrapper label="Statistic" description="The name of the statistic">
+        <FieldWrapper :label="t('statistic')" :description="t('statisticDescription')">
            <div v-for="(item, index) in state.value" :key="index" class="list-item">
             <Input
               :model-value="item"
               @update:model-value="(val) => field.handleChange((old) => old.map((v, i) => i === index ? val as string : v))"
             />
-            <button type="button" @click="field.removeValue(index)" class="remove-btn">Remove</button>
+            <button type="button" @click="field.removeValue(index)" class="remove-btn">{{ t('remove') }}</button>
           </div>
-          <button type="button" @click="field.pushValue('')" class="add-btn">+ Add Statistic</button>
+          <button type="button" @click="field.pushValue('')" class="add-btn">{{ t('addStatistic') }}</button>
         </FieldWrapper>
       </template>
     </form.Field>
@@ -51,6 +51,9 @@ import { useForm, useStore } from '@tanstack/vue-form';
 import Input from '~/components/ui/Input.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import CodeBlock from '~/components/ui/CodeBlock.vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const form = useForm({
   defaultValues: {

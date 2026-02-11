@@ -2,7 +2,7 @@
   <form class="form-container">
     <form.Field name="pattern">
       <template #default="{ field, state }">
-        <FieldWrapper label="Pattern" description="The pattern describing the date and time format" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('pattern')" :description="t('patternDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -15,7 +15,7 @@
 
     <form.Field name="type">
       <template #default="{ field, state }">
-        <FieldWrapper label="Type" description="The type of the time: duration or time" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('type')" :description="t('typeDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Select
             :id="field.name"
             :model-value="state.value"
@@ -29,7 +29,7 @@
 
     <form.Field name="unit">
       <template #default="{ field, state }">
-        <FieldWrapper label="Unit" description="The unit of the time" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('unit')" :description="t('unitDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Select
             :id="field.name"
             :model-value="state.value"
@@ -52,6 +52,9 @@ import Input from '~/components/ui/Input.vue';
 import Select from '~/components/ui/Select.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import CodeBlock from '~/components/ui/CodeBlock.vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const typeOptions = [
   { label: 'duration', value: 'duration' },

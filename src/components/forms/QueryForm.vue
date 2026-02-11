@@ -2,7 +2,7 @@
   <form @submit.prevent="form.handleSubmit" class="form-container">
     <form.Field name="holder">
       <template #default="{ field, state }">
-        <FieldWrapper label="Holder Name" description="The name of the Holder used in examples" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('holderName')" :description="t('holderNameDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             :model-value="state.value"
@@ -15,7 +15,7 @@
 
     <form.Field name="position">
       <template #default="{ field, state }">
-        <FieldWrapper label="Position" description="The position used in examples" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
+        <FieldWrapper :label="t('holderName')" :description="t('holderNameDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
           <Input
             :id="field.name"
             type="number"
@@ -35,6 +35,9 @@ import { holder, position } from '~/stores/queryStore';
 import Input from '~/components/ui/Input.vue';
 import FieldWrapper from '~/components/ui/FieldWrapper.vue';
 import { watch } from 'vue';
+import { useClientI18n } from '~/utils/i18n';
+
+const { t } = useClientI18n();
 
 const form = useForm({
   defaultValues: {
