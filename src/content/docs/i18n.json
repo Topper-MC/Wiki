@@ -17,8 +17,6 @@
     "statisticTypeDescription": "The type of the statistic (e.g., minecraft:custom, minecraft:mined, minecraft:killed)",
     "placeholder": "Placeholder",
     "placeholderDescription": "The placeholder to check",
-    "offlineCheck": "Offline check",
-    "offlineCheckDescription": "Check if the player is offline",
     "decimalSeparator": "Decimal Separator",
     "decimalSeparatorDescription": "The character used to separate the integer part from the fractional part",
     "groupingSeparator": "Grouping Separator",

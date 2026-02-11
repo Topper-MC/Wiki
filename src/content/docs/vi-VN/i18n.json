@@ -17,8 +17,6 @@
     "statisticTypeDescription": "Loại thống kê (ví dụ: minecraft:custom, minecraft:mined, minecraft:killed)",
     "placeholder": "Placeholder",
     "placeholderDescription": "Placeholder để kiểm tra",
-    "offlineCheck": "Kiểm tra ngoại tuyến",
-    "offlineCheckDescription": "Kiểm tra nếu người chơi đang ngoại tuyến",
     "decimalSeparator": "Dấu phân cách thập phân",
     "decimalSeparatorDescription": "Ký tự được sử dụng để phân tách phần nguyên và phần thập phân",
     "groupingSeparator": "Dấu phân cách nhóm",
