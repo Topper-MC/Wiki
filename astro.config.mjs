@@ -6,6 +6,7 @@ import vue from '@astrojs/vue';
 import starlightUtils from "@lorenzo_lewis/starlight-utils";
 import fs from 'node:fs';
 import path from 'node:path';
+import yaml from 'js-yaml';
 
 // Dynamically load translations
 const docsDir = './src/content/docs';
@@ -80,8 +81,13 @@ function getTitle(slug, fallback) {
         const filePath = path.join(docsDir, slug, `index.${ext}`);
         if (fs.existsSync(filePath)) {
             const content = fs.readFileSync(filePath, 'utf-8');
-            const match = content.match(/^---\s*\n[\s\S]*?^title:\s*(.+)\s*$/m);
-            if (match) return match[1].trim().replace(/^['"]|['"]$/g, '');
+            const fmMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
+            if (fmMatch) {
+                try {
+                    const frontmatter = yaml.load(fmMatch[1]);
+                    if (frontmatter?.title) return frontmatter.title;
+                } catch { /* ignore parse errors */ }
+            }
         }
     }
     return fallback || slug;
