@@ -1,0 +1,48 @@
+---
+title: Topper
+hero:
+  title: Topper
+  tagline: Một tiện ích tạo bảng xếp hạng khác cho máy chủ Minecraft
+  image:
+    file: ~/assets/topper/logo.svg
+  actions:
+    - text: Tải về
+      link: https://modrinth.com/plugin/topper-lb
+      variant: primary
+      icon: right-arrow
+    - text: Khám phá
+      link: ./quickstart/
+      variant: secondary
+      icon: external
+template: splash
+prev: false
+next: false
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="Gọn nhẹ" icon="star">
+    Ít tiêu tốn tài nguyên và hiệu suất cao
+  </Card>
+
+  <Card title="Xếp hạng" icon="star">
+    Hệ thống theo dõi và xếp hạng người chơi
+  </Card>
+
+  <Card title="Lưu trữ" icon="star">
+    Hỗ trợ lưu trữ dưới dạng YAML, JSON, SQLITE & MYSQL
+  </Card>
+
+  <Card title="Placeholder" icon="star">
+    Hỗ trợ Placeholder để sử dụng cho các tiện ích khác
+  </Card>
+
+  <Card title="Gần gũi với tất cả máy chủ" icon="star">
+    Hoạt động trơn tru cho tất cả máy chủ từ nhỏ đến lớn
+  </Card>
+
+  <Card title="Liên kết" icon="star">
+    Liên kết với PlaceholderAPI, MiniPlaceholders, LuckPerms,...
+  </Card>
+</CardGrid>
