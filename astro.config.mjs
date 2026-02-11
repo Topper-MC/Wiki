@@ -266,8 +266,7 @@ export default defineConfig({
                 })
             ],
             logo: {
-                src: 'src/assets/topper/logo.svg',
-                replacesTitle: true
+                src: 'src/assets/topper/logo.svg'
             },
             defaultLocale: 'root',
             locales: starlightLocales,
