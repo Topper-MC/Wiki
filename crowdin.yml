@@ -8,12 +8,12 @@ files:
   - source: /**/*.md
     translation: /%locale%/**/%original_file_name%
     ignore:
-      - /??/**
+      - /%locale%/**
 
   - source: /**/*.mdx
     translation: /%locale%/**/%original_file_name%
     ignore:
-      - /??/**
+      - /%locale%/**
 
   # i18n JSON (UI translations)
   - source: /i18n.json
