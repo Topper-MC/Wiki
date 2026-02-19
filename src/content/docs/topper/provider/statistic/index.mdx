@@ -3,8 +3,7 @@ title: Statistic
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
-import StatisticSpigotForm from '~/components/forms/StatisticSpigotForm.vue';
-import StatisticFabricForm from '~/components/forms/StatisticFabricForm.vue';
+import StatisticForm from '~/components/forms/StatisticForm.vue';
 
 
 
@@ -117,9 +116,9 @@ entity:
 
 <Tabs syncKey="platform">
   <TabItem label="SpigotMC">
-    <StatisticSpigotForm client:load />
+    <StatisticForm platform="spigot" client:load />
   </TabItem>
   <TabItem label="FabricMC">
-    <StatisticFabricForm client:load />
+    <StatisticForm platform="fabric" client:load />
   </TabItem>
 </Tabs>

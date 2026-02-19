@@ -3,8 +3,7 @@ title: MiniPlaceholder
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
-import MiniPlaceholderSpigotForm from '~/components/forms/MiniPlaceholderSpigotForm.vue';
-import MiniPlaceholderFabricForm from '~/components/forms/MiniPlaceholderFabricForm.vue';
+import MiniPlaceholderForm from '~/components/forms/MiniPlaceholderForm.vue';
 
 
 
@@ -56,9 +55,9 @@ holders:
 
 <Tabs syncKey="platform">
   <TabItem label="SpigotMC">
-    <MiniPlaceholderSpigotForm client:load />
+    <MiniPlaceholderForm platform="spigot" client:load />
   </TabItem>
   <TabItem label="FabricMC">
-    <MiniPlaceholderFabricForm client:load />
+    <MiniPlaceholderForm platform="fabric" client:load />
   </TabItem>
 </Tabs>

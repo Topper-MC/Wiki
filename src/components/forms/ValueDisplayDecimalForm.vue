@@ -1,97 +1,34 @@
 <template>
-  <form class="form-container">
-    <form.Field name="decimalSeparator">
-      <template #default="{ field, state }">
-        <FieldWrapper :label="t('decimalSeparator')" :description="t('decimalSeparatorDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
-          <Input
-            :id="field.name"
-            :model-value="state.value"
-            @update:model-value="(val) => field.handleChange(val as string)"
-            @blur="field.handleBlur"
-          />
-        </FieldWrapper>
-      </template>
-    </form.Field>
-
-    <form.Field name="groupingSeparator">
-      <template #default="{ field, state }">
-        <FieldWrapper :label="t('groupingSeparator')" :description="t('groupingSeparatorDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
-          <Input
-            :id="field.name"
-            :model-value="state.value"
-            @update:model-value="(val) => field.handleChange(val as string)"
-            @blur="field.handleBlur"
-          />
-        </FieldWrapper>
-      </template>
-    </form.Field>
-
-    <form.Field name="groupingSize">
-      <template #default="{ field, state }">
-        <FieldWrapper :label="t('groupingSize')" :description="t('groupingSizeDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
-          <Input
-            :id="field.name"
-            type="number"
-            :model-value="state.value"
-            @update:model-value="(val) => field.handleChange(val as string)"
-            @blur="field.handleBlur"
-          />
-        </FieldWrapper>
-      </template>
-    </form.Field>
-
-    <form.Field name="maximumFractionDigits">
-      <template #default="{ field, state }">
-        <FieldWrapper :label="t('maximumFractionDigits')" :description="t('maximumFractionDigitsDescription')" :error="state.meta.errors ? state.meta.errors.join(', ') : undefined">
-          <Input
-            :id="field.name"
-            type="number"
-            :model-value="state.value"
-            @update:model-value="(val) => field.handleChange(val as string)"
-            @blur="field.handleBlur"
-          />
-        </FieldWrapper>
-      </template>
-    </form.Field>
-  </form>
-
-  <CodeBlock :code="code" lang="text" />
+  <HolderForm :config="config" />
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useForm, useStore } from '@tanstack/vue-form';
-import Input from '~/components/ui/Input.vue';
-import FieldWrapper from '~/components/ui/FieldWrapper.vue';
-import CodeBlock from '~/components/ui/CodeBlock.vue';
-import { useClientI18n } from '~/utils/i18n';
+import HolderForm from '~/components/forms/HolderForm.vue';
+import type { FormConfig } from '~/utils/formTypes';
 
-const { t } = useClientI18n();
-
-const form = useForm({
-  defaultValues: {
+const config: FormConfig = {
+  fields: [
+    { type: 'text', name: 'decimalSeparator', labelKey: 'decimalSeparator', descriptionKey: 'decimalSeparatorDescription' },
+    { type: 'text', name: 'groupingSeparator', labelKey: 'groupingSeparator', descriptionKey: 'groupingSeparatorDescription' },
+    { type: 'text', name: 'groupingSize', labelKey: 'groupingSize', descriptionKey: 'groupingSizeDescription', inputType: 'number' },
+    { type: 'text', name: 'maximumFractionDigits', labelKey: 'maximumFractionDigits', descriptionKey: 'maximumFractionDigitsDescription', inputType: 'number' },
+  ],
+  defaults: {
     decimalSeparator: '.',
     groupingSeparator: ',',
     groupingSize: '3',
     maximumFractionDigits: '2',
   },
-});
-
-const formState = useStore(form.store);
-
-const code = computed(() => {
-    const values = formState.value.values;
+  codeLang: 'text',
+  generateCode: (v) => {
     const parts = [];
-    if (values.decimalSeparator) parts.push(`decimalSeparator=${values.decimalSeparator}`);
-    if (values.groupingSeparator) parts.push(`groupingSeparator=${values.groupingSeparator}`);
-    if (values.groupingSize) parts.push(`groupingSize=${values.groupingSize}`);
-    if (values.maximumFractionDigits) parts.push(`maximumFractionDigits=${values.maximumFractionDigits}`);
-    
-    const config = parts.join('&');
-    const format = `decimal:${config}`;
-    
-    return `{value_${format}}
-<holder>;value;${format}
-<holder>;top_value;<position>;${format}`;
-});
+    if (v.decimalSeparator) parts.push(`decimalSeparator=${v.decimalSeparator}`);
+    if (v.groupingSeparator) parts.push(`groupingSeparator=${v.groupingSeparator}`);
+    if (v.groupingSize) parts.push(`groupingSize=${v.groupingSize}`);
+    if (v.maximumFractionDigits) parts.push(`maximumFractionDigits=${v.maximumFractionDigits}`);
+    const cfg = parts.join('&');
+    const format = `decimal:${cfg}`;
+    return `{value_${format}}\n<holder>;value;${format}\n<holder>;top_value;<position>;${format}`;
+  },
+};
 </script>
