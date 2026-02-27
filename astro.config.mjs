@@ -231,7 +231,7 @@ export default defineConfig({
         vue(),
 		starlight({
 			title: siteTitle,
-            favicon: 'src/assets/topper/logo.svg',
+            favicon: '/favicon.svg',
             editLink: {
                 baseUrl: "https://github.com/Topper-MC/Wiki/edit/main/"
             },
