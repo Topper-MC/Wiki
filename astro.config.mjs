@@ -7,7 +7,6 @@ import starlightUtils from "@lorenzo_lewis/starlight-utils";
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
-import starlightCoolerCredit from "starlight-cooler-credit";
 
 // Dynamically load translations
 const docsDir = './src/content/docs';
@@ -241,14 +240,6 @@ export default defineConfig({
                     multiSidebar: {
                         switcherStyle: "dropdown"
                     }
-                }),
-                starlightCoolerCredit({
-                    credit: {
-                        title: "Help translating this page",
-                        href: "https://crowdin.com/project/topper-wiki/",
-                        description: "You can help by clicking here and going to the Crowdin project."
-                    },
-                    showImage: false
                 })
             ],
             logo: {
