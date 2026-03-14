@@ -43,6 +43,22 @@ Available types for `cron-type` include:
 - `UNIX`: Follow the UNIX cron expression. Go to [this page](https://crontab.guru/) to generate your own `cron` expression
 - `SPRING`: The cron format from Spring Framework
 - `SPRING53`: The cron format from Spring Framework, starting from version 5.3
+- `SIMPLE`: Set the duration for the next reset (e.g. `30s`, `1m 30s`).
+
+#### `SIMPLE` Type
+
+The `SIMPLE` type allows you to set the duration for the next reset. Instead of setting a specific time for the reset, you set the duration from the last reset.
+
+The supported time unit range:
+- `s`: Seconds
+- `m`: Minutes
+- `h`: Hours
+- `d`: Days
+- `w`: Weeks
+- `M`: Months
+- `y`: Years
+
+Example format: `30s`, `1m 30s`, `1h 30m`, `1d 12h`.
 
 ## Example
 
@@ -65,4 +81,14 @@ holders:
     top: jump
     cron-type: UNIX
     cron: 0 0 * * *
+  # The holder that resets every 30 seconds
+  jump_simple_time:
+    top: jump
+    cron-type: SIMPLE
+    cron: 30s
+  # The holder that resets every 1 minute 30 seconds
+  jump_simple_time_combined:
+    top: jump
+    cron-type: SIMPLE
+    cron: 1m 30s
 ```
