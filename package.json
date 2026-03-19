@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.38.1",
-    "@astrojs/vue": "^5.1.4",
+    "@astrojs/vue": "^6.0.1",
     "@lorenzo_lewis/starlight-utils": "^0.3.2",
     "@nanostores/vue": "^1.0.1",
     "@tanstack/vue-form": "^1.28.5",
