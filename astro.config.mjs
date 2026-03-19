@@ -7,6 +7,7 @@ import starlightUtils from "@lorenzo_lewis/starlight-utils";
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import {viewTransitions} from "astro-vtbot/starlight-view-transitions";
 
 // Dynamically load translations
 const docsDir = './src/content/docs';
@@ -240,7 +241,8 @@ export default defineConfig({
                     multiSidebar: {
                         switcherStyle: "dropdown"
                     }
-                })
+                }),
+                viewTransitions(),
             ],
             logo: {
                 src: 'src/assets/topper/logo.svg'
@@ -257,9 +259,6 @@ export default defineConfig({
             customCss: [
                 // './src/styles/custom.css', // If we have one
             ],
-            components: {
-                Head: "./src/components/starlight/Head.astro",
-            },
 			sidebar: getSidebar(),
 		}),
 	],
