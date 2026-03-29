@@ -289,6 +289,7 @@ holders:
 
 ```yaml
 type: towny
+towny-type: <TOWN/NATION> # The type of the town to get, TOWN for the town of the player, NATION for the capital of the nation of the player
 ```
 
 ### Example
@@ -299,4 +300,5 @@ holders:
         top: jump
 
         type: towny
+        towny-type: TOWN
 ```
