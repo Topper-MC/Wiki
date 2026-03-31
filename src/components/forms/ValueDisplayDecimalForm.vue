@@ -1,9 +1,14 @@
 <template>
-  <HolderForm :config="config" />
+  <HolderForm :config="config">
+    <template #output="{ values }">
+      <ValueDisplayOutput :code="getFormat(values)" />
+    </template>
+  </HolderForm>
 </template>
 
 <script setup lang="ts">
 import HolderForm from '~/components/forms/HolderForm.vue';
+import ValueDisplayOutput from '~/components/forms/ValueDisplayOutput.vue';
 import type { FormConfig } from '~/utils/formTypes';
 
 const config: FormConfig = {
@@ -19,16 +24,15 @@ const config: FormConfig = {
     groupingSize: '3',
     maximumFractionDigits: '2',
   },
-  codeLang: 'text',
-  generateCode: (v) => {
-    const parts = [];
-    if (v.decimalSeparator) parts.push(`decimalSeparator=${v.decimalSeparator}`);
-    if (v.groupingSeparator) parts.push(`groupingSeparator=${v.groupingSeparator}`);
-    if (v.groupingSize) parts.push(`groupingSize=${v.groupingSize}`);
-    if (v.maximumFractionDigits) parts.push(`maximumFractionDigits=${v.maximumFractionDigits}`);
-    const cfg = parts.join('&');
-    const format = `decimal:${cfg}`;
-    return `{value_${format}}\n<holder>;value;${format}\n<holder>;top_value;<position>;${format}`;
-  },
+};
+
+const getFormat = (v: any) => {
+  const parts = [];
+  if (v.decimalSeparator) parts.push(`decimalSeparator=${v.decimalSeparator}`);
+  if (v.groupingSeparator) parts.push(`groupingSeparator=${v.groupingSeparator}`);
+  if (v.groupingSize) parts.push(`groupingSize=${v.groupingSize}`);
+  if (v.maximumFractionDigits) parts.push(`maximumFractionDigits=${v.maximumFractionDigits}`);
+  const cfg = parts.join('&');
+  return `decimal:${cfg}`;
 };
 </script>

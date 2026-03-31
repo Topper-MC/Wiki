@@ -23,8 +23,8 @@ export type FormConfig = {
   fields: FieldDef[];
   /** Default values for all form fields */
   defaults: Record<string, any>;
-  /** Language for the output code block (e.g. 'yaml', 'json', 'text') */
-  codeLang: string;
-  /** Converts current form values into the output code string */
-  generateCode: (values: Record<string, any>) => string;
+  /** Language for the output code block (if used as default output type) */
+  codeLang?: string;
+  /** Converts current form values into the output code string OR the format string */
+  generateCode?: (values: Record<string, any>) => string;
 };

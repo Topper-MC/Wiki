@@ -1,9 +1,14 @@
 <template>
-  <HolderForm :config="config" />
+  <HolderForm :config="config">
+    <template #output="{ values }">
+      <ValueDisplayOutput :code="getFormat(values)" />
+    </template>
+  </HolderForm>
 </template>
 
 <script setup lang="ts">
 import HolderForm from '~/components/forms/HolderForm.vue';
+import ValueDisplayOutput from '~/components/forms/ValueDisplayOutput.vue';
 import type { FormConfig } from '~/utils/formTypes';
 
 const config: FormConfig = {
@@ -31,11 +36,10 @@ const config: FormConfig = {
     },
   ],
   defaults: { pattern: 'HH:mm:ss', type: 'duration', unit: 'seconds' },
-  codeLang: 'text',
-  generateCode: (v) => {
-    const cfg = `pattern=${v.pattern}&type=${v.type}&unit=${v.unit}`;
-    const format = `time:${cfg}`;
-    return `{value_${format}}\n<holder>;value;${format}\n<holder>;top_value;<position>;${format}`;
-  },
+};
+
+const getFormat = (v: any) => {
+  const cfg = `pattern=${v.pattern}&type=${v.type}&unit=${v.unit}`;
+  return `time:${cfg}`;
 };
 </script>

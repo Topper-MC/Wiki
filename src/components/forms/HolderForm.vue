@@ -71,7 +71,9 @@
     </template>
   </form>
 
-  <CodeBlock :code="code" :lang="config.codeLang" />
+  <slot name="output" :code="code" :values="formState.values">
+    <CodeBlock v-if="config.generateCode" :code="code" :lang="config.codeLang" />
+  </slot>
 </template>
 
 <script setup lang="ts">
@@ -94,7 +96,7 @@ const props = defineProps<{
 const config = props.config;
 const form = useForm({ defaultValues: config.defaults });
 const formState = useStore(form.store);
-const code = computed(() => config.generateCode(formState.value.values));
+const code = computed(() => config.generateCode ? config.generateCode(formState.value.values) : '');
 </script>
 
 <style scoped>
