@@ -25,7 +25,7 @@ gamemode: <gamemode> # the name of the gamemode
 
 ### Example
 
-```yaml
+```yaml {5,6}
 holders:
     jump_group:
         top: jump
@@ -51,7 +51,7 @@ type: betterteams
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -72,7 +72,7 @@ type: factionsbridge
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -93,7 +93,7 @@ type: factionsuuid
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -114,7 +114,7 @@ type: husktowns
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -136,7 +136,7 @@ kingdoms-type: <KINGDOM/NATION> # The type of the kingdoms to get, KINGDOM for t
 
 ### Example
 
-```yaml
+```yaml {5,6}
 holders:
     jump_group:
         top: jump
@@ -159,7 +159,7 @@ lands-type: <LAND/NATION> # The type of the kingdoms to get, KINGDOM for the kin
 
 ### Example
 
-```yaml
+```yaml {5,6}
 holders:
     jump_group:
         top: jump
@@ -181,7 +181,7 @@ type: mcmmo
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -202,7 +202,7 @@ type: parties
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -227,7 +227,7 @@ online: <true/false> # Whether or not to handle the value for online players onl
 
 ### Example
 
-```yaml
+```yaml {5-8}
 holders:
     jump_group:
         top: jump
@@ -251,7 +251,7 @@ type: simpleclans
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -272,7 +272,7 @@ type: superiorskyblock
 
 ### Example
 
-```yaml
+```yaml {5}
 holders:
     jump_group:
         top: jump
@@ -294,7 +294,7 @@ towny-type: <TOWN/NATION> # The type of the town to get, TOWN for the town of th
 
 ### Example
 
-```yaml
+```yaml {5,6}
 holders:
     jump_group:
         top: jump

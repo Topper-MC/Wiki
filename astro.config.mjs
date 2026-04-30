@@ -182,6 +182,7 @@ function getSidebar() {
         {
             label: getTitle('grouptopper', 'GroupTopper'),
             items: [
+                'grouptopper/installation',
                 'grouptopper/config',
                 {
                     label: getTitle('grouptopper/holder', 'Holder'),
