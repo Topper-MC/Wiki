@@ -86,6 +86,41 @@ holders:
   </TabItem>
 </Tabs>
 
+## Default Value Display
+
+You can set a default [Value Display](../value_display/) that will be applied to all the queries by setting the `default-value-display` setting.
+
+<Tabs syncKey="platform">
+  <TabItem label="SpigotMC">
+
+
+```yaml {5}
+holders:
+  jump:
+    type: statistic
+    statistic: jump
+    default-value-display: "decimal:groupingSeparator=,&groupingSize=3&maximumFractionDigits=0"
+```
+
+  </TabItem>
+  <TabItem label="FabricMC">
+
+
+```jsonc {6}
+{
+  "holders": {
+    "jump": {
+      "type": "statistic",
+      "statistic": "minecraft:jump",
+      "default-value-display": "decimal:groupingSeparator=,&groupingSize=3&maximumFractionDigits=0"
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
 ## Reversed Leaderboard
 
 By default, the leaderboard is measured by the player with the highest value first. If you want to change that (e.g.
