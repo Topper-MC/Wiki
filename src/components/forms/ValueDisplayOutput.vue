@@ -1,15 +1,15 @@
 <template>
   <div class="value-display-container">
     <div class="value-display-header">
-      <span class="value-display-title">Generated Queries</span>
+      <span class="value-display-title">Usage Guidance</span>
     </div>
     <div class="value-display-content">
       <div class="output-item">
-        <span class="output-label">Format String</span>
+        <span class="output-label">Format String (Use in <code class="inline-code">default-value-display</code>)</span>
         <code class="output-code">{{ code }}</code>
       </div>
       <div class="output-item">
-        <span class="output-label">In default-line</span>
+        <span class="output-label">In <code class="inline-code">line</code> (as placeholder)</span>
         <code class="output-code">{value_{{ code }}}</code>
       </div>
       <div class="output-item">

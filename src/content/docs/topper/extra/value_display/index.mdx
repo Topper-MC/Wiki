@@ -9,16 +9,21 @@ import ValueDisplayShortenForm from '~/components/forms/ValueDisplayShortenForm.
 
 
 
-Some places like [`{value}` in `line`](../provider/#default-values)
-and [the `value` and `top_value` queries](../../query/#types) allows you to
-apply a format to display the value in a more readable way. This is done by
-specifying some settings for them like:
+Value Display allows you to apply a format to display the value in a more readable way.
+This is useful in some places like:
+- [`default-value-display` in holder settings](../provider/#default-value-display)
+- [`{value}` in `line`](../provider/#default-values)
+- [the `value` and `top_value` queries](../../query/#types)
+
+You can apply the format by specifying it as:
 
 ```
 {value_<format>}
 <holder>;value;<format>
 <holder>;top_value;<position>;<format>
 ```
+
+Or just the `<format>` string in [`default-value-display`](../provider/#default-value-display).
 
 The following section will guide you through the available formats to replace
 `<format>`.
