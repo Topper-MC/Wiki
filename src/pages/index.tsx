@@ -2,17 +2,36 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from '@docusaurus/router';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 300, damping: 24 } }
+};
 
 function HomepageHeader() {
   return (
     <header className="hero hero--primary" style={{ padding: '4rem 0', textAlign: 'center' }}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          Topper Wiki Portal
-        </Heading>
-        <p className="hero__subtitle">
-          Welcome to the documentation hub for Topper and its ecosystem plugins.
-        </p>
+        <motion.div variants={itemVariants}>
+          <Heading as="h1" className="hero__title">
+            Topper Wiki Portal
+          </Heading>
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <p className="hero__subtitle">
+            Welcome to the documentation hub for Topper and its ecosystem plugins.
+          </p>
+        </motion.div>
       </div>
     </header>
   );
@@ -54,7 +73,7 @@ const PortalList: PortalItem[] = [
 
 function PortalCard({ title, emoji, description, link }: PortalItem) {
   return (
-    <div className="col col--6" style={{ marginBottom: '2rem' }}>
+    <motion.div variants={itemVariants} className="col col--6" style={{ marginBottom: '2rem' }}>
       <div className="card" style={{ height: '100%', border: '1px solid var(--ifm-color-emphasis-300)', display: 'flex', flexDirection: 'column' }}>
         <div className="card__header" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1.25rem' }}>
           <span style={{ fontSize: '2.5rem' }}>{emoji}</span>
@@ -69,28 +88,40 @@ function PortalCard({ title, emoji, description, link }: PortalItem) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default function Home(): React.JSX.Element {
+  const location = useLocation();
+  
   return (
     <Layout
       title="Welcome to Topper Wiki Portal"
       description="Gateway to Topper, TimedTopper, GroupTopper, and Cachy plugin documentations."
     >
-      <HomepageHeader />
-      <main>
-        <section style={{ padding: '3rem 0' }}>
-          <div className="container">
-            <div className="row">
-              {PortalList.map((props, idx) => (
-                <PortalCard key={idx} {...props} />
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
+        >
+          <HomepageHeader />
+          <main>
+            <section style={{ padding: '3rem 0' }}>
+              <div className="container">
+                <div className="row">
+                  {PortalList.map((props, idx) => (
+                    <PortalCard key={idx} {...props} />
+                  ))}
+                </div>
+              </div>
+            </section>
+          </main>
+        </motion.div>
+      </AnimatePresence>
     </Layout>
   );
 }

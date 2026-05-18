@@ -2,6 +2,21 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { Card, CardGrid } from '@site/src/components/ui/Card';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from '@docusaurus/router';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 300, damping: 24 } }
+};
 
 export interface ActionButton {
   text: string;
@@ -32,25 +47,38 @@ export function ProductLandingPage({
   actions,
   features,
 }: ProductLandingPageProps): React.JSX.Element {
+  const location = useLocation();
+
   return (
     <Layout
       title={`${title} - Leaderboard Plugin`}
       description={description || tagline}
     >
-      <header className="hero hero--primary" style={{ padding: '5rem 0', textAlign: 'center' }}>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
+        >
+          <header className="hero hero--primary" style={{ padding: '5rem 0', textAlign: 'center' }}>
         <div className="container">
-          <img
+          <motion.img
+            variants={itemVariants}
             src={logo}
             alt={`${title} Logo`}
             style={{ width: '120px', height: '120px', marginBottom: '1.5rem' }}
           />
-          <Heading as="h1" className="hero__title" style={{ fontSize: '3rem' }}>
-            {title}
-          </Heading>
-          <p className="hero__subtitle" style={{ fontSize: '1.4rem', marginBottom: '2rem' }}>
+          <motion.div variants={itemVariants}>
+            <Heading as="h1" className="hero__title" style={{ fontSize: '3rem' }}>
+              {title}
+            </Heading>
+          </motion.div>
+          <motion.p variants={itemVariants} className="hero__subtitle" style={{ fontSize: '1.4rem', marginBottom: '2rem' }}>
             {tagline}
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          </motion.p>
+          <motion.div variants={itemVariants} style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             {actions.map((action, idx) => {
               const isExternal = action.link.startsWith('http');
               if (isExternal) {
@@ -76,7 +104,7 @@ export function ProductLandingPage({
                 </Link>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </header>
 
@@ -84,13 +112,15 @@ export function ProductLandingPage({
         <div className="container">
           <CardGrid>
             {features.map((feature, idx) => (
-              <Card key={idx} title={feature.title} emoji={feature.emoji}>
+              <Card key={idx} title={feature.title} emoji={feature.emoji} variants={itemVariants}>
                 {feature.description}
               </Card>
             ))}
           </CardGrid>
         </div>
       </main>
+        </motion.div>
+      </AnimatePresence>
     </Layout>
   );
 }

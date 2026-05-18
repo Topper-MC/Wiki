@@ -1,4 +1,6 @@
 
+import { motion, HTMLMotionProps } from 'framer-motion';
+
 interface CardGridProps {
   children: React.ReactNode;
 }
@@ -11,15 +13,15 @@ export function CardGrid({ children }: CardGridProps) {
   );
 }
 
-interface CardProps {
+interface CardProps extends HTMLMotionProps<"div"> {
   title: string;
   emoji?: string;
   children: React.ReactNode;
 }
 
-export function Card({ title, emoji = '⭐', children }: CardProps) {
+export function Card({ title, emoji = '⭐', children, ...motionProps }: CardProps) {
   return (
-    <div className="col col--6" style={{ marginBottom: '1.5rem' }}>
+    <motion.div className="col col--6" style={{ marginBottom: '1.5rem' }} {...motionProps}>
       <div className="card" style={{ height: '100%', padding: '1.25rem', border: '1px solid var(--ifm-color-emphasis-200)', background: 'var(--ifm-color-emphasis-100)' }}>
         <div className="card__header" style={{ padding: 0, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <span style={{ fontSize: '1.125rem' }}>{emoji}</span>
@@ -29,6 +31,6 @@ export function Card({ title, emoji = '⭐', children }: CardProps) {
           {children}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
