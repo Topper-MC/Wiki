@@ -1,0 +1,65 @@
+---
+title: PlaceholderAPI
+---
+import QueryTypes from '../../query/_QueryTypes.mdx';
+import QueryForm from '@site/src/components/forms/QueryForm';
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+
+
+
+The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Top Holder.
+
+## Usage
+
+<Tabs groupId="platform">
+  <TabItem value="spigot" label="SpigotMC">
+
+> [!NOTE]
+> Install [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+
+```
+%topper_<query>%
+```
+
+  </TabItem>
+  <TabItem value="fabric" label="FabricMC">
+
+> [!NOTE]
+> The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+> It's bundled in the mod, you don't need to install it separately.
+
+```
+%topper:query <query>%
+```
+
+  </TabItem>
+</Tabs>
+
+Check the [Query](/topper/query/) section for more information about how to set the `<query>`.
+
+## Example
+
+
+
+<Tabs groupId="platform">
+  <TabItem value="spigot" label="SpigotMC">
+
+
+<QueryForm />
+
+<QueryTypes prefix="spigot-" globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
+
+  </TabItem>
+  <TabItem value="fabric" label="FabricMC">
+
+
+<QueryForm />
+
+<QueryTypes prefix="fabric-" globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
+
+  </TabItem>
+</Tabs>

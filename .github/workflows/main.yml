@@ -10,16 +10,46 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          submodules: true
-      - name: Install, build, and upload your site
-        uses: withastro/action@v6
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Cache persistent build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .docusaurus/
+            node_modules/.cache/
+          key: ${{ runner.os }}-docusaurus-${{ hashFiles('package-lock.json') }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-${{ hashFiles('package-lock.json') }}-
+            ${{ runner.os }}-docusaurus-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Docusaurus website
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
 
   deploy:
     needs: build
@@ -30,4 +60,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
+

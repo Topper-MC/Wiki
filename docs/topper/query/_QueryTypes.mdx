@@ -1,0 +1,251 @@
+import QueryVar from '@site/src/components/forms/QueryVar';
+import QueryCode from '@site/src/components/QueryCode';
+
+{(!props.type || props.type === 'top_name') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>top_name</code></h3> : <h3 id="top_name"><code>top_name</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_name;<QueryVar field="position" /></QueryCode></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The name of the player at the specified position.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+          <li><code>&lt;position&gt;</code>: The position of the player in the Holder</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_name;<QueryVar field="position" /></QueryCode>
+            <ul>
+              <li>Retrieve the name of the player at position <QueryVar field="position" /> in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}
+
+{(!props.type || props.type === 'top_key') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>top_key</code></h3> : <h3 id="top_key"><code>top_key</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><code>{props.globalPrefix || ''}&lt;holder&gt;;top_key;&lt;position&gt;{props.globalSuffix || ''}</code></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The UUID of the player at the specified position.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+          <li><code>&lt;position&gt;</code>: The position of the player in the Holder</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_key;<QueryVar field="position" /></QueryCode>
+            <ul>
+              <li>Retrieve the UUID of the player at position <QueryVar field="position" /> in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}
+
+{(!props.type || props.type === 'top_value') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>top_value</code></h3> : <h3 id="top_value"><code>top_value</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global">&lt;holder&gt;;top_value;&lt;position&gt;</QueryCode></li>
+          <li><QueryCode p={props} type="global">&lt;holder&gt;;top_value;&lt;position&gt;;&lt;format&gt;</QueryCode></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The value of the player at the specified position.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+          <li><code>&lt;position&gt;</code>: The position of the player in the Holder</li>
+          <li><code>&lt;format&gt;</code>: A number format pattern, see <a href="/Wiki/topper/extra/value_display/">Value Display</a> for more details on how to apply a format</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_value;<QueryVar field="position" /></QueryCode>
+            <ul>
+              <li>Retrieve the value of the player at position <QueryVar field="position" /> in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_value;<QueryVar field="position" />;#,###</QueryCode>
+            <ul>
+              <li>Retrieve the formatted value of the player at position <QueryVar field="position" /> in the Holder named <code><QueryVar field="holder" /></code>, in the format of <code>#,###</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}
+
+{(!props.type || props.type === 'top_value_raw') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>top_value_raw</code></h3> : <h3 id="top_value_raw"><code>top_value_raw</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global">&lt;holder&gt;;top_value_raw;&lt;position&gt;</QueryCode></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The raw value of the player at the specified position.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+          <li><code>&lt;position&gt;</code>: The position of the player in the Holder</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_value_raw;<QueryVar field="position" /></QueryCode>
+            <ul>
+              <li>Retrieve the raw value of the player at position <QueryVar field="position" /> in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}
+
+{(!props.type || props.type === 'top_rank') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>top_rank</code></h3> : <h3 id="top_rank"><code>top_rank</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global">&lt;holder&gt;;top_rank</QueryCode></li>
+          <li><QueryCode p={props} type="global">&lt;holder&gt;;top_rank;&lt;format&gt;</QueryCode></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The player's rank (position number) in the specified Holder.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+          <li><code>&lt;format&gt;</code>: A number format pattern, see <a href="/Wiki/topper/extra/value_display/">Value Display</a> for more details on how to apply a format</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_rank</QueryCode>
+            <ul>
+              <li>Retrieve the rank of the player in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_rank;#,###</QueryCode>
+            <ul>
+              <li>Retrieve the formatted rank of the player in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}
+
+{(!props.type || props.type === 'top_size') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>top_size</code></h3> : <h3 id="top_size"><code>top_size</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global">&lt;holder&gt;;top_size</QueryCode></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The amount of entries in the Holder.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="global"><QueryVar field="holder" />;top_size</QueryCode>
+            <ul>
+              <li>Retrieve the amount of entries in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}
+
+{(!props.type || props.type === 'value') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>value</code></h3> : <h3 id="value"><code>value</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><QueryCode p={props} type="player">&lt;holder&gt;;value</QueryCode></li>
+          <li><QueryCode p={props} type="player">&lt;holder&gt;;value;&lt;format&gt;</QueryCode></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The value of the player.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+          <li><code>&lt;format&gt;</code>: A number format pattern, see <a href="/Wiki/topper/extra/value_display/">Value Display</a> for more details on how to apply a format</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="player"><QueryVar field="holder" />;value</QueryCode>
+            <ul>
+              <li>Retrieve the value of the player in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+          <li><QueryCode p={props} type="player"><QueryVar field="holder" />;value;#,###</QueryCode>
+            <ul>
+              <li>Retrieve the formatted value of the player in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}
+
+{(!props.type || props.type === 'value_raw') && (
+  <div>
+    {props.type ? null : (props.prefix ? <h3><code>value_raw</code></h3> : <h3 id="value_raw"><code>value_raw</code></h3>)}
+    <ul>
+      <li><strong>Format</strong>:
+        <ul>
+          <li><QueryCode p={props} type="player">&lt;holder&gt;;value_raw</QueryCode></li>
+        </ul>
+      </li>
+      <li><strong>Description</strong>: The raw value of the player.</li>
+      <li><strong>Argument</strong>:
+        <ul>
+          <li><code>&lt;holder&gt;</code>: The name of the Holder</li>
+        </ul>
+      </li>
+      <li><strong>Example</strong>:
+        <ul>
+          <li><QueryCode p={props} type="player"><QueryVar field="holder" />;value_raw</QueryCode>
+            <ul>
+              <li>Retrieve the raw value of the player in the Holder named <code><QueryVar field="holder" /></code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+)}

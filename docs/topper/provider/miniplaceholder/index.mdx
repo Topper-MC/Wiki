@@ -1,0 +1,64 @@
+---
+title: MiniPlaceholder
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import MiniPlaceholderForm from '@site/src/components/forms/MiniPlaceholderForm';
+
+
+
+
+
+> [!NOTE]
+> Requires [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders)
+
+This is a provider that allows you to use MiniPlaceholders placeholders as values in the Top Holder.
+
+## Format
+
+<Tabs groupId="platform">
+  <TabItem value="spigot" label="SpigotMC">
+
+
+```yaml
+holders:
+  <holder-name>:
+    # The type of the provider
+    type: mini-placeholder
+    # The placeholder used to get the value
+    placeholder: <placeholder>
+```
+
+  </TabItem>
+  <TabItem value="fabric" label="FabricMC">
+
+
+```json
+{
+  "holders": {
+    "<holder-name>": {
+      // The type of the provider
+      "type": "mini-placeholder",
+      // The placeholder used to get the value
+      "placeholder": "<placeholder>"
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Example
+
+
+
+<Tabs groupId="platform">
+  <TabItem value="spigot" label="SpigotMC">
+    <MiniPlaceholderForm platform="spigot" />
+  </TabItem>
+  <TabItem value="fabric" label="FabricMC">
+    <MiniPlaceholderForm platform="fabric" />
+  </TabItem>
+</Tabs>
