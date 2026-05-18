@@ -1,8 +1,8 @@
 ---
 title: Query
 ---
-import QueryTypes from '../../topper/query/_QueryTypes.mdx';
-import TimedQueryTypes from './_TimedQueryTypes.mdx';
+import QueryTypes from '@site/src/components/QueryTypes';
+import TimedQueryTypes from '@site/src/components/TimedQueryTypes';
 import QueryForm from '@site/src/components/forms/QueryForm';
 
 The query system is the same as the one used in Topper, with the addition that the `<holder>` is the name of the Holder
@@ -14,32 +14,6 @@ Refer to the [Topper Query](/topper/query/) page for more information.
 
 <QueryForm />
 
-### `top_name`
-<QueryTypes type="top_name" />
+<QueryTypes />
 
-### `top_key`
-<QueryTypes type="top_key" />
-
-### `top_value`
-<QueryTypes type="top_value" />
-
-### `top_value_raw`
-<QueryTypes type="top_value_raw" />
-
-### `top_rank`
-<QueryTypes type="top_rank" />
-
-### `top_size`
-<QueryTypes type="top_size" />
-
-### `value`
-<QueryTypes type="value" />
-
-### `value_raw`
-<QueryTypes type="value_raw" />
-
-### `remain_time`
-<TimedQueryTypes type="remain_time" />
-
-### `end_time`
-<TimedQueryTypes type="end_time" />
+<TimedQueryTypes />

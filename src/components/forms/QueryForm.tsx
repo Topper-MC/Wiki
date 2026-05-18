@@ -6,7 +6,6 @@ import FieldWrapper from '@site/src/components/ui/FieldWrapper';
 export default function QueryForm() {
   const holderValue = useStoreValue('holder');
   const positionValue = useStoreValue('position');
-
   const labelHolder = translate({ id: 'ui.holderName', message: 'Holder Name' });
   const descHolder = translate({ id: 'ui.holderNameDescription', message: 'The name of the holder (e.g. money, exp)' });
   const labelPosition = translate({ id: 'ui.position', message: 'Position' });
@@ -40,6 +39,8 @@ export default function QueryForm() {
           />
         )}
       </FieldWrapper>
+
+
     </form>
   );
 }

@@ -12,6 +12,7 @@ const config: Config = {
   url: 'https://topper-mc.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/Wiki/',
+  onBrokenAnchors: 'ignore',
 
   // GitHub pages deployment config.
   organizationName: 'Topper-MC', // Usually your GitHub org/user name.
@@ -38,6 +39,17 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        docsRouteBasePath: '/',
+        indexBlog: false,
+      },
     ],
   ],
 
