@@ -130,6 +130,10 @@ be
 %parseother_unsafe_{topper_jump;top_name;1}_{luckperms_prefix}%
 ```
 
+> [!NOTE]
+> That example is there just to show how to use the ParseOther example. It is not at all an example on how to apply LuckPerms' prefix in the Holder.
+> `luckperms_prefix` only works with online players so you cannot parse it for players who are not in the server.
+
 ## Should I set `online` to `false` in PlaceholderAPI Value Provider?
 
 In most cases, you should **NOT** set `online` to `false` to avoid many issues.
