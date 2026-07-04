@@ -20,13 +20,13 @@
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.1.0",
     "framer-motion": "^12.38.0",
-    "react": "^18.2.0",
+    "react": "^19.2.6",
     "react-dom": "^18.2.0",
     "remark-github-admonitions-to-directives": "^2.1.0"
   },
   "devDependencies": {
     "@docusaurus/tsconfig": "^3.10.1",
-    "@types/react": "^18.2.0",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^18.2.0",
     "typescript": "^5.2.2"
   }
