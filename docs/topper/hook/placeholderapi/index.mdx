@@ -1,8 +1,9 @@
 ---
 title: PlaceholderAPI
+description: Query Topper leaderboard data using PlaceholderAPI placeholders in other plugins.
 ---
-import QueryTypes from '@site/src/components/QueryTypes';
-import QueryForm from '@site/src/components/forms/QueryForm';
+import QuerySection from '@site/src/components/QuerySection';
+import { topperDefinitions } from '@site/src/components/queryDefinitions';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -44,18 +45,12 @@ Check the [Query](/topper/query/) section for more information about how to set 
 <Tabs groupId="platform">
   <TabItem value="spigot" label="SpigotMC">
 
-
-<QueryForm />
-
-<QueryTypes prefix="spigot-" globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
+<QuerySection definitions={topperDefinitions} prefix globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
 
   </TabItem>
   <TabItem value="fabric" label="FabricMC">
 
-
-<QueryForm />
-
-<QueryTypes prefix="fabric-" globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
+<QuerySection definitions={topperDefinitions} prefix globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
 
   </TabItem>
 </Tabs>

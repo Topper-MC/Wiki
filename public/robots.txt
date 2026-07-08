@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://topper-mc.github.io/Wiki/sitemap.xml

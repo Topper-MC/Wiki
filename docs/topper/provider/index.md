@@ -1,5 +1,6 @@
 ---
 title: Value Provider
+description: Built-in value providers that supply data to Topper leaderboard holders.
 type: chapter
 ---
 

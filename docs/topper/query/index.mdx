@@ -1,8 +1,9 @@
 ---
 title: Query
+description: Learn how to query leaderboard data from Top Holders using the Topper query system.
 ---
-import QueryTypes from '@site/src/components/QueryTypes';
-import QueryForm from '@site/src/components/forms/QueryForm';
+import QuerySection from '@site/src/components/QuerySection';
+import { topperDefinitions } from '@site/src/components/queryDefinitions';
 
 
 
@@ -28,6 +29,4 @@ If the `<type>` does not require any arguments, the query can be simplified to:
 
 ## Types
 
-<QueryForm />
-
-<QueryTypes />
+<QuerySection definitions={topperDefinitions} />

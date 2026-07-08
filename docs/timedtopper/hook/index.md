@@ -1,5 +1,6 @@
 ---
 title: Hook
+description: Plugin integrations and hooks supported by TimedTopper.
 type: chapter
 ---
 

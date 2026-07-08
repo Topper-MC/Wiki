@@ -1,5 +1,6 @@
 ---
 title: Link a Top Holder
+description: Link a TimedTopper holder to a Topper Top Holder for periodic leaderboard resets.
 ---
 
 First, you add some settings to link a Top Holder to this Timed Holder, which

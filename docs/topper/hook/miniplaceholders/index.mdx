@@ -1,8 +1,9 @@
 ---
 title: MiniPlaceholders
+description: Query Topper leaderboard data using MiniPlaceholders in MiniMessage format.
 ---
-import QueryTypes from '@site/src/components/QueryTypes';
-import QueryForm from '@site/src/components/forms/QueryForm';
+import QuerySection from '@site/src/components/QuerySection';
+import { topperDefinitions } from '@site/src/components/queryDefinitions';
 
 > [!NOTE]
 > Install [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders)
@@ -20,6 +21,4 @@ Check the [Query](/topper/query/) section for more information about how to set 
 
 ## Example
 
-<QueryForm />
-
-<QueryTypes prefix="mini-" globalPrefix="<topper_global:" globalSuffix=">" playerPrefix="<topper_player:" playerSuffix=">" />
+<QuerySection definitions={topperDefinitions} prefix globalPrefix="<topper_global:" globalSuffix=">" playerPrefix="<topper_player:" playerSuffix=">" />

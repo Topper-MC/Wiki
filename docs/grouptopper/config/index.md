@@ -1,5 +1,6 @@
 ---
 title: Config
+description: Configure GroupTopper's storage backends, group holders, and calculation settings.
 ---
 
 

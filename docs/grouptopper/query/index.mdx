@@ -1,8 +1,9 @@
 ---
 title: Query
+description: Query group leaderboard data from GroupTopper holders using the query system.
 ---
-import QueryTypes from '@site/src/components/QueryTypes';
-import QueryForm from '@site/src/components/forms/QueryForm';
+import QuerySection from '@site/src/components/QuerySection';
+import { topperDefinitions } from '@site/src/components/queryDefinitions';
 
 The query system is the same as the one used in Topper, with the addition that:
 
@@ -14,6 +15,4 @@ Refer to the [Topper Query](/topper/query/) page for more information.
 
 ## Types
 
-<QueryForm />
-
-<QueryTypes />
+<QuerySection definitions={topperDefinitions} />

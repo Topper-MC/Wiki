@@ -1,5 +1,6 @@
 ---
 title: Query
+description: Query cached player data from Cachy holders using the query system.
 ---
 
 

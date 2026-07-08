@@ -1,5 +1,6 @@
 ---
 title: LuckPerms
+description: Integrate GroupTopper with LuckPerms for rank-based permission contexts.
 ---
 
 

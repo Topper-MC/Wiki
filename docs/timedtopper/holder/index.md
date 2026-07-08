@@ -1,5 +1,6 @@
 ---
 title: Holder
+description: Set up Timed Holders to create periodic leaderboard resets with rewards.
 type: chapter
 ---
 

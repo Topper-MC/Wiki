@@ -1,5 +1,6 @@
 ---
 title: Create an NPC
+description: Create Citizens NPCs that display Topper leaderboard player data.
 ---
 
 

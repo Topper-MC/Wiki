@@ -1,5 +1,6 @@
 ---
 title: Installation
+description: Download and install GroupTopper for group-based leaderboards on Minecraft servers.
 ---
 
 ## Download

@@ -1,5 +1,6 @@
 ---
 title: LuckPerms
+description: Integrate TimedTopper with LuckPerms for rank-based permission contexts.
 ---
 
 

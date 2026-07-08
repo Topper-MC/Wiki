@@ -1,5 +1,6 @@
 ---
 title: PlaceholderAPI
+description: Query Cachy cached player data using PlaceholderAPI placeholders.
 ---
 
 The plugin provides a PlaceholderAPI placeholder to allow you to query data from

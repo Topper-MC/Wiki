@@ -1,5 +1,6 @@
 ---
 title: LuckPerms
+description: Integrate Topper with LuckPerms for rank-based permission contexts.
 ---
 
 

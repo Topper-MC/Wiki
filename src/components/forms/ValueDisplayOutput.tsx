@@ -1,4 +1,3 @@
-
 interface ValueDisplayOutputProps {
   code: string;
 }

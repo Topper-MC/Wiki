@@ -1,5 +1,6 @@
 ---
 title: Set time interval
+description: Configure cron-based time intervals for TimedTopper leaderboard resets.
 ---
 
 

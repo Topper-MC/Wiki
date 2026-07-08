@@ -1,5 +1,6 @@
 ---
 title: Frequently Asked Questions
+description: Common questions and troubleshooting tips for the Topper leaderboard plugin.
 ---
 
 ## I set my Value Provider, but it's laggy
@@ -117,7 +118,7 @@ have to make a workaround (mostly by developing or asking a developer to make a
 plugin that gets the UUID of the player from Topper and does stuff with it).
 
 However, if you use [PlaceholderAPI](https://placeholderapi.com), Topper
-provides [the `top_key` query type](/topper/query/#top_key) to get the
+provides [the `top_key` query type](/topper/query/) to get the
 UUID of the player in the Holder. You can use that along with
 [the ParseOther expansion](https://api.extendedclip.com/expansions/parseother/)
 to parse your placeholder by the UUId of the player in the Holder.

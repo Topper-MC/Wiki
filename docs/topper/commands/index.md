@@ -1,5 +1,6 @@
 ---
 title: Commands & Permissions
+description: Complete reference of Topper commands and permission nodes for Minecraft server administrators.
 ---
 
 

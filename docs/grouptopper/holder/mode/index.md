@@ -1,5 +1,6 @@
 ---
 title: Set the Group Mode
+description: Configure how member values are aggregated into group totals in GroupTopper.
 ---
 
 

@@ -1,5 +1,6 @@
 ---
 title: API
+description: Developer API for integrating with TimedTopper using JitPack and Maven/Gradle.
 ---
 
 

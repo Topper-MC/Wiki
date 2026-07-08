@@ -1,9 +1,9 @@
 ---
 title: Query
+description: Query timed leaderboard data from TimedTopper holders using the query system.
 ---
-import QueryTypes from '@site/src/components/QueryTypes';
-import TimedQueryTypes from '@site/src/components/TimedQueryTypes';
-import QueryForm from '@site/src/components/forms/QueryForm';
+import QuerySection from '@site/src/components/QuerySection';
+import { topperDefinitions, timedDefinitions, timedArgDescriptions } from '@site/src/components/queryDefinitions';
 
 The query system is the same as the one used in Topper, with the addition that the `<holder>` is the name of the Holder
 specified in the configuration file of TimedTopper.
@@ -12,8 +12,4 @@ Refer to the [Topper Query](/topper/query/) page for more information.
 
 ## Types
 
-<QueryForm />
-
-<QueryTypes />
-
-<TimedQueryTypes />
+<QuerySection definitions={[...topperDefinitions, ...timedDefinitions]} args={timedArgDescriptions} />

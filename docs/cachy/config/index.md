@@ -1,5 +1,6 @@
 ---
 title: Config
+description: Configure Cachy's storage backends and cache holder settings for player data caching.
 ---
 
 

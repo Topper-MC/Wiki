@@ -1,5 +1,6 @@
 ---
 title: Holder
+description: Set up Group Holders to create group-based leaderboards from Topper data.
 type: chapter
 ---
 

@@ -12,7 +12,15 @@ const config: Config = {
   url: 'https://topper-mc.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/Wiki/',
-  onBrokenAnchors: 'ignore',
+  onBrokenLinks: 'warn',
+  onBrokenAnchors: 'warn',
+  trailingSlash: true,
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // GitHub pages deployment config.
   organizationName: 'Topper-MC', // Usually your GitHub org/user name.
@@ -22,6 +30,56 @@ const config: Config = {
     faster: true,
     v4: true,
   },
+
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://topper-mc.github.io',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'Topper',
+        applicationCategory: 'GameApplication',
+        operatingSystem: 'Minecraft Server (Spigot/Paper/Fabric)',
+        description: 'A simple, flexible, and powerful leaderboard plugin for Minecraft servers',
+        url: 'https://topper-mc.github.io/Wiki/',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        author: {
+          '@type': 'Organization',
+          name: 'Topper-MC',
+          url: 'https://github.com/Topper-MC',
+        },
+      }),
+    },
+  ],
 
   presets: [
     [
@@ -37,6 +95,12 @@ const config: Config = {
         blog: false, // Optional: disable the blog plugin
         theme: {
           customCss: './src/css/custom.css',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
     ],
@@ -55,7 +119,14 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'https://topper-mc.github.io/Assets/topper/logo.svg',
+    image: 'https://topper-mc.github.io/Assets/topper/logo.png',
+    metadata: [
+      { name: 'keywords', content: 'minecraft, leaderboard, plugin, spigot, paper, fabric, topper, statistics, ranking' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@Topper-MC' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Topper Wiki' },
+    ],
     navbar: {
       title: 'Topper',
       logo: {
@@ -106,7 +177,7 @@ const config: Config = {
             },
             {
               label: 'Documentation',
-              to: '/topper/quickstart',
+              to: '/topper/quickstart/',
             },
             {
               label: 'Modrinth',
@@ -123,7 +194,7 @@ const config: Config = {
             },
             {
               label: 'Documentation',
-              to: '/timedtopper/config',
+              to: '/timedtopper/config/',
             },
             {
               label: 'SpigotMC',
@@ -144,7 +215,7 @@ const config: Config = {
             },
             {
               label: 'Documentation',
-              to: '/grouptopper/installation',
+              to: '/grouptopper/installation/',
             },
             {
               label: 'Modrinth',
@@ -161,7 +232,7 @@ const config: Config = {
             },
             {
               label: 'Documentation',
-              to: '/cachy/config',
+              to: '/cachy/config/',
             },
             {
               label: 'GitHub',

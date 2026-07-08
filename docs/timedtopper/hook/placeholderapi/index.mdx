@@ -1,9 +1,9 @@
 ---
 title: PlaceholderAPI
+description: Query TimedTopper leaderboard data using PlaceholderAPI placeholders.
 ---
-import QueryTypes from '@site/src/components/QueryTypes';
-import TimedQueryTypes from '@site/src/components/TimedQueryTypes';
-import QueryForm from '@site/src/components/forms/QueryForm';
+import QuerySection from '@site/src/components/QuerySection';
+import { topperDefinitions, timedDefinitions, timedArgDescriptions } from '@site/src/components/queryDefinitions';
 
 The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Holder.
 
@@ -19,7 +19,12 @@ Check the [Query](/timedtopper/query/) section for more information about how to
 
 
 
-<QueryForm />
-
-<QueryTypes prefix="timed-" globalPrefix="%timedtopper_" globalSuffix="%" playerPrefix="%timedtopper_" playerSuffix="%" />
-<TimedQueryTypes prefix="timed-" globalPrefix="%timedtopper_" globalSuffix="%" />
+<QuerySection
+  definitions={[...topperDefinitions, ...timedDefinitions]}
+  args={timedArgDescriptions}
+  prefix
+  globalPrefix="%timedtopper_"
+  globalSuffix="%"
+  playerPrefix="%timedtopper_"
+  playerSuffix="%"
+/>

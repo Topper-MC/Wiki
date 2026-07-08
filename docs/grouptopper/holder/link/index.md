@@ -1,5 +1,6 @@
 ---
 title: Link a Top Holder
+description: Link a GroupTopper holder to a Topper Top Holder for group-based leaderboard calculations.
 ---
 
 First, you add some settings to link a Top Holder to this Group Holder, which

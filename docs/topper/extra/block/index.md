@@ -1,5 +1,6 @@
 ---
 title: Create a Top Block
+description: Display Topper leaderboard data on custom blocks and skulls using VarBlocks.
 ---
 
 

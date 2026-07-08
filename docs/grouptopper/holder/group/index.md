@@ -1,5 +1,6 @@
 ---
 title: Set up Group settings
+description: Configure group plugin integration for GroupTopper including Towny, LuckPerms, Factions, and more.
 type: chapter
 tableOfContents:
     minHeadingLevel: 2

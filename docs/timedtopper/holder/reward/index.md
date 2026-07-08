@@ -1,5 +1,6 @@
 ---
 title: Set up Reward
+description: Configure automatic reward distribution to top players when TimedTopper resets.
 ---
 
 

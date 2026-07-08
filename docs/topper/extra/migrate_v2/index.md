@@ -1,5 +1,6 @@
 ---
 title: Migrate from 2.X
+description: Step-by-step guide to migrate your Topper data from version 2.x to 3.0.
 ---
 
 

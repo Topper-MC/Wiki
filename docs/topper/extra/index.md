@@ -1,5 +1,6 @@
 ---
 title: Extra
+description: Advanced tutorials for Topper features including holograms, NPCs, and value formatting.
 type: chapter
 ---
 

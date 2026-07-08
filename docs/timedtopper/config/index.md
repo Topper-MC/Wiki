@@ -1,5 +1,6 @@
 ---
 title: Config
+description: Configure TimedTopper's storage, holders, time intervals, and reward settings.
 ---
 
 

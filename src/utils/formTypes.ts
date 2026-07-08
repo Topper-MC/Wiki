@@ -1,5 +1,5 @@
 // Shared types for data-driven config forms.
-// Used by HolderForm.vue and each specific form wrapper.
+// Used by HolderForm and each specific form wrapper.
 
 export type FieldDef = {
   type: 'text' | 'checkbox' | 'array' | 'select' | 'object-array';
