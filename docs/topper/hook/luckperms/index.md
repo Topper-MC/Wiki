@@ -31,7 +31,8 @@ available contexts for a player.
 
 > [!NOTE]
 > **Disable the context calculator**
-> Although this is a lightweight calculator, if you want to save your precious CPU usage and disable the calculator completely, you can add the calculator to the `disable-context-calculator` of LuckPerms' config:
+> 
+> Although this is a lightweight calculator, if you want to save your precious CPU usage and disable the calculator completely, you can add the calculator to the `disable-context-calculators` of LuckPerms' config:
 > ```yaml
 > disabled-context-calculators:
 > - "me.hsgamer.topper"
