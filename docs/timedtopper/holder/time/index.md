@@ -29,7 +29,7 @@ If your case is not covered in the built-in expressions, read the next section o
 
 By default, the `cron` is a **QUARTZ** expression, which is usually an expression with 7 parts.
 
-You can go to [this page](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate your own
+You can go to [this page](https://projectunified.github.io/cron-utils/) to generate your own
 `cron` expression.
 
 If you don't use **Quartz** expression and want to use another cron format, you can set the `cron-type` option, along with your `cron` expression:
@@ -39,9 +39,9 @@ cron: <cron-expression>
 ```
 
 Available types for `cron-type` include:
-- `CRON4J`: Go to [this page](https://www.sauronsoftware.it/projects/cron4j/manual.php) to learn the expression
+- `CRON4J`: Go to [this page](https://projectunified.github.io/cron-utils/) to learn the expression
 - `QUARTZ`: The default type of this plugin.
-- `UNIX`: Follow the UNIX cron expression. Go to [this page](https://crontab.guru/) to generate your own `cron` expression
+- `UNIX`: Follow the UNIX cron expression. Go to [this page](https://projectunified.github.io/cron-utils/) to generate your own `cron` expression
 - `SPRING`: The cron format from Spring Framework
 - `SPRING53`: The cron format from Spring Framework, starting from version 5.3
 - `SIMPLE`: Set the duration for the next reset (e.g. `30s`, `1m 30s`).
