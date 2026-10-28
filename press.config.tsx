@@ -3,7 +3,8 @@ import { fumadocsMdx } from "fumapress/adapters/mdx";
 import { metaSchema, pageSchema } from "fumapress/adapters/mdx/schema";
 import { defineDocs } from "fumadocs-mdx/macro";
 import { translations } from "@/lib/i18n";
-import { ProjectIcon, resolveProjectIcon } from "@/lib/projects";
+import { PROJECTS, ProjectIcon, resolveProjectIcon } from "@/lib/projects";
+import { NavTitle } from "@/components/NavTitle";
 
 const docs = defineDocs({
   dir: "docs",
@@ -41,12 +42,7 @@ export default defineConfig({
   },
   defaultLayoutProps: {
     nav: {
-      title: (
-        <>
-          <ProjectIcon project="topper" className="size-5" />
-          <span>Topper</span>
-        </>
-      ),
+      title: <NavTitle />,
     },
     githubUrl: "https://github.com/Topper-MC",
     links: [
@@ -54,32 +50,12 @@ export default defineConfig({
         type: "menu",
         text: "Projects",
         on: "nav",
-        items: [
-          {
-            text: "Topper",
-            description: "Core leaderboard plugin for Minecraft servers",
-            url: "/topper/",
-            icon: <ProjectIcon project="topper" className="size-5" />,
-          },
-          {
-            text: "TimedTopper",
-            description: "Timed leaderboard addon with automatic resets",
-            url: "/timedtopper/",
-            icon: <ProjectIcon project="timedtopper" className="size-5" />,
-          },
-          {
-            text: "GroupTopper",
-            description: "Group-based leaderboard calculations",
-            url: "/grouptopper/",
-            icon: <ProjectIcon project="grouptopper" className="size-5" />,
-          },
-          {
-            text: "Cachy",
-            description: "High-performance player data caching plugin",
-            url: "/cachy/",
-            icon: <ProjectIcon project="cachy" className="size-5" />,
-          },
-        ],
+        items: PROJECTS.map((project) => ({
+          text: project.title,
+          description: project.description,
+          url: project.url,
+          icon: <ProjectIcon project={project.id} className="size-5" />,
+        })),
       },
     ],
   },
