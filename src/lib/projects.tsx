@@ -54,6 +54,24 @@ export function resolveProjectLogo(name?: string): string | undefined {
   return PROJECT_LOGOS[key];
 }
 
+export function getProjectFromPathname(pathname: string): ProjectInfo {
+  const normalized = (pathname || '').toLowerCase();
+  const segments = normalized.split('/').filter(Boolean);
+
+  for (const segment of segments) {
+    const project = PROJECTS.find((p) => p.id === segment);
+    if (project) return project;
+  }
+
+  for (const project of PROJECTS) {
+    if (normalized.includes(`/${project.id}`) || normalized.startsWith(project.id)) {
+      return project;
+    }
+  }
+
+  return PROJECTS[0]!;
+}
+
 export function ProjectIcon({
   project,
   className = 'size-full',

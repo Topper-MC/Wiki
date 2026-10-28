@@ -2,12 +2,11 @@
 
 import React from 'react';
 import { usePathname } from 'fumadocs-core/framework';
-import { ProjectIcon, PROJECTS } from '@/lib/projects';
+import { ProjectIcon, getProjectFromPathname } from '@/lib/projects';
 
 export function NavTitle(): React.JSX.Element {
   const pathname = usePathname();
-  const current =
-    PROJECTS.find((p) => pathname.startsWith(p.url)) ?? PROJECTS[0]!;
+  const current = getProjectFromPathname(pathname);
 
   return (
     <>
