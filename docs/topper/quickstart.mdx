@@ -5,16 +5,16 @@ description: Get started with Topper by creating your first Minecraft server lea
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
-This guide will quickly introduce you to the basics of Topper by creating a simple leaderboard.
+This guide will quickly introduce you to the basics of Topper by creating a simple jump leaderboard.
 
 Choose what kind of leaderboard you want to build:
 
 <Tabs groupId="provider" items={['Statistic Provider', 'PlaceholderAPI Provider']}>
   <Tab value="Statistic Provider">
-    **Statistic Provider** uses built-in Minecraft player statistics (such as jump count, mob kills, and mined blocks) without requiring any external plugins or mods.
+    **Statistic Provider** uses built-in Minecraft player statistics (such as jump count) without requiring any external plugins or mods.
   </Tab>
   <Tab value="PlaceholderAPI Provider">
-    **PlaceholderAPI Provider** evaluates placeholders from PlaceholderAPI (Spigot) or Text Placeholder API (Fabric) to track economy balances, levels, or data from other plugins.
+    **PlaceholderAPI Provider** evaluates placeholders from PlaceholderAPI (Spigot) or Text Placeholder API (Fabric) to track data from external plugins or mods.
   </Tab>
 </Tabs>
 
@@ -24,10 +24,10 @@ Choose what kind of leaderboard you want to build:
 
 The unit that stores and manages leaderboard data is called a **Top Holder**. Inside the Top Holder, you define a **Value Provider**, which is responsible for providing the value of each entry in the leaderboard.
 
+We will create a Top Holder named `jump` to count the number of times players jump.
+
 <Tabs groupId="provider" items={['Statistic Provider', 'PlaceholderAPI Provider']}>
   <Tab value="Statistic Provider">
-
-We will start by creating a Top Holder named `jump` using the `statistic` provider to count the number of times players jump.
 
 <Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
   <Tab value="SpigotMC">
@@ -63,21 +63,19 @@ Open `config/topper/config.json`, head to the `holders` section, and add the fol
   </Tab>
   <Tab value="PlaceholderAPI Provider">
 
-We will start by creating a Top Holder named `money` using the `placeholder` provider to track player economy balances.
-
 <Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
   <Tab value="SpigotMC">
 
 > [!NOTE]
-> Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/). For Vault economy, ensure you have Vault and run `/papi ecloud download Vault` followed by `/papi reload`.
+> Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/). Make sure to download the Statistic expansion by running `/papi ecloud download Statistic` followed by `/papi reload`.
 
 Open `plugins/Topper/config.yml`, head to the `holders` section, and add the following configuration:
 
 ```yaml
 holders:
-  money: # The name of the Top Holder
+  jump: # The name of the Top Holder
     type: placeholder # The type of the Value Provider
-    placeholder: "%vault_eco_balance%" # The placeholder evaluated for each player
+    placeholder: "%statistic_jump%" # The placeholder evaluated for each player
 ```
 
   </Tab>
@@ -91,9 +89,9 @@ Open `config/topper/config.json`, head to the `holders` section, and add the fol
 ```jsonc
 {
   "holders": {
-    "money": { // The name of the Top Holder
+    "jump": { // The name of the Top Holder
       "type": "placeholder", // The type of the Value Provider
-      "placeholder": "%player:money%" // Or any currency placeholder provided by your economy mod
+      "placeholder": "%player:statistic_raw minecraft:jump%" // The placeholder evaluated for each player
     }
   }
 }
@@ -113,9 +111,6 @@ Open your server terminal and type `/reloadtop` to apply the changes.
 
 There are several ways to display the leaderboard of a Top Holder. In this case, we will simply display the top 10 players in the chat.
 
-<Tabs groupId="provider" items={['Statistic Provider', 'PlaceholderAPI Provider']}>
-  <Tab value="Statistic Provider">
-
 To display the top 10 jumping players, run:
 
 ```
@@ -124,136 +119,9 @@ To display the top 10 jumping players, run:
 
 ![gettop](./assets/gettop.png)
 
-  </Tab>
-  <Tab value="PlaceholderAPI Provider">
-
-To display the top 10 richest players, run:
-
-```
-/gettop money 10
-```
-
-![gettop](./assets/gettop.png)
-
-  </Tab>
-</Tabs>
-
-## Add another Top Holder
-
-<Tabs groupId="provider" items={['Statistic Provider', 'PlaceholderAPI Provider']}>
-  <Tab value="Statistic Provider">
-
-Now, let's add another Top Holder named `mine` to show the amount of diamond ores a player has mined.
-
-`mine_block` requires a block material to work. Hence, we add the `material` field to specify `diamond_ore`.
-
-<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
-  <Tab value="SpigotMC">
-
-Open `plugins/Topper/config.yml` and add `mine` under `holders`:
-
-```yaml
-holders:
-  jump:
-    type: statistic
-    statistic: jump
-  mine:
-    type: statistic
-    statistic: mine_block
-    material: diamond_ore
-```
-
-  </Tab>
-  <Tab value="FabricMC">
-
-Open `config/topper/config.json` and add `mine` under `holders`:
-
-```jsonc
-{
-  "holders": {
-    "jump": {
-      "type": "statistic",
-      "statistic": "minecraft:jump"
-    },
-    "mine": { // The name of the Top Holder
-      "type": "statistic", // The type of the Top Holder
-      "statistic-type": "minecraft:mined", // The category of the statistic
-      "statistic": "minecraft:diamond_ore" // The block material identifier
-    }
-  }
-}
-```
-
-  </Tab>
-</Tabs>
-
-Open your server terminal and type `/reloadtop` to apply the changes.
-
-Now, you can display the top 10 diamond miners by running:
-
-```
-/gettop mine 10
-```
-
-![gettop](./assets/gettop2.png)
-
-  </Tab>
-  <Tab value="PlaceholderAPI Provider">
-
-Now, let's add another Top Holder named `level` to track player experience levels.
-
-<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
-  <Tab value="SpigotMC">
-
-Open `plugins/Topper/config.yml` and add `level` under `holders`:
-
-```yaml
-holders:
-  money:
-    type: placeholder
-    placeholder: "%vault_eco_balance%"
-  level:
-    type: placeholder
-    placeholder: "%player_level%"
-```
-
-  </Tab>
-  <Tab value="FabricMC">
-
-Open `config/topper/config.json` and add `level` under `holders`:
-
-```jsonc
-{
-  "holders": {
-    "money": {
-      "type": "placeholder",
-      "placeholder": "%player:money%"
-    },
-    "level": {
-      "type": "placeholder",
-      "placeholder": "%player:level%"
-    }
-  }
-}
-```
-
-  </Tab>
-</Tabs>
-
-Open your server terminal and type `/reloadtop` to apply the changes.
-
-Now, you can display the top 10 player levels by running:
-
-```
-/gettop level 10
-```
-
-  </Tab>
-</Tabs>
-
 ## What's next?
 
-Now that your leaderboards are set up, explore more ways to display and customize them:
+Now that your leaderboard is set up, explore more ways to display and customize it:
 - Display rankings on [Signs](/topper/extra/block) or player [Heads / Skulls](/topper/extra/block).
 - Integrate with [Holograms](/topper/extra/hologram) or [Citizens NPCs](/topper/extra/npc).
 - Use [PlaceholderAPI Hook](/topper/hook/placeholderapi) or [MiniPlaceholders Hook](/topper/hook/miniplaceholders) to display leaderboard places anywhere in your chat, scoreboard, or tab list.
