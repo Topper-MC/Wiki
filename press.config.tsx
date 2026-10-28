@@ -3,6 +3,7 @@ import { fumadocsMdx } from "fumapress/adapters/mdx";
 import { metaSchema, pageSchema } from "fumapress/adapters/mdx/schema";
 import { defineDocs } from "fumadocs-mdx/macro";
 import { translations } from "@/lib/i18n";
+import { ProjectIcon, resolveProjectIcon } from "@/lib/projects";
 
 const docs = defineDocs({
   dir: "docs",
@@ -18,37 +19,6 @@ const docs = defineDocs({
     schema: metaSchema,
   },
 });
-
-const projectIcons: Record<string, React.ReactNode> = {
-  topper: (
-    <img
-      src="https://topper-mc.github.io/Assets/topper/logo.svg"
-      alt="Topper"
-      className="size-full"
-    />
-  ),
-  timedtopper: (
-    <img
-      src="https://topper-mc.github.io/Assets/timedtopper/logo.svg"
-      alt="TimedTopper"
-      className="size-full"
-    />
-  ),
-  grouptopper: (
-    <img
-      src="https://topper-mc.github.io/Assets/grouptopper/logo.svg"
-      alt="GroupTopper"
-      className="size-full"
-    />
-  ),
-  cachy: (
-    <img
-      src="https://topper-mc.github.io/Assets/topper/logo.svg"
-      alt="Cachy"
-      className="size-full"
-    />
-  ),
-};
 
 export default defineConfig({
   mode: "static",
@@ -66,19 +36,14 @@ export default defineConfig({
   },
   loaderOptions: {
     icon(icon) {
-      if (!icon) return;
-      return projectIcons[icon];
+      return resolveProjectIcon(icon);
     },
   },
   defaultLayoutProps: {
     nav: {
       title: (
         <>
-          <img
-            src="https://topper-mc.github.io/Assets/topper/logo.svg"
-            alt="Topper"
-            className="size-5"
-          />
+          <ProjectIcon project="topper" className="size-5" />
           <span>Topper</span>
         </>
       ),
@@ -94,49 +59,25 @@ export default defineConfig({
             text: "Topper",
             description: "Core leaderboard plugin for Minecraft servers",
             url: "/topper/",
-            icon: (
-              <img
-                src="https://topper-mc.github.io/Assets/topper/logo.svg"
-                alt="Topper"
-                className="size-5"
-              />
-            ),
+            icon: <ProjectIcon project="topper" className="size-5" />,
           },
           {
             text: "TimedTopper",
             description: "Timed leaderboard addon with automatic resets",
             url: "/timedtopper/",
-            icon: (
-              <img
-                src="https://topper-mc.github.io/Assets/timedtopper/logo.svg"
-                alt="TimedTopper"
-                className="size-5"
-              />
-            ),
+            icon: <ProjectIcon project="timedtopper" className="size-5" />,
           },
           {
             text: "GroupTopper",
             description: "Group-based leaderboard calculations",
             url: "/grouptopper/",
-            icon: (
-              <img
-                src="https://topper-mc.github.io/Assets/grouptopper/logo.svg"
-                alt="GroupTopper"
-                className="size-5"
-              />
-            ),
+            icon: <ProjectIcon project="grouptopper" className="size-5" />,
           },
           {
             text: "Cachy",
             description: "High-performance player data caching plugin",
             url: "/cachy/",
-            icon: (
-              <img
-                src="https://topper-mc.github.io/Assets/topper/logo.svg"
-                alt="Cachy"
-                className="size-5"
-              />
-            ),
+            icon: <ProjectIcon project="cachy" className="size-5" />,
           },
         ],
       },

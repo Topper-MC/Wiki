@@ -3,6 +3,7 @@ import Link from 'fumadocs-core/link';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { buttonVariants } from 'fumadocs-ui/components/ui/button';
 import { createHomeLayout } from 'fumapress/layouts/home';
+import { ProjectIcon } from '@/lib/projects';
 
 const HomeLayout = createHomeLayout();
 
@@ -22,9 +23,8 @@ export default function TopperHome(): React.JSX.Element {
       {/* Hero Section */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <img
-            src="https://topper-mc.github.io/Assets/topper/logo.svg"
-            alt="Topper Logo"
+          <ProjectIcon
+            project="topper"
             className="w-28 h-28 mb-6 object-contain drop-shadow"
           />
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">

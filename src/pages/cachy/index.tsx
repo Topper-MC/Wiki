@@ -3,6 +3,7 @@ import Link from 'fumadocs-core/link';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { buttonVariants } from 'fumadocs-ui/components/ui/button';
 import { createHomeLayout } from 'fumapress/layouts/home';
+import { ProjectIcon } from '@/lib/projects';
 
 const HomeLayout = createHomeLayout();
 
@@ -22,9 +23,8 @@ export default function CachyHome(): React.JSX.Element {
       {/* Hero Section */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <img
-            src="https://topper-mc.github.io/Assets/topper/logo.svg"
-            alt="Cachy Logo"
+          <ProjectIcon
+            project="cachy"
             className="w-28 h-28 mb-6 object-contain drop-shadow"
           />
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
@@ -56,34 +56,34 @@ export default function CachyHome(): React.JSX.Element {
         <div className="max-w-5xl mx-auto">
           <Cards className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <Card
-              icon={<span className="text-2xl">💾</span>}
-              title="Data Caching"
-              description="Efficient caching of online player data with minimal overhead."
+              icon={<span className="text-2xl">⚡</span>}
+              title="Fast Data Caching"
+              description="Keep frequent queries and player statistics cached in memory."
+            />
+            <Card
+              icon={<span className="text-2xl">📦</span>}
+              title="Storage Sync"
+              description="Synchronize cached data to backend databases periodically."
+            />
+            <Card
+              icon={<span className="text-2xl">🛡️</span>}
+              title="Crash Protection"
+              description="Safeguard against data loss with safe cache persistence."
+            />
+            <Card
+              icon={<span className="text-2xl">🧩</span>}
+              title="Placeholder Support"
+              description="Expose cached player data via PlaceholderAPI placeholders."
+            />
+            <Card
+              icon={<span className="text-2xl">⚙️</span>}
+              title="Flexible Configuration"
+              description="Control cache durations, update intervals, and thresholds."
             />
             <Card
               icon={<span className="text-2xl">🚀</span>}
-              title="High Performance"
-              description="Optimized data storage and retrieval for server efficiency."
-            />
-            <Card
-              icon={<span className="text-2xl">🔄</span>}
-              title="Dynamic Updates"
-              description="Real-time synchronization of player data across the server."
-            />
-            <Card
-              icon={<span className="text-2xl">🗄️</span>}
-              title="Multiple Storage Options"
-              description="Support for various storage backends for flexible deployment."
-            />
-            <Card
-              icon={<span className="text-2xl">🔍</span>}
-              title="Query System"
-              description="Powerful query capabilities for data retrieval and analysis."
-            />
-            <Card
-              icon={<span className="text-2xl">🔌</span>}
-              title="Plugin Integration"
-              description="Integration with PlaceholderAPI and other popular plugins."
+              title="Zero Impact"
+              description="Designed specifically to eliminate I/O lag on busy servers."
             />
           </Cards>
         </div>

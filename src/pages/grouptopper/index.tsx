@@ -3,6 +3,7 @@ import Link from 'fumadocs-core/link';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { buttonVariants } from 'fumadocs-ui/components/ui/button';
 import { createHomeLayout } from 'fumapress/layouts/home';
+import { ProjectIcon } from '@/lib/projects';
 
 const HomeLayout = createHomeLayout();
 
@@ -22,9 +23,8 @@ export default function GroupTopperHome(): React.JSX.Element {
       {/* Hero Section */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <img
-            src="https://topper-mc.github.io/Assets/grouptopper/logo.svg"
-            alt="GroupTopper Logo"
+          <ProjectIcon
+            project="grouptopper"
             className="w-28 h-28 mb-6 object-contain drop-shadow"
           />
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
@@ -58,32 +58,32 @@ export default function GroupTopperHome(): React.JSX.Element {
             <Card
               icon={<span className="text-2xl">🚀</span>}
               title="Run on Topper"
-              description="Built as an addon of Topper - the better leaderboard plugin."
-            />
-            <Card
-              icon={<span className="text-2xl">⚡</span>}
-              title="Lightweight & High Performance"
-              description="Heavy optimization designed for big servers with minimal resource usage."
+              description="Seamlessly integrates with the core Topper leaderboard plugin."
             />
             <Card
               icon={<span className="text-2xl">👥</span>}
-              title="Support for Many Group Plugins"
-              description="Compatible with Towny, LuckPerms, Parties, Factions, and more."
+              title="Group Metrics"
+              description="Support Towny, Factions, Parties, or custom grouping calculations."
             />
             <Card
-              icon={<span className="text-2xl">📊</span>}
-              title="Built-in Group Strategies"
-              description="Min, Max, Total, and other built-in strategies for group calculations."
+              icon={<span className="text-2xl">⚡</span>}
+              title="Optimized & Fast"
+              description="Low overhead background score calculation and caching."
             />
             <Card
               icon={<span className="text-2xl">🧩</span>}
-              title="Placeholders"
-              description="Get information of group rankings with flexible placeholder support."
+              title="Placeholder Support"
+              description="Display group leaderboard values and placements anywhere."
             />
             <Card
               icon={<span className="text-2xl">💾</span>}
-              title="Multiple Storage Backends"
-              description="Support YAML, JSON, SQLITE & MYSQL storage options."
+              title="Storage Options"
+              description="Multiple storage options for saving group metrics."
+            />
+            <Card
+              icon={<span className="text-2xl">🔧</span>}
+              title="Easy Setup"
+              description="Simple configuration to map groups and top holders."
             />
           </Cards>
         </div>
