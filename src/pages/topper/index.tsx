@@ -9,6 +9,16 @@ const HomeLayout = createHomeLayout();
 export default function TopperHome(): React.JSX.Element {
   return (
     <HomeLayout>
+      <title>Topper</title>
+      <meta
+        name="description"
+        content="Another leaderboard plugin for Minecraft servers"
+      />
+      <meta property="og:title" content="Topper" />
+      <meta
+        property="og:description"
+        content="Another leaderboard plugin for Minecraft servers"
+      />
       {/* Hero Section */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">

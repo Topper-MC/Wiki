@@ -34,6 +34,16 @@ const PortalList = [
 export default function Home(): React.JSX.Element {
   return (
     <HomeLayout>
+      <title>Topper Wiki Portal</title>
+      <meta
+        name="description"
+        content="Welcome to the documentation hub for Topper and its ecosystem plugins."
+      />
+      <meta property="og:title" content="Topper Wiki Portal" />
+      <meta
+        property="og:description"
+        content="Welcome to the documentation hub for Topper and its ecosystem plugins."
+      />
       {/* Hero Header */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">

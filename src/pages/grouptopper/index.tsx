@@ -9,6 +9,16 @@ const HomeLayout = createHomeLayout();
 export default function GroupTopperHome(): React.JSX.Element {
   return (
     <HomeLayout>
+      <title>GroupTopper</title>
+      <meta
+        name="description"
+        content="An addon for Group Leaderboard"
+      />
+      <meta property="og:title" content="GroupTopper" />
+      <meta
+        property="og:description"
+        content="An addon for Group Leaderboard"
+      />
       {/* Hero Section */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">

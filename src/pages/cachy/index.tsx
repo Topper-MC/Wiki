@@ -9,6 +9,16 @@ const HomeLayout = createHomeLayout();
 export default function CachyHome(): React.JSX.Element {
   return (
     <HomeLayout>
+      <title>Cachy</title>
+      <meta
+        name="description"
+        content="A Minecraft plugin for caching player data"
+      />
+      <meta property="og:title" content="Cachy" />
+      <meta
+        property="og:description"
+        content="A Minecraft plugin for caching player data"
+      />
       {/* Hero Section */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">

@@ -9,6 +9,16 @@ const HomeLayout = createHomeLayout();
 export default function TimedTopperHome(): React.JSX.Element {
   return (
     <HomeLayout>
+      <title>TimedTopper</title>
+      <meta
+        name="description"
+        content="An addon for Timely Leaderboard"
+      />
+      <meta property="og:title" content="TimedTopper" />
+      <meta
+        property="og:description"
+        content="An addon for Timely Leaderboard"
+      />
       {/* Hero Section */}
       <section className="py-16 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
