@@ -1,5 +1,7 @@
 {
   "title": "TimedTopper",
+  "description": "Timed leaderboard addon with automatic resets",
+  "icon": "timedtopper",
   "root": true,
   "pages": [
     "config",

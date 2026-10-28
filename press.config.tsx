@@ -2,7 +2,7 @@ import { defineConfig } from "fumapress";
 import { fumadocsMdx } from "fumapress/adapters/mdx";
 import { metaSchema, pageSchema } from "fumapress/adapters/mdx/schema";
 import { defineDocs } from "fumadocs-mdx/macro";
-import { translations } from "./src/lib/i18n";
+import { translations } from "@/lib/i18n";
 
 const docs = defineDocs({
   dir: "docs",
@@ -19,6 +19,37 @@ const docs = defineDocs({
   },
 });
 
+const projectIcons: Record<string, React.ReactNode> = {
+  topper: (
+    <img
+      src="https://topper-mc.github.io/Assets/topper/logo.svg"
+      alt="Topper"
+      className="size-full"
+    />
+  ),
+  timedtopper: (
+    <img
+      src="https://topper-mc.github.io/Assets/timedtopper/logo.svg"
+      alt="TimedTopper"
+      className="size-full"
+    />
+  ),
+  grouptopper: (
+    <img
+      src="https://topper-mc.github.io/Assets/grouptopper/logo.svg"
+      alt="GroupTopper"
+      className="size-full"
+    />
+  ),
+  cachy: (
+    <img
+      src="https://topper-mc.github.io/Assets/topper/logo.svg"
+      alt="Cachy"
+      className="size-full"
+    />
+  ),
+};
+
 export default defineConfig({
   mode: "static",
   translations,
@@ -31,6 +62,12 @@ export default defineConfig({
       user: "Topper-MC",
       repo: "Wiki",
       branch: "main",
+    },
+  },
+  loaderOptions: {
+    icon(icon) {
+      if (!icon) return;
+      return projectIcons[icon];
     },
   },
   defaultLayoutProps: {

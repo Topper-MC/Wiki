@@ -1,5 +1,7 @@
 {
   "title": "Topper",
+  "description": "Core leaderboard plugin for Minecraft servers",
+  "icon": "topper",
   "root": true,
   "pages": [
     "quickstart",

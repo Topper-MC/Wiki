@@ -1,5 +1,7 @@
 {
   "title": "GroupTopper",
+  "description": "Group-based leaderboard calculations",
+  "icon": "grouptopper",
   "root": true,
   "pages": [
     "installation",

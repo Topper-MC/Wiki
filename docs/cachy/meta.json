@@ -1,5 +1,7 @@
 {
   "title": "Cachy",
+  "description": "High-performance player data caching plugin",
+  "icon": "cachy",
   "root": true,
   "pages": [
     "config",
