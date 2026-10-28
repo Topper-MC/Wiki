@@ -1,0 +1,9 @@
+{
+  "title": "Hook",
+  "description": "Plugin integrations and hooks supported by TimedTopper.",
+  "defaultOpen": true,
+  "pages": [
+    "placeholderapi",
+    "luckperms"
+  ]
+}

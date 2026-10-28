@@ -1,0 +1,10 @@
+{
+  "title": "Value Provider",
+  "description": "Built-in value providers that supply data to Topper leaderboard holders.",
+  "defaultOpen": true,
+  "pages": [
+    "statistic",
+    "placeholder",
+    "miniplaceholder"
+  ]
+}

@@ -1,13 +1,41 @@
 {
-  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
+    "target": "ES2023",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "ES2023"
+    ],
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
     "paths": {
+      "@/*": [
+        "./src/*"
+      ],
       "@site/*": [
         "./*"
       ]
-    },
-    "ignoreDeprecations": "6.0"
-  }
+    }
+  },
+  "include": [
+    "src/**/*",
+    "docs/**/*",
+    "vite.config.ts",
+    "press.config.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
 }

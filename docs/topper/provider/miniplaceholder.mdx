@@ -1,0 +1,64 @@
+---
+title: MiniPlaceholder
+description: Use MiniPlaceholders as leaderboard values with the MiniPlaceholder Value Provider.
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import MiniPlaceholderForm from '@site/src/components/forms/MiniPlaceholderForm';
+
+
+
+
+
+> [!NOTE]
+> Requires [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders)
+
+This is a provider that allows you to use MiniPlaceholders placeholders as values in the Top Holder.
+
+## Format
+
+<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
+  <Tab value="SpigotMC">
+
+
+```yaml
+holders:
+  <holder-name>:
+    # The type of the provider
+    type: mini-placeholder
+    # The placeholder used to get the value
+    placeholder: <placeholder>
+```
+
+  </Tab>
+  <Tab value="FabricMC">
+
+
+```json
+{
+  "holders": {
+    "<holder-name>": {
+      // The type of the provider
+      "type": "mini-placeholder",
+      // The placeholder used to get the value
+      "placeholder": "<placeholder>"
+    }
+  }
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Example
+
+
+
+<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
+  <Tab value="SpigotMC">
+    <MiniPlaceholderForm platform="spigot" />
+  </Tab>
+  <Tab value="FabricMC">
+    <MiniPlaceholderForm platform="fabric" />
+  </Tab>
+</Tabs>

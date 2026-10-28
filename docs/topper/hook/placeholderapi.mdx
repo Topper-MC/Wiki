@@ -1,0 +1,55 @@
+---
+title: PlaceholderAPI
+description: Query Topper leaderboard data using PlaceholderAPI placeholders in other plugins.
+---
+import QuerySection from '@site/src/components/QuerySection';
+import { topperDefinitions } from '@site/src/components/queryDefinitions';
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Top Holder.
+
+## Usage
+
+<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
+  <Tab value="SpigotMC">
+
+> [!NOTE]
+> Install [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+
+```
+%topper_<query>%
+```
+
+  </Tab>
+  <Tab value="FabricMC">
+
+> [!NOTE]
+> The placeholders are provided by [Text Placeholder API](https://modrinth.com/mod/placeholder-api)
+> It's bundled in the mod, you don't need to install it separately.
+
+```
+%topper:query <query>%
+```
+
+  </Tab>
+</Tabs>
+
+Check the [Query](/topper/query/) section for more information about how to set the `<query>`.
+
+## Example
+
+
+
+<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
+  <Tab value="SpigotMC">
+
+<QuerySection definitions={topperDefinitions} prefix globalPrefix="%topper_" globalSuffix="%" playerPrefix="%topper_" playerSuffix="%" />
+
+  </Tab>
+  <Tab value="FabricMC">
+
+<QuerySection definitions={topperDefinitions} prefix globalPrefix="%topper:query " globalSuffix="%" playerPrefix="%topper:query " playerSuffix="%" />
+
+  </Tab>
+</Tabs>

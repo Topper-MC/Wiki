@@ -1,0 +1,14 @@
+{
+  "title": "Topper",
+  "root": true,
+  "pages": [
+    "quickstart",
+    "commands",
+    "config",
+    "faq",
+    "query",
+    "provider",
+    "hook",
+    "extra"
+  ]
+}

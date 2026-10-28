@@ -1,0 +1,11 @@
+{
+  "title": "TimedTopper",
+  "root": true,
+  "pages": [
+    "config",
+    "holder",
+    "query",
+    "hook",
+    "api"
+  ]
+}

@@ -1,4 +1,4 @@
-import type { QueryDefinition } from '@site/src/components/QuerySection';
+import type { QueryDefinition } from './QuerySection';
 
 export const topperDefinitions: QueryDefinition[] = [
   {
@@ -9,8 +9,8 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder', 'position'],
     examples: [
       {
-        format: ['holder', ';top_name;', 'position'],
-        desc: ['Retrieve the name of the player at position ', 'position', ' in the Holder named ', 'holder'],
+        format: '{holder};top_name;{position}',
+        desc: 'Retrieve the name of the player at position {position} in the Holder named {holder}',
       },
     ],
   },
@@ -22,8 +22,8 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder', 'position'],
     examples: [
       {
-        format: ['holder', ';top_key;', 'position'],
-        desc: ['Retrieve the UUID of the player at position ', 'position', ' in the Holder named ', 'holder'],
+        format: '{holder};top_key;{position}',
+        desc: 'Retrieve the UUID of the player at position {position} in the Holder named {holder}',
       },
     ],
   },
@@ -38,12 +38,12 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder', 'position', 'format'],
     examples: [
       {
-        format: ['holder', ';top_value;', 'position'],
-        desc: ['Retrieve the value of the player at position ', 'position', ' in the Holder named ', 'holder'],
+        format: '{holder};top_value;{position}',
+        desc: 'Retrieve the value of the player at position {position} in the Holder named {holder}',
       },
       {
-        format: ['holder', ';top_value;', 'position', ';#,###'],
-        desc: ['Retrieve the formatted value of the player at position ', 'position', ' in the Holder named ', 'holder', ', in the format of ', { code: '#,###' }],
+        format: '{holder};top_value;{position};#,###',
+        desc: 'Retrieve the formatted value of the player at position {position} in the Holder named {holder}, in the format of `#,###`',
       },
     ],
   },
@@ -55,8 +55,8 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder', 'position'],
     examples: [
       {
-        format: ['holder', ';top_value_raw;', 'position'],
-        desc: ['Retrieve the raw value of the player at position ', 'position', ' in the Holder named ', 'holder'],
+        format: '{holder};top_value_raw;{position}',
+        desc: 'Retrieve the raw value of the player at position {position} in the Holder named {holder}',
       },
     ],
   },
@@ -71,12 +71,12 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder', 'format'],
     examples: [
       {
-        format: ['holder', ';top_rank'],
-        desc: ['Retrieve the rank of the player in the Holder named ', 'holder'],
+        format: '{holder};top_rank',
+        desc: 'Retrieve the rank of the player in the Holder named {holder}',
       },
       {
-        format: ['holder', ';top_rank;#,###'],
-        desc: ['Retrieve the formatted rank of the player in the Holder named ', 'holder'],
+        format: '{holder};top_rank;#,###',
+        desc: 'Retrieve the formatted rank of the player in the Holder named {holder}',
       },
     ],
   },
@@ -88,8 +88,8 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder'],
     examples: [
       {
-        format: ['holder', ';top_size'],
-        desc: ['Retrieve the amount of entries in the Holder named ', 'holder'],
+        format: '{holder};top_size',
+        desc: 'Retrieve the amount of entries in the Holder named {holder}',
       },
     ],
   },
@@ -104,12 +104,12 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder', 'format'],
     examples: [
       {
-        format: ['holder', ';value'],
-        desc: ['Retrieve the value of the player in the Holder named ', 'holder'],
+        format: '{holder};value',
+        desc: 'Retrieve the value of the player in the Holder named {holder}',
       },
       {
-        format: ['holder', ';value;#,###'],
-        desc: ['Retrieve the formatted value of the player in the Holder named ', 'holder'],
+        format: '{holder};value;#,###',
+        desc: 'Retrieve the formatted value of the player in the Holder named {holder}',
       },
     ],
   },
@@ -121,8 +121,8 @@ export const topperDefinitions: QueryDefinition[] = [
     args: ['holder'],
     examples: [
       {
-        format: ['holder', ';value_raw'],
-        desc: ['Retrieve the raw value of the player in the Holder named ', 'holder'],
+        format: '{holder};value_raw',
+        desc: 'Retrieve the raw value of the player in the Holder named {holder}',
       },
     ],
   },
@@ -140,12 +140,12 @@ export const timedDefinitions: QueryDefinition[] = [
     args: ['holder', 'time_format'],
     examples: [
       {
-        format: ['holder', ';remain_time'],
-        desc: ['Retrieve the remaining time in millis until the next reset of the Holder named ', 'holder'],
+        format: '{holder};remain_time',
+        desc: 'Retrieve the remaining time in millis until the next reset of the Holder named {holder}',
       },
       {
-        format: ['holder', ';remain_time;HH:mm:ss'],
-        desc: ['Retrieve the remaining time until the next reset of the Holder named ', 'holder'],
+        format: '{holder};remain_time;HH:mm:ss',
+        desc: 'Retrieve the remaining time until the next reset of the Holder named {holder}',
       },
     ],
   },
@@ -160,12 +160,12 @@ export const timedDefinitions: QueryDefinition[] = [
     args: ['holder', 'end_time_format'],
     examples: [
       {
-        format: ['holder', ';end_time'],
-        desc: ['Retrieve the next reset time in millis of the Holder named ', 'holder'],
+        format: '{holder};end_time',
+        desc: 'Retrieve the next reset time in millis of the Holder named {holder}',
       },
       {
-        format: ['holder', ';end_time;yyyy-MM-dd HH:mm:ss'],
-        desc: ['Retrieve the next reset time of the Holder named ', 'holder'],
+        format: '{holder};end_time;yyyy-MM-dd HH:mm:ss',
+        desc: 'Retrieve the next reset time of the Holder named {holder}',
       },
     ],
   },

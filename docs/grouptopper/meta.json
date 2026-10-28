@@ -1,0 +1,11 @@
+{
+  "title": "GroupTopper",
+  "root": true,
+  "pages": [
+    "installation",
+    "config",
+    "holder",
+    "query",
+    "hook"
+  ]
+}

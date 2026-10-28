@@ -1,0 +1,11 @@
+{
+  "title": "Hook",
+  "description": "Plugin integrations and hooks supported by Topper for Minecraft servers.",
+  "defaultOpen": true,
+  "pages": [
+    "placeholderapi",
+    "miniplaceholders",
+    "luckperms",
+    "lastloginapi"
+  ]
+}

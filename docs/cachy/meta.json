@@ -1,0 +1,9 @@
+{
+  "title": "Cachy",
+  "root": true,
+  "pages": [
+    "config",
+    "query",
+    "hook"
+  ]
+}

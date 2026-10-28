@@ -1,3 +1,5 @@
+'use client';
+
 import HolderForm from './HolderForm';
 import type { FormConfig } from '@site/src/utils/formTypes';
 

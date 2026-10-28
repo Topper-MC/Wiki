@@ -1,3 +1,5 @@
+'use client';
+
 import HolderForm from './HolderForm';
 import ValueDisplayOutput from './ValueDisplayOutput';
 import type { FormConfig } from '@site/src/utils/formTypes';
