@@ -4,6 +4,7 @@ description: Get started with Topper by creating your first Minecraft server lea
 ---
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 This guide will quickly introduce you to the basics of Topper by creating a simple leaderboard.
 
@@ -19,6 +20,10 @@ Choose what kind of leaderboard you want to build:
 </Tabs>
 
 ---
+
+<Steps>
+
+<Step>
 
 ## Add a Top Holder
 
@@ -105,7 +110,17 @@ Open `config/topper/config.json`, head to the `holders` section, and add the fol
 
 That is all you need to configure your first leaderboard!
 
+</Step>
+
+<Step>
+
+## Reload the Server
+
 Open your server terminal and type `/reloadtop` to apply the changes.
+
+</Step>
+
+<Step>
 
 ## Display the Top Holder
 
@@ -118,6 +133,10 @@ To display the top 10 jumping players, run:
 ```
 
 ![gettop](./assets/gettop.png)
+
+</Step>
+
+<Step>
 
 ## Add another Top Holder
 
@@ -221,6 +240,10 @@ Now, you can display the top 10 diamond miners by running:
 ```
 
 ![gettop](./assets/gettop2.png)
+
+</Step>
+
+</Steps>
 
 ## What's next?
 
