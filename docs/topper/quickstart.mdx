@@ -200,7 +200,7 @@ Now, you can display the top 10 diamond miners by running:
   </Tab>
   <Tab value="PlaceholderAPI Provider">
 
-Now, let's add another Top Holder named `level` to track player experience levels, and configure update settings.
+Now, let's add another Top Holder named `level` to track player experience levels.
 
 <Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
   <Tab value="SpigotMC">
@@ -215,11 +215,10 @@ holders:
   level:
     type: placeholder
     placeholder: "%player_level%"
-    online: true # Optional: parse for online players only to optimize performance
 ```
 
 > [!TIP]
-> Setting `online: true` instructs Topper to parse values only for players currently online. Offline players will still remain on the leaderboard; their recorded values are simply preserved until they log back in.
+> By default, `online` is set to `true`, meaning Topper updates values only for players currently online. Offline players will still remain on the leaderboard; their recorded values are simply preserved until they log back in. If you want a placeholder to be parsed for all players even when offline, you can set `online: false`.
 
   </Tab>
   <Tab value="FabricMC">
