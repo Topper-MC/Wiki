@@ -5,13 +5,13 @@ description: Get started with Topper by creating your first Minecraft server lea
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
-This guide will quickly introduce you to the basics of Topper by creating a simple jump leaderboard.
+This guide will quickly introduce you to the basics of Topper by creating a simple leaderboard.
 
 Choose what kind of leaderboard you want to build:
 
 <Tabs groupId="provider" items={['Statistic Provider', 'PlaceholderAPI Provider']}>
   <Tab value="Statistic Provider">
-    **Statistic Provider** uses built-in Minecraft player statistics (such as jump count) without requiring any external plugins or mods.
+    **Statistic Provider** uses built-in Minecraft player statistics (such as jump count and mined blocks) without requiring any external plugins or mods.
   </Tab>
   <Tab value="PlaceholderAPI Provider">
     **PlaceholderAPI Provider** evaluates placeholders from PlaceholderAPI (Spigot) or Text Placeholder API (Fabric) to track data from external plugins or mods.
@@ -24,7 +24,7 @@ Choose what kind of leaderboard you want to build:
 
 The unit that stores and manages leaderboard data is called a **Top Holder**. Inside the Top Holder, you define a **Value Provider**, which is responsible for providing the value of each entry in the leaderboard.
 
-We will create a Top Holder named `jump` to count the number of times players jump.
+We will start by creating a Top Holder named `jump` to count the number of times players jump.
 
 <Tabs groupId="provider" items={['Statistic Provider', 'PlaceholderAPI Provider']}>
   <Tab value="Statistic Provider">
@@ -119,9 +119,112 @@ To display the top 10 jumping players, run:
 
 ![gettop](./assets/gettop.png)
 
+## Add another Top Holder
+
+Now, let's add another Top Holder named `mine` to show the amount of diamond ores a player has mined.
+
+<Tabs groupId="provider" items={['Statistic Provider', 'PlaceholderAPI Provider']}>
+  <Tab value="Statistic Provider">
+
+`mine_block` requires a block material to work. Hence, we add the `material` field to specify `diamond_ore`.
+
+<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
+  <Tab value="SpigotMC">
+
+Open `plugins/Topper/config.yml` and add `mine` under `holders`:
+
+```yaml
+holders:
+  jump:
+    type: statistic
+    statistic: jump
+  mine:
+    type: statistic
+    statistic: mine_block
+    material: diamond_ore
+```
+
+  </Tab>
+  <Tab value="FabricMC">
+
+Open `config/topper/config.json` and add `mine` under `holders`:
+
+```jsonc
+{
+  "holders": {
+    "jump": {
+      "type": "statistic",
+      "statistic": "minecraft:jump"
+    },
+    "mine": { // The name of the Top Holder
+      "type": "statistic", // The type of the Top Holder
+      "statistic-type": "minecraft:mined", // The category of the statistic
+      "statistic": "minecraft:diamond_ore" // The block material identifier
+    }
+  }
+}
+```
+
+  </Tab>
+</Tabs>
+
+  </Tab>
+  <Tab value="PlaceholderAPI Provider">
+
+<Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
+  <Tab value="SpigotMC">
+
+Open `plugins/Topper/config.yml` and add `mine` under `holders`:
+
+```yaml
+holders:
+  jump:
+    type: placeholder
+    placeholder: "%statistic_jump%"
+  mine:
+    type: placeholder
+    placeholder: "%statistic_mine_block:diamond_ore%"
+```
+
+  </Tab>
+  <Tab value="FabricMC">
+
+Open `config/topper/config.json` and add `mine` under `holders`:
+
+```jsonc
+{
+  "holders": {
+    "jump": {
+      "type": "placeholder",
+      "placeholder": "%player:statistic_raw minecraft:jump%"
+    },
+    "mine": {
+      "type": "placeholder",
+      "placeholder": "%player:statistic_raw minecraft:mined minecraft:diamond_ore%"
+    }
+  }
+}
+```
+
+  </Tab>
+</Tabs>
+
+  </Tab>
+</Tabs>
+
+Open your server terminal and type `/reloadtop` to apply the changes.
+
+Now, you can display the top 10 diamond miners by running:
+
+```
+/gettop mine 10
+```
+
+![gettop](./assets/gettop2.png)
+
 ## What's next?
 
-Now that your leaderboard is set up, explore more ways to display and customize it:
+Now that your leaderboards are set up, explore more ways to display and customize them:
 - Display rankings on [Signs](/topper/extra/block) or player [Heads / Skulls](/topper/extra/block).
 - Integrate with [Holograms](/topper/extra/hologram) or [Citizens NPCs](/topper/extra/npc).
 - Use [PlaceholderAPI Hook](/topper/hook/placeholderapi) or [MiniPlaceholders Hook](/topper/hook/miniplaceholders) to display leaderboard places anywhere in your chat, scoreboard, or tab list.
