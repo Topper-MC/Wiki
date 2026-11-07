@@ -2,8 +2,7 @@
 title: PlaceholderAPI
 description: Query TimedTopper leaderboard data using PlaceholderAPI placeholders.
 ---
-import QuerySection from '@site/src/components/QuerySection';
-import { topperDefinitions, timedDefinitions, timedArgDescriptions } from '@site/src/components/queryDefinitions';
+import { Query, QueryForm, QueryFormItem, QueryArguments, QueryArgument, QueryDisplay, QueryDisplayItem, QueryExample } from '@site/src/components/Query';
 
 The plugin provides a PlaceholderAPI placeholder to allow you to query data from the Holder.
 
@@ -17,14 +16,122 @@ Check the [Query](/timedtopper/query/) section for more information about how to
 
 ## Example
 
-
-
-<QuerySection
-  definitions={[...topperDefinitions, ...timedDefinitions]}
-  args={timedArgDescriptions}
+<Query
+  defaults={{ holder: 'money', position: '1' }}
   prefix
   globalPrefix="%timedtopper_"
   globalSuffix="%"
   playerPrefix="%timedtopper_"
   playerSuffix="%"
-/>
+>
+  <QueryForm title="Interactive Query Playground">
+    <QueryFormItem
+      name="holder"
+      label="Holder Name"
+      description="The name of the holder (e.g. money, exp)"
+    />
+    <QueryFormItem
+      name="position"
+      label="Position"
+      type="number"
+      description="The position in the leaderboard (must be >= 1)"
+    />
+    <QueryArguments label="Arguments">
+      <QueryArgument name="holder">Holder name</QueryArgument>
+      <QueryArgument name="position">Leaderboard position</QueryArgument>
+      <QueryArgument name="format">Format pattern</QueryArgument>
+    </QueryArguments>
+  </QueryForm>
+  <QueryDisplay
+    playerLabel="Player"
+    globalLabel="Global"
+    syntaxLabel="Syntax"
+    resultLabel="Result"
+  >
+    <QueryDisplayItem
+      id="top_name"
+      type="global"
+      description="The name of the player at the specified position."
+      args={['holder', 'position']}
+    >
+      <QueryExample syntax="<holder>;top_name;<position>" result="{holder};top_name;{position}" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="top_key"
+      type="global"
+      description="The UUID of the player at the specified position."
+      args={['holder', 'position']}
+    >
+      <QueryExample syntax="<holder>;top_key;<position>" result="{holder};top_key;{position}" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="top_value"
+      type="global"
+      description="The value of the player at the specified position."
+      args={['holder', 'position', 'format']}
+    >
+      <QueryExample syntax="<holder>;top_value;<position>" result="{holder};top_value;{position}" />
+      <QueryExample syntax="<holder>;top_value;<position>;<format>" result="{holder};top_value;{position};#,###" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="top_value_raw"
+      type="global"
+      description="The raw value of the player at the specified position."
+      args={['holder', 'position']}
+    >
+      <QueryExample syntax="<holder>;top_value_raw;<position>" result="{holder};top_value_raw;{position}" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="top_rank"
+      type="global"
+      description="The player's rank (position number) in the specified Holder."
+      args={['holder', 'format']}
+    >
+      <QueryExample syntax="<holder>;top_rank" result="{holder};top_rank" />
+      <QueryExample syntax="<holder>;top_rank;<format>" result="{holder};top_rank;#,###" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="top_size"
+      type="global"
+      description="The amount of entries in the Holder."
+      args={['holder']}
+    >
+      <QueryExample syntax="<holder>;top_size" result="{holder};top_size" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="value"
+      type="player"
+      description="The value of the player."
+      args={['holder', 'format']}
+    >
+      <QueryExample syntax="<holder>;value" result="{holder};value" />
+      <QueryExample syntax="<holder>;value;<format>" result="{holder};value;#,###" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="value_raw"
+      type="player"
+      description="The raw value of the player."
+      args={['holder']}
+    >
+      <QueryExample syntax="<holder>;value_raw" result="{holder};value_raw" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="remain_time"
+      type="global"
+      description="The remaining time until the next reset."
+      args={['holder', 'format']}
+    >
+      <QueryExample syntax="<holder>;remain_time" result="{holder};remain_time" />
+      <QueryExample syntax="<holder>;remain_time;<format>" result="{holder};remain_time;HH:mm:ss" />
+    </QueryDisplayItem>
+    <QueryDisplayItem
+      id="end_time"
+      type="global"
+      description="The time of the next reset."
+      args={['holder', 'format']}
+    >
+      <QueryExample syntax="<holder>;end_time" result="{holder};end_time" />
+      <QueryExample syntax="<holder>;end_time;<format>" result="{holder};end_time;yyyy-MM-dd HH:mm:ss" />
+    </QueryDisplayItem>
+  </QueryDisplay>
+</Query>

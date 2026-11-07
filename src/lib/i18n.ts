@@ -5,18 +5,12 @@ const baseTranslations: Record<string, string> = {
   // General & Container
   configurationGenerator: 'Configuration Generator',
   usageGuidance: 'Usage Guidance',
-  interactiveQueryPlayground: 'Interactive Query Playground',
   format: 'Format',
-  syntax: 'Syntax',
-  result: 'Result',
   description: 'Description',
   argument: 'Argument',
-  arguments: 'Arguments',
   args: 'Args',
   queryAndFormat: 'Query & Format',
   liveExample: 'Live Example',
-  global: 'Global',
-  player: 'Player',
   none: 'None',
   example: 'Example',
   remove: 'Remove',
@@ -24,12 +18,9 @@ const baseTranslations: Record<string, string> = {
   // Holders & Placeholders
   holderName: 'Holder Name',
   holderDescription: 'The name of the holder',
-  holderNameDescription: 'The name of the holder (e.g. money, exp)',
   placeholder: 'Placeholder',
   placeholderDescription: 'The placeholder used to get the value',
   valuePlaceholderDescription: 'The placeholder used to get the value',
-  position: 'Position',
-  positionDescription: 'The position in the leaderboard (must be >= 1)',
   onlineLabel: 'Parse for online players only',
   onlineDescription:
     'Whether the placeholder should be parsed only for players who are currently online in the server. When enabled, the plugin parses placeholder values for online players. When disabled, it parses for all players, including offline.',
@@ -47,58 +38,6 @@ const baseTranslations: Record<string, string> = {
   addMaterial: 'Add Material',
   addEntity: 'Add Entity',
   addStatistic: 'Add Statistic',
-
-  // Query Section arguments
-  'arg.holder': 'The name of the holder',
-  'arg.position': 'The position in the leaderboard',
-  'arg.match_position': 'The position to match',
-  'arg.format': 'A format pattern (e.g., #,###)',
-  'arg.time_format': 'A time format pattern (e.g., HH:mm:ss for hours:minutes:seconds)',
-  'arg.end_time_format': 'A time format pattern (e.g., yyyy-MM-dd HH:mm:ss)',
-
-  // Query descriptions
-  'query.top_name.desc': 'The name of the player at the specified position.',
-  'query.top_key.desc': 'The UUID of the player at the specified position.',
-  'query.top_value.desc': 'The value of the player at the specified position.',
-  'query.top_value_raw.desc': 'The raw value of the player at the specified position.',
-  'query.top_rank.desc': "The player's rank (position number) in the specified Holder.",
-  'query.top_size.desc': 'The amount of entries in the Holder.',
-  'query.value.desc': 'The value of the player.',
-  'query.value_raw.desc': 'The raw value of the player.',
-  'query.remain_time.desc': 'The remaining time until the next reset.',
-  'query.end_time.desc': 'The time of the next reset.',
-
-  // Query example descriptions
-  'query.top_name.example.0':
-    'Retrieve the name of the player at position {position} in the Holder named {holder}',
-  'query.top_key.example.0':
-    'Retrieve the UUID of the player at position {position} in the Holder named {holder}',
-  'query.top_value.example.0':
-    'Retrieve the value of the player at position {position} in the Holder named {holder}',
-  'query.top_value.example.1':
-    'Retrieve the formatted value of the player at position {position} in the Holder named {holder}, in the format of `#,###`',
-  'query.top_value_raw.example.0':
-    'Retrieve the raw value of the player at position {position} in the Holder named {holder}',
-  'query.top_rank.example.0':
-    'Retrieve the rank of the player in the Holder named {holder}',
-  'query.top_rank.example.1':
-    'Retrieve the formatted rank of the player in the Holder named {holder}',
-  'query.top_size.example.0':
-    'Retrieve the amount of entries in the Holder named {holder}',
-  'query.value.example.0':
-    'Retrieve the value of the player in the Holder named {holder}',
-  'query.value.example.1':
-    'Retrieve the formatted value of the player in the Holder named {holder}',
-  'query.value_raw.example.0':
-    'Retrieve the raw value of the player in the Holder named {holder}',
-  'query.remain_time.example.0':
-    'Retrieve the remaining time in millis until the next reset of the Holder named {holder}',
-  'query.remain_time.example.1':
-    'Retrieve the remaining time until the next reset of the Holder named {holder}',
-  'query.end_time.example.0':
-    'Retrieve the next reset time in millis of the Holder named {holder}',
-  'query.end_time.example.1':
-    'Retrieve the next reset time of the Holder named {holder}',
 
   // Value Display - Decimal
   decimalSeparator: 'Decimal Separator',
