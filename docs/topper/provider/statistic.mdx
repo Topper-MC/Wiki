@@ -4,7 +4,7 @@ description: Use Minecraft statistics as leaderboard values with the Statistic V
 ---
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import StatisticForm from '@site/src/components/forms/StatisticForm';
+import { ConfigForm, FormText, FormArray } from '@site/src/components/forms/ConfigForm';
 
 
 
@@ -117,9 +117,55 @@ entity:
 
 <Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
   <Tab value="SpigotMC">
-    <StatisticForm platform="spigot" />
+    <ConfigForm
+      title="Configuration Generator"
+      removeLabel="Remove"
+      defaults={{ name: 'jump', statistic: 'JUMP', material: [], entity: [] }}
+      generator="statisticSpigot"
+      codeLang="yaml"
+      codeTitle="holder.yml"
+    >
+      <FormText name="name" label="Holder Name" description="The name of the holder" />
+      <FormText
+        name="statistic"
+        label="Statistic"
+        description="The statistic used to get the value"
+      />
+      <FormArray
+        name="material"
+        label="Material"
+        description="The material used to filter the statistic"
+        addLabel="Add Material"
+      />
+      <FormArray
+        name="entity"
+        label="Entity"
+        description="The entity used to filter the statistic"
+        addLabel="Add Entity"
+      />
+    </ConfigForm>
   </Tab>
   <Tab value="FabricMC">
-    <StatisticForm platform="fabric" />
+    <ConfigForm
+      title="Configuration Generator"
+      removeLabel="Remove"
+      defaults={{ name: 'jump', statisticType: 'minecraft:custom', statisticList: ['minecraft:jump'] }}
+      generator="statisticFabric"
+      codeLang="json"
+      codeTitle="holder.json"
+    >
+      <FormText name="name" label="Holder Name" description="The name of the holder" />
+      <FormText
+        name="statisticType"
+        label="Statistic Type"
+        description="The type of the statistic (e.g. minecraft:custom, minecraft:mined)"
+      />
+      <FormArray
+        name="statisticList"
+        label="Statistic"
+        description="The statistic used to get the value"
+        addLabel="Add Statistic"
+      />
+    </ConfigForm>
   </Tab>
 </Tabs>

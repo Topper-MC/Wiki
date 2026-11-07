@@ -3,9 +3,7 @@ title: Value Display
 description: Format leaderboard values with decimal, time, or number shortening display options.
 ---
 
-import ValueDisplayDecimalForm from '@site/src/components/forms/ValueDisplayDecimalForm';
-import ValueDisplayTimeForm from '@site/src/components/forms/ValueDisplayTimeForm';
-import ValueDisplayShortenForm from '@site/src/components/forms/ValueDisplayShortenForm';
+import { ConfigForm, FormText, FormSelect, FormObjectArray, FormUsage } from '@site/src/components/forms/ConfigForm';
 
 
 
@@ -44,7 +42,48 @@ The following section will guide you through the available formats to replace
 
 #### Example
 
-<ValueDisplayDecimalForm />
+<ConfigForm
+  title="Configuration Generator"
+  removeLabel="Remove"
+  defaults={{
+    decimalSeparator: '.',
+    groupingSeparator: ',',
+    groupingSize: '3',
+    maximumFractionDigits: '2',
+  }}
+  generator="valueDisplayDecimal"
+  showCode={false}
+>
+  <FormText
+    name="decimalSeparator"
+    label="Decimal Separator"
+    description="The character used to separate the integer and fraction parts of a number"
+  />
+  <FormText
+    name="groupingSeparator"
+    label="Grouping Separator"
+    description="The character used to separate groups of digits"
+  />
+  <FormText
+    name="groupingSize"
+    label="Grouping Size"
+    type="number"
+    description="The number of digits in each group"
+  />
+  <FormText
+    name="maximumFractionDigits"
+    label="Maximum Fraction Digits"
+    type="number"
+    description="The maximum number of digits allowed in the fraction portion of a number"
+  />
+  <FormUsage
+    title="Usage Guidance"
+    formatLabel={<>Format String (Use in <code>default-value-display</code>)</>}
+    lineLabel={<>In <code>line</code> (as placeholder)</>}
+    valueLabel={<>In <code>value</code> query</>}
+    topValueLabel={<>In <code>top_value</code> query</>}
+  />
+</ConfigForm>
 
 
 
@@ -60,7 +99,47 @@ The following section will guide you through the available formats to replace
 
 #### Example
 
-<ValueDisplayTimeForm />
+<ConfigForm
+  title="Configuration Generator"
+  removeLabel="Remove"
+  defaults={{ pattern: 'HH:mm:ss', type: 'duration', unit: 'seconds' }}
+  generator="valueDisplayTime"
+  showCode={false}
+>
+  <FormText
+    name="pattern"
+    label="Pattern"
+    description="The pattern used to format the time/duration"
+  />
+  <FormSelect
+    name="type"
+    label="Type"
+    description="The type of the time/duration (e.g. duration, time)"
+    options={['duration', 'time']}
+  />
+  <FormSelect
+    name="unit"
+    label="Unit"
+    description="The unit of the value to format (e.g. seconds, minutes)"
+    options={[
+      'ticks',
+      'nanoseconds',
+      'microseconds',
+      'milliseconds',
+      'seconds',
+      'minutes',
+      'hours',
+      'days',
+    ]}
+  />
+  <FormUsage
+    title="Usage Guidance"
+    formatLabel={<>Format String (Use in <code>default-value-display</code>)</>}
+    lineLabel={<>In <code>line</code> (as placeholder)</>}
+    valueLabel={<>In <code>value</code> query</>}
+    topValueLabel={<>In <code>top_value</code> query</>}
+  />
+</ConfigForm>
 
 
 
@@ -110,6 +189,30 @@ would shorten the number based on the following groups:
 
 #### Example
 
-<ValueDisplayShortenForm />
+<ConfigForm
+  title="Configuration Generator"
+  removeLabel="Remove"
+  defaults={{ customGroups: [] }}
+  generator="valueDisplayShorten"
+  showCode={false}
+>
+  <FormObjectArray
+    name="customGroups"
+    label="Custom Groups"
+    description="Define custom shortening thresholds and their corresponding suffixes (e.g., 1000 with suffix k)."
+    addLabel="Add Group"
+    subFields={[
+      { name: 'number', placeholder: 'Number (e.g., 1000)' },
+      { name: 'suffix', placeholder: 'Suffix (e.g., k)' },
+    ]}
+  />
+  <FormUsage
+    title="Usage Guidance"
+    formatLabel={<>Format String (Use in <code>default-value-display</code>)</>}
+    lineLabel={<>In <code>line</code> (as placeholder)</>}
+    valueLabel={<>In <code>value</code> query</>}
+    topValueLabel={<>In <code>top_value</code> query</>}
+  />
+</ConfigForm>
 
 

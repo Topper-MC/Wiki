@@ -4,7 +4,7 @@ description: Use MiniPlaceholders as leaderboard values with the MiniPlaceholder
 ---
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import MiniPlaceholderForm from '@site/src/components/forms/MiniPlaceholderForm';
+import { ConfigForm, FormText } from '@site/src/components/forms/ConfigForm';
 
 
 
@@ -52,13 +52,39 @@ holders:
 
 ## Example
 
-
-
 <Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
   <Tab value="SpigotMC">
-    <MiniPlaceholderForm platform="spigot" />
+    <ConfigForm
+      title="Configuration Generator"
+      removeLabel="Remove"
+      defaults={{ name: 'money', placeholder: '<vault_eco_balance>' }}
+      generator="miniPlaceholderSpigot"
+      codeLang="yaml"
+      codeTitle="holder.yml"
+    >
+      <FormText name="name" label="Holder Name" description="The name of the holder" />
+      <FormText
+        name="placeholder"
+        label="Placeholder"
+        description="The placeholder used to get the value"
+      />
+    </ConfigForm>
   </Tab>
   <Tab value="FabricMC">
-    <MiniPlaceholderForm platform="fabric" />
+    <ConfigForm
+      title="Configuration Generator"
+      removeLabel="Remove"
+      defaults={{ name: 'money', placeholder: '<vault_eco_balance>' }}
+      generator="miniPlaceholderFabric"
+      codeLang="json"
+      codeTitle="holder.json"
+    >
+      <FormText name="name" label="Holder Name" description="The name of the holder" />
+      <FormText
+        name="placeholder"
+        label="Placeholder"
+        description="The placeholder used to get the value"
+      />
+    </ConfigForm>
   </Tab>
 </Tabs>

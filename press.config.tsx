@@ -2,7 +2,6 @@ import { defineConfig } from "fumapress";
 import { fumadocsMdx } from "fumapress/adapters/mdx";
 import { metaSchema, pageSchema } from "fumapress/adapters/mdx/schema";
 import { defineDocs } from "fumadocs-mdx/macro";
-import { translations } from "@/lib/i18n";
 import { PROJECTS, ProjectIcon, resolveProjectIcon } from "@/lib/projects";
 import { NavTitle } from "@/components/NavTitle";
 
@@ -23,7 +22,6 @@ const docs = defineDocs({
 
 export default defineConfig({
   mode: "static",
-  translations,
   content: docs.toFumadocsSource(),
   site: {
     name: "Topper",

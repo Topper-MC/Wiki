@@ -4,7 +4,7 @@ description: Use PlaceholderAPI placeholders as leaderboard values with the Plac
 ---
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import PlaceholderForm from '@site/src/components/forms/PlaceholderForm';
+import { ConfigForm, FormText, FormCheckbox } from '@site/src/components/forms/ConfigForm';
 
 
 
@@ -69,9 +69,42 @@ holders:
 
 <Tabs groupId="platform" items={['SpigotMC', 'FabricMC']}>
   <Tab value="SpigotMC">
-    <PlaceholderForm platform="spigot" />
+    <ConfigForm
+      title="Configuration Generator"
+      removeLabel="Remove"
+      defaults={{ name: 'money', placeholder: '%vault_eco_balance%', online: true }}
+      generator="placeholderSpigot"
+      codeLang="yaml"
+      codeTitle="holder.yml"
+    >
+      <FormText name="name" label="Holder Name" description="The name of the holder" />
+      <FormText
+        name="placeholder"
+        label="Placeholder"
+        description="The placeholder used to get the value"
+      />
+      <FormCheckbox
+        name="online"
+        label="Parse for online players only"
+        description="Whether the placeholder should be parsed only for players who are currently online in the server. When enabled, the plugin parses placeholder values for online players. When disabled, it parses for all players, including offline."
+      />
+    </ConfigForm>
   </Tab>
   <Tab value="FabricMC">
-    <PlaceholderForm platform="fabric" />
+    <ConfigForm
+      title="Configuration Generator"
+      removeLabel="Remove"
+      defaults={{ name: 'level', placeholder: '%playerex:level%' }}
+      generator="placeholderFabric"
+      codeLang="json"
+      codeTitle="holder.json"
+    >
+      <FormText name="name" label="Holder Name" description="The name of the holder" />
+      <FormText
+        name="placeholder"
+        label="Placeholder"
+        description="The placeholder used to get the value"
+      />
+    </ConfigForm>
   </Tab>
 </Tabs>
