@@ -4,8 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import press from "fumapress/vite";
 import { fumadocsMdx } from "fumadocs-mdx/vite";
 import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
-import { remarkGithubAlerts } from "@/plugins/remark-github-alerts";
-import { transformerMetaHighlight } from "@/plugins/transformer-meta-highlight";
+import { remarkGithubAlerts } from "./plugins/remark-github-alerts";
+import { transformerMetaHighlight } from "./plugins/transformer-meta-highlight";
 
 export default defineConfig({
   plugins: [
@@ -31,7 +31,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
-      "@site": fileURLToPath(new URL("./", import.meta.url)),
     },
   },
 });

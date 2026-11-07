@@ -21,15 +21,13 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ],
-      "@site/*": [
-        "./*"
       ]
     }
   },
   "include": [
     "src/**/*",
     "docs/**/*",
+    "plugins/**/*",
     "vite.config.ts",
     "press.config.tsx"
   ],
