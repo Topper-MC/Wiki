@@ -53,35 +53,22 @@ The following section will guide you through the available formats to replace
   }}
   generator="valueDisplayDecimal"
   showCode={false}
+  columns={2}
 >
-  <FormText
-    name="decimalSeparator"
-    label="Decimal Separator"
-    description="The character used to separate the integer and fraction parts of a number"
-  />
-  <FormText
-    name="groupingSeparator"
-    label="Grouping Separator"
-    description="The character used to separate groups of digits"
-  />
-  <FormText
-    name="groupingSize"
-    label="Grouping Size"
-    type="number"
-    description="The number of digits in each group"
-  />
-  <FormText
-    name="maximumFractionDigits"
-    label="Maximum Fraction Digits"
-    type="number"
-    description="The maximum number of digits allowed in the fraction portion of a number"
-  />
+  <FormText name="decimalSeparator" label="Decimal Separator" />
+  <FormText name="groupingSeparator" label="Grouping Separator" />
+  <FormText name="groupingSize" label="Grouping Size" type="number" />
+  <FormText name="maximumFractionDigits" label="Maximum Fraction Digits" type="number" />
   <FormUsage
-    title="Usage Guidance"
-    formatLabel={<>Format String (Use in <code>default-value-display</code>)</>}
-    lineLabel={<>In <code>line</code> (as placeholder)</>}
-    valueLabel={<>In <code>value</code> query</>}
-    topValueLabel={<>In <code>top_value</code> query</>}
+    title="Where to use it"
+    formatLabel="default-value-display"
+    formatHint="Formats every value from this holder by default."
+    lineLabel="line placeholder"
+    lineHint="As the placeholder inside a line."
+    valueLabel="value query"
+    valueHint="As the format of a value query."
+    topValueLabel="top_value query"
+    topValueHint="As the format of a top_value query."
   />
 </ConfigForm>
 
@@ -105,22 +92,13 @@ The following section will guide you through the available formats to replace
   defaults={{ pattern: 'HH:mm:ss', type: 'duration', unit: 'seconds' }}
   generator="valueDisplayTime"
   showCode={false}
+  columns={2}
 >
-  <FormText
-    name="pattern"
-    label="Pattern"
-    description="The pattern used to format the time/duration"
-  />
-  <FormSelect
-    name="type"
-    label="Type"
-    description="The type of the time/duration (e.g. duration, time)"
-    options={['duration', 'time']}
-  />
+  <FormText name="pattern" label="Pattern" />
+  <FormSelect name="type" label="Type" options={['duration', 'time']} />
   <FormSelect
     name="unit"
     label="Unit"
-    description="The unit of the value to format (e.g. seconds, minutes)"
     options={[
       'ticks',
       'nanoseconds',
@@ -133,11 +111,15 @@ The following section will guide you through the available formats to replace
     ]}
   />
   <FormUsage
-    title="Usage Guidance"
-    formatLabel={<>Format String (Use in <code>default-value-display</code>)</>}
-    lineLabel={<>In <code>line</code> (as placeholder)</>}
-    valueLabel={<>In <code>value</code> query</>}
-    topValueLabel={<>In <code>top_value</code> query</>}
+    title="Where to use it"
+    formatLabel="default-value-display"
+    formatHint="Formats every value from this holder by default."
+    lineLabel="line placeholder"
+    lineHint="As the placeholder inside a line."
+    valueLabel="value query"
+    valueHint="As the format of a value query."
+    topValueLabel="top_value query"
+    topValueHint="As the format of a top_value query."
   />
 </ConfigForm>
 
@@ -199,7 +181,6 @@ would shorten the number based on the following groups:
   <FormObjectArray
     name="customGroups"
     label="Custom Groups"
-    description="Define custom shortening thresholds and their corresponding suffixes (e.g., 1000 with suffix k)."
     addLabel="Add Group"
     subFields={[
       { name: 'number', placeholder: 'Number (e.g., 1000)' },
@@ -207,11 +188,15 @@ would shorten the number based on the following groups:
     ]}
   />
   <FormUsage
-    title="Usage Guidance"
-    formatLabel={<>Format String (Use in <code>default-value-display</code>)</>}
-    lineLabel={<>In <code>line</code> (as placeholder)</>}
-    valueLabel={<>In <code>value</code> query</>}
-    topValueLabel={<>In <code>top_value</code> query</>}
+    title="Where to use it"
+    formatLabel="default-value-display"
+    formatHint="Formats every value from this holder by default."
+    lineLabel="line placeholder"
+    lineHint="As the placeholder inside a line."
+    valueLabel="value query"
+    valueHint="As the format of a value query."
+    topValueLabel="top_value query"
+    topValueHint="As the format of a top_value query."
   />
 </ConfigForm>
 
