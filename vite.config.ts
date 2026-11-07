@@ -4,8 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import press from "fumapress/vite";
 import { fumadocsMdx } from "fumadocs-mdx/vite";
 import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
-import { remarkGithubAlerts } from "./src/plugins/remark-github-alerts";
-import { transformerMetaHighlight } from "./src/plugins/transformer-meta-highlight";
+import { remarkGithubAlerts } from "@/plugins/remark-github-alerts";
+import { transformerMetaHighlight } from "@/plugins/transformer-meta-highlight";
 
 export default defineConfig({
   plugins: [
